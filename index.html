@@ -22,7 +22,10 @@
 
   <title>Mukesh Dubey — Full Stack Java Developer</title>
 
-  <!-- Fonts -->
+  <!-- =====================================================
+       GOOGLE FONTS
+       ===================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -31,8 +34,12 @@
     rel="stylesheet"
   />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- =====================================================
+       MAIN STYLESHEET
+       IMPORTANT: actual file is styles.css
+       ===================================================== -->
+
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
@@ -41,7 +48,10 @@
        LOADING SCREEN
        ===================================================== -->
 
-  <div class="loading-screen" aria-label="Loading portfolio">
+  <div
+    class="loading-screen"
+    aria-label="Loading portfolio"
+  >
     <i></i>
     <span>LOADING PORTFOLIO</span>
     <i></i>
@@ -52,8 +62,15 @@
        VISUAL EFFECTS
        ===================================================== -->
 
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
+  <div
+    class="noise"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="cursor-glow"
+    aria-hidden="true"
+  ></div>
 
 
   <!-- =====================================================
@@ -62,7 +79,11 @@
 
   <header class="topbar section-pad">
 
-    <a href="#top" class="wordmark" aria-label="Mukesh Dubey home">
+    <a
+      href="#top"
+      class="wordmark"
+      aria-label="Mukesh Dubey home"
+    >
       MUKESH
       <i></i>
     </a>
@@ -96,9 +117,9 @@
 
       <a
         class="nav-resume"
-        href="assets/Mukesh-Dubey-Resume.pdf"
+        href="./assets/Mukesh-Dubey-Resume.pdf"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         Resume <span>↗</span>
       </a>
@@ -107,7 +128,12 @@
   </header>
 
 
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
   <main id="top">
+
 
     <!-- ===================================================
          HERO
@@ -163,7 +189,9 @@
       </div>
 
 
-      <!-- Orbit -->
+      <!-- =================================================
+           ORBIT
+           ================================================= -->
 
       <div
         class="orbit-scene"
@@ -196,16 +224,22 @@
       </div>
 
 
-      <!-- Resume strip -->
+      <!-- =================================================
+           RESUME STRIP
+           ================================================= -->
 
       <a
         class="resume-strip"
-        href="assets/Mukesh-Dubey-Resume.pdf"
+        href="./assets/Mukesh-Dubey-Resume.pdf"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         <span>01</span>
-        <strong>View / Download Resume</strong>
+
+        <strong>
+          View / Download Resume
+        </strong>
+
         <i>↗</i>
       </a>
 
@@ -213,7 +247,7 @@
 
 
     <!-- ===================================================
-         ABOUT / STATEMENT
+         ABOUT
          =================================================== -->
 
     <section
@@ -313,7 +347,7 @@
 
       <div class="project-console reveal">
 
-        <!-- Project tabs -->
+        <!-- PROJECT TABS -->
 
         <div
           class="project-tabs"
@@ -379,7 +413,7 @@
         </div>
 
 
-        <!-- Project display -->
+        <!-- PROJECT DISPLAY -->
 
         <div class="project-display">
 
@@ -396,7 +430,7 @@
           </div>
 
 
-          <!-- Project visual -->
+          <!-- PROJECT VISUAL -->
 
           <div
             class="project-visual blog-visual"
@@ -409,7 +443,7 @@
           </div>
 
 
-          <!-- Project information -->
+          <!-- PROJECT INFORMATION -->
 
           <div class="project-copy">
 
@@ -440,7 +474,7 @@
                 data-live-link
                 href="https://blog-lyart-alpha-17.vercel.app/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 Open live project
                 <span>↗</span>
@@ -450,7 +484,7 @@
                 class="source-link"
                 href="https://github.com/DubeyMukesh-Official"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 GitHub profile
               </a>
@@ -685,12 +719,12 @@
       </div>
 
 
-      <!-- Featured credential -->
+      <!-- FEATURED CREDENTIAL -->
 
       <div class="credential-feature reveal">
 
         <img
-          src="assets/certificates/vedant-certificate.jpg"
+          src="./assets/certificates/vedant-certificate.jpg"
           alt="Full Stack Java Development training certificate"
           loading="lazy"
         />
@@ -715,7 +749,7 @@
             class="credential-open"
             type="button"
             data-title="Full Stack Java Development"
-            data-image="assets/certificates/vedant-certificate.jpg"
+            data-image="./assets/certificates/vedant-certificate.jpg"
           >
             View credential
             <i>↗</i>
@@ -726,7 +760,7 @@
       </div>
 
 
-      <!-- Credential cards -->
+      <!-- CREDENTIAL CARDS -->
 
       <div class="credential-grid reveal">
 
@@ -734,11 +768,11 @@
           class="credential-card"
           type="button"
           data-title="IBM Java Development Certificate"
-          data-image="assets/certificates/ibm-java.jpg"
+          data-image="./assets/certificates/ibm-java.jpg"
         >
 
           <img
-            src="assets/certificates/ibm-java.jpg"
+            src="./assets/certificates/ibm-java.jpg"
             alt="IBM Java certificate"
             loading="lazy"
           />
@@ -756,11 +790,11 @@
           class="credential-card"
           type="button"
           data-title="IBM React Development Certificate"
-          data-image="assets/certificates/ibm-react.jpg"
+          data-image="./assets/certificates/ibm-react.jpg"
         >
 
           <img
-            src="assets/certificates/ibm-react.jpg"
+            src="./assets/certificates/ibm-react.jpg"
             alt="IBM React certificate"
             loading="lazy"
           />
@@ -778,11 +812,11 @@
           class="credential-card"
           type="button"
           data-title="HackerRank Certificate"
-          data-image="assets/certificates/hackerrank.jpg"
+          data-image="./assets/certificates/hackerrank.jpg"
         >
 
           <img
-            src="assets/certificates/hackerrank.jpg"
+            src="./assets/certificates/hackerrank.jpg"
             alt="HackerRank certificate"
             loading="lazy"
           />
@@ -838,7 +872,10 @@
       </p>
 
 
-      <div class="contact-noise" aria-hidden="true">
+      <div
+        class="contact-noise"
+        aria-hidden="true"
+      >
         LET'S TALK
       </div>
 
@@ -868,7 +905,7 @@
         <a
           href="https://github.com/DubeyMukesh-Official"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           GitHub ↗
         </a>
@@ -876,7 +913,7 @@
         <a
           href="https://www.linkedin.com/"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           LinkedIn ↗
         </a>
@@ -930,43 +967,29 @@
       viewBox="0 0 24 24"
       aria-hidden="true"
     >
+
       <circle
         cx="12"
         cy="12"
         r="4"
       ></circle>
 
-      <path
-        d="M12 2v2"
-      ></path>
+      <path d="M12 2v2"></path>
 
-      <path
-        d="M12 20v2"
-      ></path>
+      <path d="M12 20v2"></path>
 
-      <path
-        d="m4.93 4.93 1.41 1.41"
-      ></path>
+      <path d="m4.93 4.93 1.41 1.41"></path>
 
-      <path
-        d="m17.66 17.66 1.41 1.41"
-      ></path>
+      <path d="m17.66 17.66 1.41 1.41"></path>
 
-      <path
-        d="M2 12h2"
-      ></path>
+      <path d="M2 12h2"></path>
 
-      <path
-        d="M20 12h2"
-      ></path>
+      <path d="M20 12h2"></path>
 
-      <path
-        d="m6.34 17.66-1.41 1.41"
-      ></path>
+      <path d="m6.34 17.66-1.41 1.41"></path>
 
-      <path
-        d="m19.07 4.93-1.41 1.41"
-      ></path>
+      <path d="m19.07 4.93-1.41 1.41"></path>
+
     </svg>
 
   </button>
@@ -1025,7 +1048,7 @@
         class="modal-pdf"
         href="#"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         Open PDF ↗
       </a>
@@ -1039,7 +1062,7 @@
        JAVASCRIPT
        ===================================================== -->
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 
 </body>
 </html>
