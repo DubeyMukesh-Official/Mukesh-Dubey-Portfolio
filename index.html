@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,659 +10,83 @@
 
   <meta
     name="description"
-    content="Mukesh Dubey - B.Sc. IT graduate and fresher showcasing React.js, Java, Spring Boot, MySQL, REST APIs, and full-stack projects."
+    content="Mukesh Dubey — Full Stack Java Developer and React.js Developer portfolio."
   />
 
-  <meta name="theme-color" content="#070a12" />
+  <meta
+    name="keywords"
+    content="Mukesh Dubey, React Developer, Java Developer, Spring Boot Developer, Full Stack Developer, Mumbai"
+  />
 
-  <title>Mukesh Dubey | Developer Portfolio</title>
+  <meta name="author" content="Mukesh Dubey" />
+
+  <title>Mukesh Dubey — Full Stack Java Developer</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="motion.css" />
-
-  <!-- Portfolio Enhancements -->
-  <style>
-    /* ================================
-       PROJECT VISUALS
-    ================================= */
-
-    .project-display.is-changing {
-      opacity: 0.56;
-      transform: scale(0.993);
-      transition: opacity 0.12s, transform 0.12s;
-    }
-
-    .blog-visual {
-      background: #fff5de;
-    }
-
-    .blog-visual::before {
-      width: 270px;
-      height: 270px;
-      background: #ff725e;
-      left: -76px;
-      top: -118px;
-    }
-
-    .blog-visual::after {
-      width: 190px;
-      height: 190px;
-      background: #6c83ff;
-      right: -36px;
-      bottom: -40px;
-    }
-
-    .blog-visual b,
-    .hotel-visual b,
-    .ridex-visual b,
-    .safety-visual b {
-      position: absolute;
-      z-index: 2;
-      top: 28px;
-      left: 29px;
-      color: #101523;
-      font: 500 18px var(--mono);
-      letter-spacing: -1.5px;
-    }
-
-    .blog-visual i {
-      display: block;
-      position: absolute;
-      z-index: 1;
-      right: 11%;
-      width: 52%;
-      height: 42px;
-      background: #101523;
-      border-radius: 3px;
-    }
-
-    .blog-visual i:nth-of-type(1) {
-      top: 35%;
-    }
-
-    .blog-visual i:nth-of-type(2) {
-      top: 52%;
-      width: 39%;
-      right: 24%;
-      background: #f4f1e9;
-    }
-
-    .blog-visual i:nth-of-type(3) {
-      top: 69%;
-      width: 47%;
-      right: 17%;
-      background: #d9ff4f;
-    }
-
-    /* Hotel */
-
-    .hotel-visual {
-      background: #e2f0ed;
-    }
-
-    .hotel-visual::before {
-      width: 260px;
-      height: 260px;
-      right: -65px;
-      top: -48px;
-      background: #bed8cb;
-    }
-
-    .hotel-visual::after {
-      width: 120px;
-      height: 120px;
-      left: 12%;
-      bottom: -48px;
-      background: #ff725e;
-    }
-
-    .hotel-visual i {
-      position: absolute;
-      z-index: 1;
-      display: block;
-      width: 83px;
-      height: 102px;
-      background: #101523;
-      bottom: 37px;
-      border-radius: 45px 45px 3px 3px;
-    }
-
-    .hotel-visual i:nth-of-type(1) {
-      left: 25%;
-    }
-
-    .hotel-visual i:nth-of-type(2) {
-      left: 48%;
-      bottom: 54px;
-      background: #d9ff4f;
-    }
-
-    .hotel-visual i:nth-of-type(3) {
-      left: 68%;
-      background: #4862d8;
-    }
-
-    .hotel-visual i:nth-of-type(4) {
-      left: 9%;
-      bottom: 70px;
-      width: 43px;
-      height: 14px;
-      border-radius: 8px;
-      background: #f4f1e9;
-    }
-
-    /* RideX */
-
-    .ridex-visual {
-      background: #e8ebf8;
-    }
-
-    .ridex-visual::before {
-      width: 380px;
-      height: 380px;
-      top: -175px;
-      right: -65px;
-      background: #ff725e;
-    }
-
-    .ridex-visual::after {
-      width: 210px;
-      height: 210px;
-      bottom: -124px;
-      left: -36px;
-      background: #d9ff4f;
-    }
-
-    .ridex-visual i {
-      position: absolute;
-      z-index: 1;
-      display: block;
-      border: 9px solid #101523;
-      border-radius: 50%;
-      width: 83px;
-      height: 83px;
-      bottom: 45px;
-    }
-
-    .ridex-visual i:nth-of-type(1) {
-      left: 22%;
-    }
-
-    .ridex-visual i:nth-of-type(2) {
-      left: 62%;
-    }
-
-    .ridex-visual i:nth-of-type(3) {
-      height: 13px;
-      width: 189px;
-      border: 0;
-      border-radius: 0;
-      background: #101523;
-      bottom: 83px;
-      left: 31%;
-      transform: rotate(-23deg);
-    }
-
-    /* Women Safety */
-
-    .safety-visual {
-      background: #eef7f3;
-    }
-
-    .safety-visual::before {
-      width: 280px;
-      height: 280px;
-      background: #8ee0c1;
-      top: -115px;
-      left: -70px;
-    }
-
-    .safety-visual::after {
-      width: 190px;
-      height: 190px;
-      background: #ff725e;
-      right: -54px;
-      bottom: -75px;
-    }
-
-    .safety-visual i {
-      position: absolute;
-      z-index: 1;
-      display: block;
-      background: #101523;
-    }
-
-    .safety-visual i:nth-of-type(1) {
-      width: 156px;
-      height: 96px;
-      left: 30%;
-      bottom: 48px;
-      border-radius: 16px;
-      box-shadow: 0 0 0 12px #d9ff4f33;
-    }
-
-    .safety-visual i:nth-of-type(2) {
-      width: 96px;
-      height: 13px;
-      left: 39%;
-      bottom: 91px;
-      background: #eef7f3;
-      border-radius: 20px;
-    }
-
-    .safety-visual i:nth-of-type(3) {
-      width: 13px;
-      height: 96px;
-      left: 49%;
-      bottom: 49px;
-      background: #eef7f3;
-      border-radius: 20px;
-    }
-
-
-    /* ================================
-       PREMIUM THEME
-    ================================= */
-
-    :root {
-      --accent: #7c5cff;
-      --accent2: #22d3ee;
-      --bg: #070a12;
-      --panel: rgba(18, 24, 38, 0.72);
-      --panel2: rgba(255, 255, 255, 0.045);
-      --text: #f7f8ff;
-      --muted: #aab2c7;
-      --border: rgba(255, 255, 255, 0.1);
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background:
-        radial-gradient(
-          circle at 15% 10%,
-          rgba(124, 92, 255, 0.13),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 85% 25%,
-          rgba(34, 211, 238, 0.08),
-          transparent 26%
-        ),
-        var(--bg);
-    }
-
-    ::selection {
-      background: rgba(124, 92, 255, 0.45);
-      color: #fff;
-    }
-
-    a,
-    button {
-      transition: all 0.22s ease;
-    }
-
-    button {
-      font: inherit;
-    }
-
-
-    /* Buttons */
-
-    .premium-btn,
-    .btn,
-    .button,
-    .cta-btn {
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border: 1px solid var(--border) !important;
-      border-radius: 13px !important;
-      padding: 11px 18px !important;
-      text-decoration: none !important;
-      cursor: pointer;
-      font-weight: 700 !important;
-      letter-spacing: 0.1px;
-    }
-
-    .premium-btn-primary,
-    .btn-primary,
-    .primary-btn {
-      color: #fff !important;
-      border-color: transparent !important;
-      background: linear-gradient(
-        135deg,
-        var(--accent),
-        #5b7cff
-      ) !important;
-      box-shadow: 0 10px 28px rgba(124, 92, 255, 0.27);
-    }
-
-    .premium-btn-primary:hover,
-    .btn-primary:hover,
-    .primary-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(124, 92, 255, 0.38);
-    }
-
-    .premium-btn-ghost,
-    .btn-ghost,
-    .secondary-btn {
-      color: var(--text) !important;
-      background: rgba(255, 255, 255, 0.045) !important;
-      backdrop-filter: blur(12px);
-    }
-
-    .premium-btn-ghost:hover,
-    .btn-ghost:hover,
-    .secondary-btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.09) !important;
-      border-color: rgba(124, 92, 255, 0.5) !important;
-    }
-
-
-    /* Cards */
-
-    .project-card,
-    .card,
-    .project,
-    .skill-card,
-    .service-card {
-      border: 1px solid var(--border) !important;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.055),
-          rgba(255, 255, 255, 0.025)
-        ) !important;
-      box-shadow: var(--shadow) !important;
-      border-radius: 22px !important;
-      overflow: hidden;
-    }
-
-    .project-card:hover,
-    .project:hover,
-    .skill-card:hover,
-    .service-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(124, 92, 255, 0.42) !important;
-    }
-
-
-    /* Project controls */
-
-    .project-toggle-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin: 18px 0 26px;
-      padding: 7px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.035);
-      width: max-content;
-      max-width: 100%;
-      backdrop-filter: blur(14px);
-    }
-
-    .project-toggle {
-      appearance: none;
-      border: 0;
-      border-radius: 11px;
-      padding: 10px 16px;
-      color: var(--muted);
-      background: transparent;
-      font-weight: 750;
-      cursor: pointer;
-    }
-
-    .project-toggle:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    .project-toggle.active {
-      color: #fff;
-      background: linear-gradient(
-        135deg,
-        var(--accent),
-        #536dff
-      );
-      box-shadow: 0 8px 22px rgba(124, 92, 255, 0.28);
-    }
-
-
-    /* Project grid */
-
-    .project-grid-enhanced {
-      display: grid !important;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .project-card-enhanced {
-      position: relative;
-    }
-
-    .project-card-enhanced .project-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .project-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(124, 92, 255, 0.11);
-      border: 1px solid rgba(124, 92, 255, 0.25);
-      color: #d9d2ff;
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    .project-techs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 14px;
-    }
-
-    .project-tech {
-      padding: 6px 9px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.055);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #c8d0e5;
-      font-size: 0.75rem;
-    }
-
-    .project-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .project-actions a {
-      font-size: 0.88rem;
-    }
-
-
-    /* Reveal animation */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition:
-        opacity 0.6s ease,
-        transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-
-    /* Scroll progress */
-
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 0;
-      z-index: 99999;
-      background: linear-gradient(
-        90deg,
-        var(--accent),
-        var(--accent2)
-      );
-    }
-
-
-    /* Back to top */
-
-    .back-top {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: rgba(15, 20, 32, 0.78);
-      color: #fff;
-      backdrop-filter: blur(14px);
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 999;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .back-top.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .back-top:hover {
-      transform: translateY(-3px);
-      background: var(--accent);
-    }
-
-    .nav-link-active {
-      color: #fff !important;
-    }
-
-
-    /* Responsive */
-
-    @media (max-width: 800px) {
-      .project-grid-enhanced {
-        grid-template-columns: 1fr !important;
-      }
-
-      .project-toggle-wrap {
-        width: 100%;
-        overflow: auto;
-      }
-
-      .project-toggle {
-        white-space: nowrap;
-      }
-
-      .project-actions a {
-        width: 100%;
-      }
-    }
-
-
-    /* Reduced motion */
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 
 <body>
 
-  <!-- Decorative elements -->
-  <div class="noise" aria-hidden="true"></div>
+  <!-- =====================================================
+       LOADING SCREEN
+       ===================================================== -->
 
-  <div class="scroll-meter" aria-hidden="true">
+  <div class="loading-screen" aria-label="Loading portfolio">
+    <i></i>
+    <span>LOADING PORTFOLIO</span>
     <i></i>
   </div>
 
+
+  <!-- =====================================================
+       VISUAL EFFECTS
+       ===================================================== -->
+
+  <div class="noise" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
 
-  <div class="loading-screen" aria-hidden="true">
-    <span>MD/01</span>
-    <i></i>
-  </div>
 
+  <!-- =====================================================
+       NAVIGATION
+       ===================================================== -->
 
-  <!-- ================================
-       HEADER
-  ================================= -->
+  <header class="topbar section-pad">
 
-  <header class="topbar" id="top">
-
-    <a
-      class="wordmark"
-      href="#home"
-      aria-label="Mukesh Dubey - home"
-    >
-      <span>MD</span>
+    <a href="#top" class="wordmark" aria-label="Mukesh Dubey home">
+      MUKESH
       <i></i>
     </a>
 
-    <p class="topbar-status">
+    <div class="topbar-status">
       <b></b>
       Available for opportunities
-    </p>
+    </div>
 
     <button
       class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
       aria-expanded="false"
-      aria-controls="site-nav"
+      aria-controls="site-navigation"
     >
       <span></span>
-      <span></span>
-      Menu
+      MENU
     </button>
 
     <nav
-      id="site-nav"
       class="site-nav"
-      aria-label="Main navigation"
+      id="site-navigation"
+      aria-label="Primary navigation"
     >
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -672,7 +96,7 @@
 
       <a
         class="nav-resume"
-        href="assets/resume/Mukesh_Dubey_Resume.pdf"
+        href="assets/Mukesh-Dubey-Resume.pdf"
         target="_blank"
         rel="noopener"
       >
@@ -683,19 +107,13 @@
   </header>
 
 
-  <!-- ================================
-       MAIN
-  ================================= -->
+  <main id="top">
 
-  <main>
+    <!-- ===================================================
+         HERO
+         =================================================== -->
 
-
-    <!-- HERO -->
-
-    <section
-      class="hero section-pad"
-      id="home"
-    >
+    <section class="hero section-pad">
 
       <div class="hero-meta">
         <span>Portfolio / 2026</span>
@@ -704,38 +122,40 @@
 
       <div class="hero-main">
 
-        <p class="kicker reveal">
-          Hello, I am Mukesh · Frontend / Full Stack Developer
-        </p>
+        <div class="hero-copy-stack">
 
-        <h1 class="reveal">
-          I build <em>useful</em><br />
-          web experiences.
-        </h1>
+          <p class="hero-kicker">
+            FULL STACK JAVA DEVELOPER
+          </p>
 
-        <div class="hero-bottom reveal">
-
-          <div class="hero-copy-stack">
-
-            <span class="role-chip">
-              OPEN TO INTERNSHIPS &amp; JUNIOR ROLES
-            </span>
-
-            <p>
-              B.Sc. IT graduate and fresher focused on
-              <strong>React.js, Java, Spring Boot</strong>,
-              and <strong>MySQL</strong>.
-              I learn by building responsive interfaces
-              and practical full-stack applications.
-            </p>
-
+          <div class="role-chip">
+            REACT.JS · JAVA · SPRING BOOT
           </div>
+
+          <h1>
+            Building
+            <em>digital</em><br />
+            experiences.
+          </h1>
+
+        </div>
+
+
+        <div class="hero-bottom">
+
+          <p>
+            I'm <strong>Mukesh Dubey</strong>, a B.Sc. IT graduate and
+            aspiring Full Stack Developer focused on building responsive
+            web applications using React.js, Java, Spring Boot, REST APIs
+            and MySQL.
+          </p>
 
           <a
             class="primary-cta"
             href="#projects"
           >
-            Explore my work <span>↓</span>
+            EXPLORE MY WORK
+            <span>↘</span>
           </a>
 
         </div>
@@ -743,79 +163,98 @@
       </div>
 
 
-      <!-- Tech visual -->
+      <!-- Orbit -->
 
       <div
-        class="orbit-scene reveal"
-        aria-label="Java, React, API and database technology visual"
+        class="orbit-scene"
+        aria-hidden="true"
       >
 
-        <span class="orbit orbit-one"></span>
-        <span class="orbit orbit-two"></span>
-
-        <span class="orbit-label java">JAVA</span>
-        <span class="orbit-label react">REACT</span>
-        <span class="orbit-label api">APIs</span>
-        <span class="orbit-label sql">SQL</span>
-
         <div class="core">
-          MD
+          &lt;/&gt;
         </div>
+
+        <div class="orbit"></div>
+        <div class="orbit orbit-two"></div>
+
+        <span class="orbit-label java">
+          JAVA
+        </span>
+
+        <span class="orbit-label react">
+          REACT
+        </span>
+
+        <span class="orbit-label api">
+          REST API
+        </span>
+
+        <span class="orbit-label sql">
+          MYSQL
+        </span>
 
       </div>
 
 
-      <!-- Resume -->
+      <!-- Resume strip -->
 
       <a
         class="resume-strip"
-        href="assets/resume/Mukesh_Dubey_Resume.pdf"
+        href="assets/Mukesh-Dubey-Resume.pdf"
         target="_blank"
         rel="noopener"
       >
-        <span>Want the short version?</span>
-        <strong>View my resume</strong>
+        <span>01</span>
+        <strong>View / Download Resume</strong>
         <i>↗</i>
       </a>
 
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- ===================================================
+         ABOUT / STATEMENT
+         =================================================== -->
 
     <section
-      class="statement section-pad"
+      class="statement section-pad reveal"
       id="about"
     >
 
-      <div class="section-label">
-        01 <span>/</span> About
-      </div>
+      <p class="section-label">
+        01 <span>/</span> ABOUT
+      </p>
 
       <div class="statement-content">
 
-        <h2 class="reveal">
-          A developer at the start of the journey,
-          focused on doing the
-          <em>fundamentals well.</em>
+        <h2>
+          I create
+          <em>clean, responsive</em>
+          web experiences with
+          practical engineering.
         </h2>
 
-        <div class="bio reveal">
+        <div class="bio">
 
           <p>
-            I enjoy taking an interface or workflow and
-            turning it into a practical application.
-            Through personal and academic projects,
-            I have worked with component-based front ends,
-            REST APIs, authentication, database operations,
-            and responsive layouts.
+            I enjoy turning ideas into functional web applications.
+            My development experience includes frontend development
+            with React.js and backend development using Java,
+            Spring Boot, REST APIs and MySQL.
+          </p>
+
+          <p>
+            As a fresher, I'm focused on learning quickly, writing
+            maintainable code and contributing to real-world
+            development teams.
           </p>
 
           <a
             class="text-arrow"
-            href="mailto:mukeshdubey975@gmail.com"
+            href="#contact"
           >
-            Let's connect <span>↗</span>
+            Let's work together
+            <span>↗</span>
           </a>
 
         </div>
@@ -823,41 +262,26 @@
       </div>
 
 
-      <div
-        class="fact-row reveal"
-        aria-label="Career highlights"
-      >
+      <div class="fact-row">
 
         <article>
-          <strong>9.40</strong>
-          <span>
-            CGPA<br />
-            B.Sc. IT
-          </span>
+          <strong>2025</strong>
+          <span>B.Sc. IT Graduate</span>
         </article>
 
         <article>
-          <strong>5</strong>
-          <span>
-            Featured<br />
-            projects
-          </span>
+          <strong>4+</strong>
+          <span>Major Projects</span>
         </article>
 
         <article>
-          <strong>16</strong>
-          <span>
-            Verified<br />
-            credentials
-          </span>
+          <strong>Java</strong>
+          <span>Backend Development</span>
         </article>
 
         <article>
-          <strong>B.Sc. IT</strong>
-          <span>
-            Khar Education<br />
-            Society's College
-          </span>
+          <strong>React</strong>
+          <span>Frontend Development</span>
         </article>
 
       </div>
@@ -865,21 +289,23 @@
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- ===================================================
+         PROJECTS
+         =================================================== -->
 
     <section
-      class="project-section section-pad"
+      class="project-section"
       id="projects"
     >
 
-      <div class="section-heading">
+      <div class="section-heading reveal">
 
-        <div class="section-label">
-          02 <span>/</span> Project archive
-        </div>
+        <p class="section-label">
+          02 <span>/</span> SELECTED WORK
+        </p>
 
         <p>
-          Click a project to inspect the build.
+          Projects / Applications / Experiments
         </p>
 
       </div>
@@ -897,16 +323,18 @@
 
           <button
             class="project-tab is-active"
+            type="button"
             role="tab"
             aria-selected="true"
             data-project="blog"
           >
             <span>01</span>
-            Blog App
+            Blog Application
           </button>
 
           <button
             class="project-tab"
+            type="button"
             role="tab"
             aria-selected="false"
             data-project="shoe"
@@ -917,6 +345,7 @@
 
           <button
             class="project-tab"
+            type="button"
             role="tab"
             aria-selected="false"
             data-project="hotel"
@@ -927,6 +356,7 @@
 
           <button
             class="project-tab"
+            type="button"
             role="tab"
             aria-selected="false"
             data-project="ridex"
@@ -937,6 +367,7 @@
 
           <button
             class="project-tab"
+            type="button"
             role="tab"
             aria-selected="false"
             data-project="safety"
@@ -950,23 +381,22 @@
 
         <!-- Project display -->
 
-        <article
-          class="project-display"
-          aria-live="polite"
-        >
+        <div class="project-display">
 
           <div class="project-display-top">
-
-            <span class="display-code">
-              CASE / 01
-            </span>
 
             <span class="display-type">
               CONTENT EXPERIENCE
             </span>
 
+            <span class="display-code">
+              CASE / 01
+            </span>
+
           </div>
 
+
+          <!-- Project visual -->
 
           <div
             class="project-visual blog-visual"
@@ -979,6 +409,8 @@
           </div>
 
 
+          <!-- Project information -->
+
           <div class="project-copy">
 
             <p class="project-overline">
@@ -990,10 +422,9 @@
             </h3>
 
             <p class="project-description">
-              A responsive blog application that renders
-              REST API content through reusable React
-              components and gives readers a clear,
-              simple way to explore posts.
+              A responsive blog application that renders REST API
+              content through reusable React components and gives
+              readers a clear, simple way to explore posts.
             </p>
 
             <ul class="project-tags">
@@ -1011,7 +442,8 @@
                 target="_blank"
                 rel="noopener"
               >
-                Open live project <span>↗</span>
+                Open live project
+                <span>↗</span>
               </a>
 
               <a
@@ -1029,101 +461,122 @@
 
 
           <div class="project-counter">
-            <span data-current-project>01</span>
-            / 05
+            <span data-current-project>01</span> / 05
           </div>
 
-        </article>
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- ===================================================
+         SKILLS
+         =================================================== -->
 
     <section
-      class="stack-section section-pad"
+      class="stack-section section-pad reveal"
       id="skills"
     >
 
-      <div class="section-label">
-        03 <span>/</span> Working toolkit
-      </div>
+      <p class="section-label">
+        03 <span>/</span> STACK
+      </p>
+
 
       <div class="stack-grid">
 
-        <article class="stack-intro reveal">
+        <div class="stack-intro">
 
-          <p>THE TOOLS</p>
+          <p>
+            TOOLS / TECHNOLOGIES
+          </p>
 
           <h2>
-            What I use to turn a blank page
-            into something useful.
+            Technology is useful
+            when it solves the
+            right problem.
           </h2>
 
-        </article>
+        </div>
 
 
-        <article class="skill-card reveal">
+        <article class="skill-card">
 
-          <span>01</span>
+          <span>01 / FRONTEND</span>
 
           <h3>
-            Front end
+            React.js
           </h3>
 
           <p>
-            React.js, JavaScript, HTML5, CSS3,
-            Bootstrap, Responsive Design
+            React, JavaScript ES6+, HTML5, CSS3,
+            Bootstrap, React Router and responsive UI.
           </p>
 
         </article>
 
 
-        <article class="skill-card reveal">
+        <article class="skill-card">
 
-          <span>02</span>
+          <span>02 / BACKEND</span>
 
           <h3>
-            Back end
+            Java & Spring Boot
           </h3>
 
           <p>
-            Core Java, Spring Boot, JDBC,
-            REST APIs, Spring Data JPA
+            Core Java, OOP, Spring Boot, REST APIs,
+            JDBC, JPA and backend application development.
           </p>
 
         </article>
 
 
-        <article class="skill-card reveal">
+        <article class="skill-card">
 
-          <span>03</span>
+          <span>03 / DATABASE</span>
 
           <h3>
-            Data &amp; tools
+            MySQL
           </h3>
 
           <p>
-            MySQL, SQL, Git, GitHub, Postman,
-            VS Code, Eclipse
+            SQL queries, CRUD operations, relational
+            database design and application integration.
           </p>
 
         </article>
 
 
-        <article class="skill-card reveal">
+        <article class="skill-card">
 
-          <span>04</span>
+          <span>04 / TOOLS</span>
 
           <h3>
-            Concepts
+            Git & Development Tools
           </h3>
 
           <p>
-            OOP, CRUD, JWT Authentication,
-            Role-Based Access Control, API Integration
+            Git, GitHub, Postman, VS Code, Eclipse,
+            Maven and API testing workflows.
+          </p>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <span>05 / SECURITY</span>
+
+          <h3>
+            Authentication
+          </h3>
+
+          <p>
+            JWT authentication, Spring Security,
+            BCrypt password encoding and protected APIs.
           </p>
 
         </article>
@@ -1133,59 +586,64 @@
     </section>
 
 
-    <!-- PROCESS -->
+    <!-- ===================================================
+         PROCESS
+         =================================================== -->
 
-    <section class="process-section section-pad">
+    <section
+      class="process-section section-pad reveal"
+    >
 
-      <div class="section-label">
-        04 <span>/</span> How I build
-      </div>
+      <p class="section-label">
+        04 <span>/</span> PROCESS
+      </p>
+
 
       <div class="process-grid">
 
-        <article class="process-card reveal">
+        <article class="process-card">
 
-          <span>01</span>
+          <span>01 / UNDERSTAND</span>
 
           <h3>
             Understand
           </h3>
 
           <p>
-            Break the requirement into a clear
-            user flow and practical features.
+            Break down the requirement and understand
+            the problem before starting implementation.
           </p>
 
         </article>
 
 
-        <article class="process-card reveal">
+        <article class="process-card">
 
-          <span>02</span>
+          <span>02 / BUILD</span>
 
           <h3>
             Build
           </h3>
 
           <p>
-            Create responsive components, APIs,
-            authentication, and database operations.
+            Create clean components, APIs and database
+            operations while keeping the application practical.
           </p>
 
         </article>
 
 
-        <article class="process-card reveal">
+        <article class="process-card">
 
-          <span>03</span>
+          <span>03 / IMPROVE</span>
 
           <h3>
-            Refine
+            Improve
           </h3>
 
           <p>
-            Test, debug, improve the interface,
-            and keep the code maintainable.
+            Test, debug and refine the application to
+            improve usability, responsiveness and reliability.
           </p>
 
         </article>
@@ -1195,62 +653,72 @@
     </section>
 
 
-    <!-- CREDENTIALS -->
+    <!-- ===================================================
+         CREDENTIALS
+         =================================================== -->
 
     <section
-      class="credentials section-pad"
+      class="credentials"
       id="credentials"
     >
 
-      <div class="section-heading credentials-heading">
+      <div class="credentials-heading reveal">
 
-        <div class="section-label">
-          05 <span>/</span> Credential vault
-        </div>
+        <p class="section-label">
+          05 <span>/</span> CREDENTIALS
+        </p>
 
         <div>
+
           <h2>
-            Learning, documented.
+            Learning,
+            building,
+            improving.
           </h2>
 
           <p>
-            Every card opens the original credential.
+            Certifications / Training / Learning
           </p>
+
         </div>
 
       </div>
 
 
-      <!-- Featured certificate -->
+      <!-- Featured credential -->
 
       <div class="credential-feature reveal">
 
         <img
-          src="assets/certificates/itvedant-full-stack-java.jpg"
-          alt="IT Vedant Full Stack Web Development with Java certificate awarded to Mukesh Sanjay Dubey"
+          src="assets/certificates/vedant-certificate.jpg"
+          alt="Full Stack Java Development training certificate"
+          loading="lazy"
         />
 
         <div class="credential-feature-copy">
 
           <span>
-            Featured credential
+            FEATURED TRAINING
           </span>
 
           <h3>
-            Full Stack Web Development with Java
+            Full Stack Java Development
           </h3>
 
           <p>
-            Professional completion credential
-            from IT Vedant, issued July 2026.
+            Full Stack Java Development training covering
+            Java, Spring Boot, frontend technologies,
+            databases and application development.
           </p>
 
           <button
             class="credential-open"
-            data-title="Full Stack Web Development with Java"
-            data-image="assets/certificates/itvedant-full-stack-java.jpg"
+            type="button"
+            data-title="Full Stack Java Development"
+            data-image="assets/certificates/vedant-certificate.jpg"
           >
-            Inspect certificate <i>↗</i>
+            View credential
+            <i>↗</i>
           </button>
 
         </div>
@@ -1258,269 +726,97 @@
       </div>
 
 
-      <!-- Certificate grid -->
+      <!-- Credential cards -->
 
-      <div class="credential-grid">
-
-
-        <button
-          class="credential-card reveal"
-          data-title="Java Essentials"
-          data-image="assets/certificates/itvedant-java-essentials.jpg"
-        >
-          <img
-            src="assets/certificates/itvedant-java-essentials.jpg"
-            alt="Java Essentials certificate"
-          />
-          <span>Java essentials</span>
-          <i>↗</i>
-        </button>
-
+      <div class="credential-grid reveal">
 
         <button
-          class="credential-card reveal"
-          data-title="React Essentials"
-          data-image="assets/certificates/itvedant-react-essentials.jpg"
+          class="credential-card"
+          type="button"
+          data-title="IBM Java Development Certificate"
+          data-image="assets/certificates/ibm-java.jpg"
         >
+
           <img
-            src="assets/certificates/itvedant-react-essentials.jpg"
-            alt="React Essentials certificate"
-          />
-          <span>React essentials</span>
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card reveal"
-          data-title="JavaScript Essentials"
-          data-image="assets/certificates/itvedant-javascript-essentials.jpg"
-        >
-          <img
-            src="assets/certificates/itvedant-javascript-essentials.jpg"
-            alt="JavaScript Essentials certificate"
-          />
-          <span>JavaScript essentials</span>
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card reveal"
-          data-title="Mastering Spring Boot"
-          data-image="assets/certificates/itvedant-springboot.jpg"
-        >
-          <img
-            src="assets/certificates/itvedant-springboot.jpg"
-            alt="Mastering Spring Boot certificate"
-          />
-          <span>Mastering Spring Boot</span>
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card reveal"
-          data-title="SQL Deep Dive"
-          data-image="assets/certificates/itvedant-sql-deep-dive.jpg"
-        >
-          <img
-            src="assets/certificates/itvedant-sql-deep-dive.jpg"
-            alt="SQL Deep Dive certificate"
-          />
-          <span>SQL deep dive</span>
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card college-card reveal"
-          data-title="Future Tech 2.0 - Blind Coding Participation"
-          data-image="assets/certificates/college-future-tech-2024.jpg"
-        >
-          <img
-            src="assets/certificates/college-future-tech-2024.jpg"
-            alt="Future Tech 2.0 Blind Coding participation certificate awarded to Mukesh Dubey"
+            src="assets/certificates/ibm-java.jpg"
+            alt="IBM Java certificate"
+            loading="lazy"
           />
 
           <span>
-            College achievement
+            IBM / JAVA
+          </span>
+
+          <i>↗</i>
+
+        </button>
+
+
+        <button
+          class="credential-card"
+          type="button"
+          data-title="IBM React Development Certificate"
+          data-image="assets/certificates/ibm-react.jpg"
+        >
+
+          <img
+            src="assets/certificates/ibm-react.jpg"
+            alt="IBM React certificate"
+            loading="lazy"
+          />
+
+          <span>
+            IBM / REACT
+          </span>
+
+          <i>↗</i>
+
+        </button>
+
+
+        <button
+          class="credential-card"
+          type="button"
+          data-title="HackerRank Certificate"
+          data-image="assets/certificates/hackerrank.jpg"
+        >
+
+          <img
+            src="assets/certificates/hackerrank.jpg"
+            alt="HackerRank certificate"
+            loading="lazy"
+          />
+
+          <span>
+            HACKERRANK
+          </span>
+
+          <i>↗</i>
+
+        </button>
+
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="Java & Web Development Learning"
+        >
+
+          <span class="ibm-mark">
+            IBM
           </span>
 
           <b>
-            Future Tech 2.0<br />
-            Blind Coding
+            Continuous
+            Learning
           </b>
 
           <small>
-            Khar Education Society's College · 2024
+            Java / React / Development
           </small>
 
           <i>↗</i>
-        </button>
 
-
-        <!-- IBM -->
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="IBM: Master in Full Stack Web Development with Java"
-          data-pdf="assets/certificates/ibm-full-stack-java.pdf"
-        >
-          <span class="ibm-mark">IBM</span>
-
-          <b>
-            Full Stack<br />
-            Java path
-          </b>
-
-          <small>
-            Skills Network credential
-          </small>
-
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="IBM: Java Fundamentals"
-          data-pdf="assets/certificates/ibm-java-fundamentals.pdf"
-        >
-          <span class="ibm-mark">IBM</span>
-
-          <b>
-            Java<br />
-            Fundamentals
-          </b>
-
-          <small>
-            Skills Network credential
-          </small>
-
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="IBM: SQL and Relational Databases 101"
-          data-pdf="assets/certificates/ibm-sql-databases.pdf"
-        >
-          <span class="ibm-mark">IBM</span>
-
-          <b>
-            SQL &amp;<br />
-            Relational DB
-          </b>
-
-          <small>
-            Skills Network credential
-          </small>
-
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="IBM: Microservices and Open-source AI"
-          data-pdf="assets/certificates/ibm-microservices-ai.pdf"
-        >
-          <span class="ibm-mark">IBM</span>
-
-          <b>
-            Microservices &amp;<br />
-            open-source AI
-          </b>
-
-          <small>
-            Skills Network credential
-          </small>
-
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="IBM: Web Development using HTML"
-          data-pdf="assets/certificates/ibm-web-development-html.pdf"
-        >
-          <span class="ibm-mark">IBM</span>
-
-          <b>
-            Web Development<br />
-            using HTML
-          </b>
-
-          <small>
-            Skills Network credential
-          </small>
-
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="IBM: Containerizing, Packaging, and Running a Spring Boot Application"
-          data-pdf="assets/certificates/ibm-spring-boot-application.pdf"
-        >
-          <span class="ibm-mark">IBM</span>
-
-          <b>
-            Spring Boot<br />
-            Application
-          </b>
-
-          <small>
-            Skills Network credential
-          </small>
-
-          <i>↗</i>
-        </button>
-
-
-        <!-- HackerRank -->
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="HackerRank Java (Basic)"
-          data-pdf="assets/certificates/hackerrank-java-basic.pdf"
-        >
-          <span class="ibm-mark">HR</span>
-
-          <b>
-            Java<br />
-            (Basic)
-          </b>
-
-          <small>
-            HackerRank skill certificate
-          </small>
-
-          <i>↗</i>
-        </button>
-
-
-        <button
-          class="credential-card ibm-card reveal"
-          data-title="HackerRank React (Basic)"
-          data-pdf="assets/certificates/hackerrank-react-basic.pdf"
-        >
-          <span class="ibm-mark">HR</span>
-
-          <b>
-            React<br />
-            (Basic)
-          </b>
-
-          <small>
-            HackerRank skill certificate
-          </small>
-
-          <i>↗</i>
         </button>
 
       </div>
@@ -1528,54 +824,46 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- ===================================================
+         CONTACT
+         =================================================== -->
 
     <section
-      class="contact section-pad"
+      class="contact section-pad reveal"
       id="contact"
     >
 
-      <div
-        class="contact-noise"
-        aria-hidden="true"
-      >
-        HELLO HELLO HELLO HELLO HELLO
-      </div>
-
       <p class="section-label">
-        06 <span>/</span> Get in touch
+        06 <span>/</span> CONTACT
       </p>
 
-      <h2 class="reveal">
-        Have an opportunity?<br />
-        <em>Let's talk.</em>
+
+      <div class="contact-noise" aria-hidden="true">
+        LET'S TALK
+      </div>
+
+
+      <h2>
+        Let's build
+        <em>something</em><br />
+        useful.
       </h2>
 
+
       <a
-        class="mail-link reveal"
-        href="mailto:mukeshdubey975@gmail.com"
+        class="mail-link"
+        href="mailto:mukeshdubey.dev@gmail.com"
       >
-        mukeshdubey975@gmail.com
+        mukeshdubey.dev@gmail.com
         <span>↗</span>
       </a>
 
-      <div class="contact-details reveal">
+
+      <div class="contact-details">
 
         <span>
-          Mumbai, Maharashtra
+          Mumbai, India
         </span>
-
-        <span>
-          +91 9702465977
-        </span>
-
-        <a
-          href="https://www.linkedin.com/in/mukesh-dubey-offiicial/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn ↗
-        </a>
 
         <a
           href="https://github.com/DubeyMukesh-Official"
@@ -1585,6 +873,20 @@
           GitHub ↗
         </a>
 
+        <a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          href="mailto:mukeshdubey.dev@gmail.com"
+        >
+          Email ↗
+        </a>
+
       </div>
 
     </section>
@@ -1592,18 +894,18 @@
   </main>
 
 
-  <!-- ================================
+  <!-- =====================================================
        FOOTER
-  ================================= -->
+       ===================================================== -->
 
-  <footer class="footer">
+  <footer class="footer section-pad">
 
     <span>
       © 2026 Mukesh Dubey
     </span>
 
     <span>
-      Made with Java, React &amp; curiosity.
+      Built with HTML / CSS / JavaScript
     </span>
 
     <a href="#top">
@@ -1613,9 +915,66 @@
   </footer>
 
 
-  <!-- ================================
+  <!-- =====================================================
+       THEME SWITCH
+       ===================================================== -->
+
+  <button
+    class="theme-switch"
+    type="button"
+    aria-label="Toggle light and dark theme"
+    title="Toggle theme"
+  >
+
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+      ></circle>
+
+      <path
+        d="M12 2v2"
+      ></path>
+
+      <path
+        d="M12 20v2"
+      ></path>
+
+      <path
+        d="m4.93 4.93 1.41 1.41"
+      ></path>
+
+      <path
+        d="m17.66 17.66 1.41 1.41"
+      ></path>
+
+      <path
+        d="M2 12h2"
+      ></path>
+
+      <path
+        d="M20 12h2"
+      ></path>
+
+      <path
+        d="m6.34 17.66-1.41 1.41"
+      ></path>
+
+      <path
+        d="m19.07 4.93-1.41 1.41"
+      ></path>
+    </svg>
+
+  </button>
+
+
+  <!-- =====================================================
        CERTIFICATE MODAL
-  ================================= -->
+       ===================================================== -->
 
   <dialog
     class="certificate-modal"
@@ -1624,46 +983,51 @@
 
     <button
       class="modal-close"
-      aria-label="Close certificate viewer"
+      type="button"
+      aria-label="Close certificate"
     >
       ×
     </button>
 
+
     <div class="modal-inner">
 
       <p>
-        Credential viewer
+        CREDENTIAL
       </p>
 
       <h2 id="certificate-title">
         Certificate
       </h2>
 
+
       <img
         class="modal-image"
-        alt="Certificate preview"
+        src=""
+        alt=""
       />
+
 
       <div class="modal-placeholder">
 
         <span>
-          DOCUMENT
+          CERTIFICATE / CREDENTIAL
         </span>
 
         <b>
-          Original certificate<br />
-          available as PDF
+          Credential preview
         </b>
 
       </div>
 
+
       <a
         class="modal-pdf"
+        href="#"
         target="_blank"
         rel="noopener"
       >
-        Open original PDF
-        <span>↗</span>
+        Open PDF ↗
       </a>
 
     </div>
@@ -1671,477 +1035,11 @@
   </dialog>
 
 
-  <!-- Main JavaScript -->
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
   <script src="script.js"></script>
-
-
-  <!-- ================================
-       PREMIUM PORTFOLIO JS
-  ================================= -->
-
-  <script>
-    (function () {
-
-      const d = document;
-
-
-      /* --------------------------------
-         Scroll progress
-      -------------------------------- */
-
-      const progress = d.createElement("div");
-
-      progress.className = "scroll-progress";
-
-      d.body.prepend(progress);
-
-
-      function updateProgress() {
-
-        const height =
-          d.documentElement.scrollHeight -
-          d.documentElement.clientHeight;
-
-        progress.style.width =
-          (height > 0
-            ? (scrollY / height) * 100
-            : 0) + "%";
-      }
-
-
-      addEventListener(
-        "scroll",
-        updateProgress,
-        { passive: true }
-      );
-
-      updateProgress();
-
-
-      /* --------------------------------
-         Reveal animations
-      -------------------------------- */
-
-      const revealables =
-        d.querySelectorAll(
-          "section, .card, .project, .project-card, .skill-card, .service-card"
-        );
-
-
-      revealables.forEach((element) => {
-        element.classList.add("reveal");
-      });
-
-
-      if ("IntersectionObserver" in window) {
-
-        const observer =
-          new IntersectionObserver(
-            (entries) => {
-
-              entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                  entry.target.classList.add(
-                    "visible"
-                  );
-
-                  observer.unobserve(
-                    entry.target
-                  );
-                }
-
-              });
-
-            },
-            {
-              threshold: 0.08
-            }
-          );
-
-
-        revealables.forEach((element) => {
-          observer.observe(element);
-        });
-
-      } else {
-
-        revealables.forEach((element) => {
-          element.classList.add("visible");
-        });
-
-      }
-
-
-      /* --------------------------------
-         Project filters
-      -------------------------------- */
-
-      const cards = [
-        ...d.querySelectorAll(
-          ".project-card, .project, .project-card-enhanced"
-        )
-      ];
-
-
-      if (
-        cards.length &&
-        !d.querySelector(".project-toggle-wrap")
-      ) {
-
-        const section =
-          cards[0].closest("section") ||
-          cards[0].parentElement;
-
-        const wrap =
-          d.createElement("div");
-
-
-        wrap.className =
-          "project-toggle-wrap";
-
-        wrap.setAttribute(
-          "aria-label",
-          "Project filters"
-        );
-
-
-        const labels = [
-          ["all", "All Projects"],
-          ["react", "React / Frontend"],
-          ["java", "Java / Backend"],
-          ["django", "Python / Django"]
-        ];
-
-
-        labels.forEach(
-          ([key, label], index) => {
-
-            const button =
-              d.createElement("button");
-
-            button.className =
-              "project-toggle" +
-              (index === 0
-                ? " active"
-                : "");
-
-            button.type = "button";
-
-            button.dataset.filter = key;
-
-            button.textContent = label;
-
-            wrap.appendChild(button);
-          }
-        );
-
-
-        section.insertBefore(
-          wrap,
-          cards[0]
-        );
-
-
-        const getText = (card) =>
-          (card.innerText || "")
-            .toLowerCase();
-
-
-        wrap.addEventListener(
-          "click",
-          (event) => {
-
-            const button =
-              event.target.closest(
-                ".project-toggle"
-              );
-
-            if (!button) return;
-
-
-            wrap
-              .querySelectorAll(
-                ".project-toggle"
-              )
-              .forEach((item) => {
-                item.classList.remove(
-                  "active"
-                );
-              });
-
-
-            button.classList.add(
-              "active"
-            );
-
-
-            const filter =
-              button.dataset.filter;
-
-
-            cards.forEach((card) => {
-
-              const text =
-                getText(card);
-
-
-              const show =
-                filter === "all" ||
-
-                (
-                  filter === "react" &&
-                  /react|frontend|javascript|vite/.test(text)
-                ) ||
-
-                (
-                  filter === "java" &&
-                  /java|spring|jdbc|mysql|backend/.test(text)
-                ) ||
-
-                (
-                  filter === "django" &&
-                  /django|python|women safety|emergency rescue/.test(text)
-                );
-
-
-              card.style.display =
-                show ? "" : "none";
-
-            });
-
-          }
-        );
-
-      }
-
-
-      /* --------------------------------
-         Back to top
-      -------------------------------- */
-
-      const topButton =
-        d.createElement("button");
-
-      topButton.className =
-        "back-top";
-
-      topButton.type = "button";
-
-      topButton.setAttribute(
-        "aria-label",
-        "Back to top"
-      );
-
-      topButton.innerHTML = "↑";
-
-      d.body.appendChild(
-        topButton
-      );
-
-
-      addEventListener(
-        "scroll",
-        () => {
-
-          topButton.classList.toggle(
-            "show",
-            scrollY > 500
-          );
-
-        },
-        { passive: true }
-      );
-
-
-      topButton.addEventListener(
-        "click",
-        () => {
-
-          scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-
-        }
-      );
-
-
-      /* --------------------------------
-         Smooth internal links
-      -------------------------------- */
-
-      d.querySelectorAll(
-        'a[href^="#"]'
-      ).forEach((link) => {
-
-        link.addEventListener(
-          "click",
-          (event) => {
-
-            const id =
-              link.getAttribute("href");
-
-            const target =
-              id && d.querySelector(id);
-
-
-            if (target) {
-
-              event.preventDefault();
-
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-              });
-
-            }
-
-          }
-        );
-
-      });
-
-
-      /* --------------------------------
-         Premium button appearance
-      -------------------------------- */
-
-      d.querySelectorAll(
-        "button"
-      ).forEach((button) => {
-
-        if (!button.classList.length) {
-
-          button.classList.add(
-            "premium-btn",
-            "premium-btn-ghost"
-          );
-
-        }
-
-      });
-
-    })();
-  </script>
-
-
-  <!-- ================================
-       THEME SWITCH
-  ================================= -->
-
-  <script>
-    (function () {
-
-      const body =
-        document.body;
-
-      const button =
-        document.createElement("button");
-
-
-      button.className =
-        "theme-switch";
-
-      button.type =
-        "button";
-
-
-      button.setAttribute(
-        "aria-label",
-        "Switch color theme"
-      );
-
-      button.setAttribute(
-        "title",
-        "Switch theme"
-      );
-
-
-      const sunIcon = `
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <circle
-            cx="12"
-            cy="12"
-            r="4"
-          ></circle>
-
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-          ></path>
-        </svg>
-      `;
-
-
-      const moonIcon = `
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            d="M20.8 15.2A8.5 8.5 0 0 1 8.8 3.2 8.5 8.5 0 1 0 20.8 15.2Z"
-          ></path>
-        </svg>
-      `;
-
-
-      function applyTheme(mode) {
-
-        body.classList.toggle(
-          "light-theme",
-          mode === "light"
-        );
-
-
-        button.innerHTML =
-          mode === "light"
-            ? moonIcon
-            : sunIcon;
-
-
-        localStorage.setItem(
-          "portfolio-theme",
-          mode
-        );
-
-      }
-
-
-      const savedTheme =
-        localStorage.getItem(
-          "portfolio-theme"
-        ) || "dark";
-
-
-      applyTheme(savedTheme);
-
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          const nextTheme =
-            body.classList.contains(
-              "light-theme"
-            )
-              ? "dark"
-              : "light";
-
-
-          applyTheme(nextTheme);
-
-        }
-      );
-
-
-      body.appendChild(button);
-
-    })();
-  </script>
 
 </body>
 </html>
