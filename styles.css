@@ -1,7 +1,7 @@
 /* =========================================================
    MUKESH DUBEY PORTFOLIO
    COMPLETE RESPONSIVE STYLESHEET
-   CLEAN / CONSOLIDATED VERSION
+   CLEAN / CONSOLIDATED / FIXED VERSION
    ========================================================= */
 
 
@@ -76,7 +76,6 @@ body {
     var(--bg);
 
   color: var(--ink);
-
   font-family: var(--sans);
   font-size: 15px;
   line-height: 1.5;
@@ -166,7 +165,6 @@ a:focus-visible {
   margin: 0;
 
   color: var(--muted);
-
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.08em;
@@ -185,7 +183,6 @@ a:focus-visible {
 .noise {
   position: fixed;
   inset: 0;
-
   z-index: 9998;
 
   pointer-events: none;
@@ -369,6 +366,7 @@ a:focus-visible {
   font-weight: 500;
 
   letter-spacing: 0.13em;
+
   text-transform: uppercase;
 }
 
@@ -408,6 +406,7 @@ a:focus-visible {
   font-size: 8px;
 
   letter-spacing: 0.12em;
+
   text-transform: uppercase;
 }
 
@@ -469,6 +468,7 @@ a:focus-visible {
   font-weight: 500;
 
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 
   border-radius: 7px;
@@ -504,6 +504,7 @@ a:focus-visible {
   background: var(--acid);
 
   transform: scaleX(0);
+
   transform-origin: right;
 
   transition:
@@ -533,7 +534,6 @@ a:focus-visible {
 
 .nav-resume {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
@@ -555,6 +555,7 @@ a:focus-visible {
   font-weight: 500;
 
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 
   transition:
@@ -578,7 +579,6 @@ a:focus-visible {
   color: var(--acid);
 
   font-size: 12px;
-
   line-height: 1;
 
   transition:
@@ -622,6 +622,7 @@ a:focus-visible {
   display: inline-flex;
 
   flex-direction: column;
+
   justify-content: center;
 
   gap: 5px;
@@ -642,15 +643,13 @@ a:focus-visible {
     width 0.25s ease;
 }
 
-.menu-toggle[aria-expanded="true"]
-.menu-icon i:first-child {
+.menu-toggle[aria-expanded="true"] .menu-icon i:first-child {
   transform:
     translateY(3px)
     rotate(45deg);
 }
 
-.menu-toggle[aria-expanded="true"]
-.menu-icon i:last-child {
+.menu-toggle[aria-expanded="true"] .menu-icon i:last-child {
   transform:
     translateY(-3px)
     rotate(-45deg);
@@ -674,6 +673,7 @@ a:focus-visible {
 
 .hero-meta {
   display: flex;
+
   justify-content: space-between;
 
   color: var(--dim);
@@ -682,6 +682,7 @@ a:focus-visible {
   font-size: 9px;
 
   letter-spacing: 0.05em;
+
   text-transform: uppercase;
 }
 
@@ -763,6 +764,7 @@ a:focus-visible {
   display: flex;
 
   align-items: flex-end;
+
   justify-content: space-between;
 
   gap: 40px;
@@ -792,6 +794,7 @@ a:focus-visible {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 35px;
@@ -919,6 +922,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 19px;
 
   box-shadow:
@@ -937,6 +941,7 @@ a:focus-visible {
   color: var(--muted);
 
   font-family: var(--mono);
+
   font-size: 8px;
 
   letter-spacing: 0.08em;
@@ -1177,6 +1182,7 @@ a:focus-visible {
   color: var(--ink);
 
   font-family: var(--serif);
+
   font-size: 34px;
 
   font-weight: 500;
@@ -1186,6 +1192,7 @@ a:focus-visible {
   color: var(--muted);
 
   font-family: var(--mono);
+
   font-size: 8px;
 
   text-transform: uppercase;
@@ -1216,6 +1223,7 @@ a:focus-visible {
   display: flex;
 
   justify-content: space-between;
+
   align-items: flex-end;
 
   gap: 30px;
@@ -1227,6 +1235,7 @@ a:focus-visible {
   color: var(--dim);
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   text-transform: uppercase;
@@ -1277,6 +1286,7 @@ a:focus-visible {
   flex-direction: column;
 
   align-items: flex-start;
+
   justify-content: center;
 
   gap: 5px;
@@ -1290,6 +1300,7 @@ a:focus-visible {
   cursor: pointer;
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   text-align: left;
@@ -1366,6 +1377,7 @@ a:focus-visible {
   color: var(--dim);
 
   font-family: var(--mono);
+
   font-size: 8px;
 
   letter-spacing: 0.06em;
@@ -1385,6 +1397,7 @@ a:focus-visible {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border: 1px solid var(--rule);
@@ -1426,6 +1439,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 24px;
 
   letter-spacing: 0.08em;
@@ -1520,6 +1534,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   letter-spacing: 0.06em;
@@ -1578,6 +1593,7 @@ a:focus-visible {
   color: var(--muted);
 
   font-family: var(--mono);
+
   font-size: 8px;
 
   text-transform: uppercase;
@@ -1597,6 +1613,7 @@ a:focus-visible {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   min-height: 42px;
@@ -1604,6 +1621,7 @@ a:focus-visible {
   padding: 10px 14px;
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   text-transform: uppercase;
@@ -1649,6 +1667,7 @@ a:focus-visible {
   color: var(--dim);
 
   font-family: var(--mono);
+
   font-size: 9px;
 }
 
@@ -1709,6 +1728,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   letter-spacing: 0.08em;
@@ -1750,6 +1770,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 8px;
 
   letter-spacing: 0.08em;
@@ -1757,6 +1778,7 @@ a:focus-visible {
 
 .skill-card h3 {
   margin-top: 85px;
+
   margin-bottom: 12px;
 
   color: var(--ink);
@@ -1827,6 +1849,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 8px;
 
   letter-spacing: 0.08em;
@@ -1834,6 +1857,7 @@ a:focus-visible {
 
 .process-card h3 {
   margin-top: 100px;
+
   margin-bottom: 14px;
 
   color: var(--ink);
@@ -1915,6 +1939,7 @@ a:focus-visible {
   color: var(--muted);
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   text-transform: uppercase;
@@ -1970,6 +1995,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   letter-spacing: 0.08em;
@@ -2020,6 +2046,7 @@ a:focus-visible {
   cursor: pointer;
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   text-transform: uppercase;
@@ -2070,6 +2097,7 @@ a:focus-visible {
   width: 100%;
 
   min-width: 0;
+
   min-height: 250px;
 
   overflow: hidden;
@@ -2150,6 +2178,7 @@ a:focus-visible {
   color: #fff;
 
   font-family: var(--mono);
+
   font-size: 8px;
 
   line-height: 1.35;
@@ -2394,6 +2423,7 @@ a:focus-visible {
   color: var(--muted);
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   text-transform: uppercase;
@@ -2464,6 +2494,7 @@ a:focus-visible {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border: 1px solid var(--rule-strong);
@@ -2584,6 +2615,7 @@ a:focus-visible {
   color: var(--acid);
 
   font-family: var(--mono);
+
   font-size: 9px;
 
   letter-spacing: 0.08em;
@@ -2623,6 +2655,7 @@ a:focus-visible {
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
@@ -2672,6 +2705,7 @@ a:focus-visible {
 body.light-theme {
   --bg: #f3f1e9;
   --bg-soft: #ebe9e0;
+
   --surface: #e8e6dd;
   --surface-2: #dedcd3;
 
@@ -2802,7 +2836,6 @@ body.light-theme .orbit-scene .core {
    ========================================================= */
 
 @media (max-width: 1100px) {
-
   .topbar {
     gap: 18px;
   }
@@ -2998,6 +3031,7 @@ body.light-theme .orbit-scene .core {
 
   .orbit-scene {
     right: -100px;
+
     bottom: 80px;
 
     width: 350px;
@@ -3784,7 +3818,9 @@ body.light-theme .orbit-scene .core {
 
   .credential-card > span {
     left: 9px;
+
     right: 25px;
+
     bottom: 9px;
 
     font-size: 6.5px;
@@ -3792,6 +3828,7 @@ body.light-theme .orbit-scene .core {
 
   .credential-card > i {
     right: 8px;
+
     bottom: 7px;
 
     font-size: 11px;
@@ -3831,6 +3868,7 @@ body.light-theme .orbit-scene .core {
 
   .contact-noise {
     top: 125px;
+
     left: -20px;
 
     font-size:
@@ -3980,7 +4018,6 @@ body.light-theme .orbit-scene .core {
    ========================================================= */
 
 @media (max-width: 420px) {
-
   .credential-grid {
     width: calc(100% - var(--small-gap));
 
@@ -3995,7 +4032,9 @@ body.light-theme .orbit-scene .core {
 
   .credential-card > span {
     left: 8px;
+
     right: 20px;
+
     bottom: 8px;
 
     font-size: 6px;
@@ -4003,6 +4042,7 @@ body.light-theme .orbit-scene .core {
 
   .credential-card > i {
     right: 7px;
+
     bottom: 6px;
 
     font-size: 10px;
@@ -4033,7 +4073,6 @@ body.light-theme .orbit-scene .core {
    ========================================================= */
 
 @media (max-width: 380px) {
-
   .section-pad,
   .topbar {
     width: calc(100% - var(--small-gap));
@@ -4120,7 +4159,6 @@ body.light-theme .orbit-scene .core {
    ========================================================= */
 
 @media (max-width: 340px) {
-
   .hero h1 {
     font-size: 38px;
   }
@@ -4179,7 +4217,6 @@ body.light-theme .orbit-scene .core {
    ========================================================= */
 
 @media (hover: hover) and (pointer: fine) {
-
   .credential-card:hover {
     transform: translateY(-4px);
 
@@ -4206,7 +4243,6 @@ body.light-theme .orbit-scene .core {
    ========================================================= */
 
 @media (hover: none) and (pointer: coarse) {
-
   .primary-cta:hover,
   .project-actions a:hover,
   .process-card:hover,
@@ -4234,7 +4270,6 @@ body.light-theme .orbit-scene .core {
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   html {
     scroll-behavior: auto !important;
   }

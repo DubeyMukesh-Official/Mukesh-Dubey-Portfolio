@@ -1,7 +1,7 @@
 /* =========================================================
    MUKESH DUBEY PORTFOLIO
    MAIN JAVASCRIPT
-   FINAL UPDATED / FIXED VERSION
+   UPDATED VERSION
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingScreen = document.querySelector(".loading-screen");
 
   const hideLoadingScreen = () => {
-
     if (!loadingScreen) return;
 
     loadingScreen.classList.add("is-hidden");
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       loadingScreen.style.display = "none";
     }, 700);
-
   };
 
   window.addEventListener("load", hideLoadingScreen);
@@ -58,11 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "nav-open",
         !isOpen
       );
-
     });
 
 
-    /* Close navigation after clicking a link */
+    /* Close mobile navigation after clicking a link */
 
     siteNav.querySelectorAll("a").forEach((link) => {
 
@@ -76,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         siteNav.classList.remove("is-open");
 
         document.body.classList.remove("nav-open");
-
       });
 
     });
@@ -108,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     updateHeader();
-
   }
 
 
@@ -122,8 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       link.addEventListener("click", (event) => {
 
-        const targetId =
-          link.getAttribute("href");
+        const targetId = link.getAttribute("href");
 
         if (
           !targetId ||
@@ -132,8 +126,13 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        const target =
-          document.querySelector(targetId);
+        let target = null;
+
+        try {
+          target = document.querySelector(targetId);
+        } catch (error) {
+          return;
+        }
 
         if (!target) return;
 
@@ -151,9 +150,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =======================================================
      PROJECT DATA
+     =======================================================
+
+     LIVE DEMOS AVAILABLE FOR:
+
+     01 - Blog Application
+     02 - Shoe Mart
+     03 - Hotel Booking - NO LIVE DEMO
+     04 - RideX
+     05 - Women Safety
+     06 - User Management
+
      ======================================================= */
 
   const projects = {
+
+    /* =====================================================
+       PROJECT 01
+       BLOG APPLICATION
+       ===================================================== */
 
     blog: {
 
@@ -189,6 +204,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
+    /* =====================================================
+       PROJECT 02
+       SHOE MART
+       ===================================================== */
+
     shoe: {
 
       number: "02",
@@ -214,13 +234,20 @@ document.addEventListener("DOMContentLoaded", () => {
         "Responsive UI"
       ],
 
-      live: "#",
+      live:
+        "https://shoe-mart-khaki.vercel.app/",
 
       github:
         "https://github.com/DubeyMukesh-Official"
 
     },
 
+
+    /* =====================================================
+       PROJECT 03
+       HOTEL BOOKING
+       NO LIVE DEMO
+       ===================================================== */
 
     hotel: {
 
@@ -247,13 +274,19 @@ document.addEventListener("DOMContentLoaded", () => {
         "MySQL"
       ],
 
-      live: "#",
+      live:
+        "",
 
       github:
         "https://github.com/DubeyMukesh-Official"
 
     },
 
+
+    /* =====================================================
+       PROJECT 04
+       RIDEX
+       ===================================================== */
 
     ridex: {
 
@@ -280,13 +313,19 @@ document.addEventListener("DOMContentLoaded", () => {
         "REST API"
       ],
 
-      live: "#",
+      live:
+        "https://ride-x-rouge.vercel.app/",
 
       github:
         "https://github.com/DubeyMukesh-Official"
 
     },
 
+
+    /* =====================================================
+       PROJECT 05
+       WOMEN SAFETY
+       ===================================================== */
 
     safety: {
 
@@ -305,7 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Women Safety",
 
       description:
-        "A safety-focused application concept designed around quick access to important actions and practical technology solutions.",
+        "A safety-focused application designed around quick access to important actions and practical technology solutions.",
 
       tags: [
         "Java",
@@ -313,7 +352,47 @@ document.addEventListener("DOMContentLoaded", () => {
         "React.js"
       ],
 
-      live: "#",
+      live:
+        "https://dubeymukesh-official.github.io/svgRescue/",
+
+      github:
+        "https://github.com/DubeyMukesh-Official"
+
+    },
+
+
+    /* =====================================================
+       PROJECT 06
+       USER MANAGEMENT
+       ===================================================== */
+
+    userManagement: {
+
+      number: "06",
+
+      type: "USER MANAGEMENT APPLICATION",
+
+      code: "CASE / 06",
+
+      visual: "user-table-visual",
+
+      overline:
+        "React.js · JavaScript · REST API",
+
+      title:
+        "User Management Table",
+
+      description:
+        "A responsive React application for displaying and managing user data through a structured table interface. The project focuses on reusable React components, data rendering, user interactions and a clean responsive UI.",
+
+      tags: [
+        "React.js",
+        "JavaScript",
+        "REST API"
+      ],
+
+      live:
+        "https://react-user-management-dashboard-cnad349y1.vercel.app/",
 
       github:
         "https://github.com/DubeyMukesh-Official"
@@ -369,10 +448,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const project = projects[projectKey];
 
-    if (!project) return;
+    if (!project) {
+      console.warn(
+        "Project not found:",
+        projectKey
+      );
+      return;
+    }
 
 
-    /* Update tabs */
+    /* -----------------------------------------------------
+       ACTIVE TAB
+       ----------------------------------------------------- */
 
     projectTabs.forEach((tab) => {
 
@@ -392,7 +479,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* Type */
+    /* -----------------------------------------------------
+       TYPE
+       ----------------------------------------------------- */
 
     if (displayType) {
       displayType.textContent =
@@ -400,7 +489,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Code */
+    /* -----------------------------------------------------
+       CASE NUMBER
+       ----------------------------------------------------- */
 
     if (displayCode) {
       displayCode.textContent =
@@ -408,7 +499,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Overline */
+    /* -----------------------------------------------------
+       OVERLINE
+       ----------------------------------------------------- */
 
     if (projectOverline) {
       projectOverline.textContent =
@@ -416,7 +509,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Title */
+    /* -----------------------------------------------------
+       TITLE
+       ----------------------------------------------------- */
 
     if (projectTitle) {
       projectTitle.textContent =
@@ -424,7 +519,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Description */
+    /* -----------------------------------------------------
+       DESCRIPTION
+       ----------------------------------------------------- */
 
     if (projectDescription) {
       projectDescription.textContent =
@@ -432,7 +529,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Tags */
+    /* -----------------------------------------------------
+       TAGS
+       ----------------------------------------------------- */
 
     if (projectTags) {
 
@@ -443,7 +542,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const li =
           document.createElement("li");
 
-        li.textContent = tag;
+        li.textContent =
+          tag;
 
         projectTags.appendChild(li);
 
@@ -452,7 +552,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Visual */
+    /* -----------------------------------------------------
+       PROJECT VISUAL
+       ----------------------------------------------------- */
 
     if (projectVisual) {
 
@@ -463,12 +565,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Live project */
+    /* -----------------------------------------------------
+       LIVE PROJECT
+       ----------------------------------------------------- */
 
     if (liveLink) {
 
+      /*
+       * Projects with a valid live URL
+       * will show the Live Project button.
+       */
+
       if (
         project.live &&
+        project.live.trim() !== "" &&
         project.live !== "#"
       ) {
 
@@ -478,9 +588,33 @@ document.addEventListener("DOMContentLoaded", () => {
         liveLink.style.display =
           "inline-flex";
 
+        liveLink.setAttribute(
+          "target",
+          "_blank"
+        );
+
+        liveLink.setAttribute(
+          "rel",
+          "noopener noreferrer"
+        );
+
+        liveLink.setAttribute(
+          "aria-label",
+          `Open live demo of ${project.title}`
+        );
+
       } else {
 
+        /*
+         * Hotel Booking has no live URL,
+         * therefore hide the button.
+         */
+
         liveLink.removeAttribute("href");
+
+        liveLink.removeAttribute("target");
+
+        liveLink.removeAttribute("rel");
 
         liveLink.style.display =
           "none";
@@ -490,17 +624,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* GitHub */
+    /* -----------------------------------------------------
+       GITHUB
+       ----------------------------------------------------- */
 
     if (sourceLink) {
 
-      sourceLink.href =
-        project.github;
+      if (
+        project.github &&
+        project.github !== "#"
+      ) {
+
+        sourceLink.href =
+          project.github;
+
+        sourceLink.style.display =
+          "inline-flex";
+
+        sourceLink.setAttribute(
+          "target",
+          "_blank"
+        );
+
+        sourceLink.setAttribute(
+          "rel",
+          "noopener noreferrer"
+        );
+
+      } else {
+
+        sourceLink.removeAttribute(
+          "href"
+        );
+
+        sourceLink.style.display =
+          "none";
+
+      }
 
     }
 
 
-    /* Counter */
+    /* -----------------------------------------------------
+       PROJECT COUNTER
+       ----------------------------------------------------- */
 
     if (currentProject) {
 
@@ -518,13 +685,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   projectTabs.forEach((tab) => {
 
-    tab.addEventListener("click", () => {
+    tab.addEventListener(
+      "click",
+      () => {
 
-      updateProject(
-        tab.dataset.project
-      );
+        const projectKey =
+          tab.dataset.project;
 
-    });
+        updateProject(projectKey);
+
+      }
+    );
 
   });
 
@@ -539,44 +710,43 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const modal =
-    document.querySelector(".certificate-modal");
+    document.querySelector(
+      ".certificate-modal"
+    );
 
   const modalTitle =
-    document.querySelector("#certificate-title");
+    document.querySelector(
+      "#certificate-title"
+    );
 
   const modalImage =
-    document.querySelector(".modal-image");
+    document.querySelector(
+      ".modal-image"
+    );
 
   const modalPdfViewer =
-    document.querySelector(".modal-pdf-viewer");
+    document.querySelector(
+      ".modal-pdf-viewer"
+    );
 
   const modalPlaceholder =
-    document.querySelector(".modal-placeholder");
+    document.querySelector(
+      ".modal-placeholder"
+    );
 
   const modalPdf =
-    document.querySelector(".modal-pdf");
+    document.querySelector(
+      ".modal-pdf"
+    );
 
   const modalClose =
-    document.querySelector(".modal-close");
+    document.querySelector(
+      ".modal-close"
+    );
 
 
   /* =======================================================
-     CERTIFICATE FILE ALIAS FIX
-     =======================================================
-
-     IMPORTANT:
-
-     Your HTML currently contains some filenames that
-     don't exactly match the files visible in your VS Code
-     assets/certificates folder.
-
-     This mapping automatically corrects them.
-
-     Actual files visible in your project:
-
-       ibm-microservices-ai.pdf
-       ibm-sql-databases.pdf
-
+     CERTIFICATE FILE ALIASES
      ======================================================= */
 
   const certificateFileAliases = {
@@ -610,12 +780,13 @@ document.addEventListener("DOMContentLoaded", () => {
       certificateFileAliases[filename]
     ) {
 
-      return certificateFileAliases[filename];
+      return certificateFileAliases[
+        filename
+      ];
 
     }
 
     return path;
-
   };
 
 
@@ -624,8 +795,6 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const resetModal = () => {
-
-    /* Reset image */
 
     if (modalImage) {
 
@@ -639,8 +808,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Reset PDF */
-
     if (modalPdfViewer) {
 
       modalPdfViewer.removeAttribute("src");
@@ -651,8 +818,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Reset PDF button */
-
     if (modalPdf) {
 
       modalPdf.removeAttribute("href");
@@ -662,8 +827,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    /* Reset placeholder */
 
     if (modalPlaceholder) {
 
@@ -705,10 +868,7 @@ document.addEventListener("DOMContentLoaded", () => {
      SHOW PDF
      ======================================================= */
 
-  const showPDF = (
-    pdfPath,
-    title
-  ) => {
+  const showPDF = (pdfPath) => {
 
     if (!pdfPath) {
 
@@ -718,18 +878,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
     const resolvedPath =
       resolveCertificatePath(pdfPath);
 
-
-    console.log(
-      "Opening certificate PDF:",
-      resolvedPath
-    );
-
-
-    /* PDF iframe */
 
     if (modalPdfViewer) {
 
@@ -739,31 +890,8 @@ document.addEventListener("DOMContentLoaded", () => {
       modalPdfViewer.style.display =
         "block";
 
-
-      /*
-       * If the browser cannot render the PDF,
-       * the Open PDF button still works.
-       */
-
-      modalPdfViewer.addEventListener(
-        "error",
-        () => {
-
-          console.warn(
-            "PDF iframe could not display:",
-            resolvedPath
-          );
-
-        },
-        {
-          once: true
-        }
-      );
-
     }
 
-
-    /* Open PDF button */
 
     if (modalPdf) {
 
@@ -804,7 +932,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
     modalImage.src =
       imagePath;
 
@@ -813,14 +940,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modalImage.style.display =
       "block";
-
-
-    modalImage.onload = () => {
-
-      modalImage.style.display =
-        "block";
-
-    };
 
 
     modalImage.onerror = () => {
@@ -850,11 +969,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!modal || !card) return;
 
-
     resetModal();
 
-
-    /* Title */
 
     const title =
       card.dataset.title ||
@@ -869,24 +985,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Get certificate data */
-
     const image =
       card.dataset.image;
 
     const pdf =
       card.dataset.pdf;
 
-
-    console.log(
-      "Credential opened:",
-      title
-    );
-
-
-    /* =====================================================
-       IMAGE CERTIFICATE
-       ===================================================== */
 
     if (image) {
 
@@ -895,37 +999,16 @@ document.addEventListener("DOMContentLoaded", () => {
         title
       );
 
-    }
+    } else if (pdf) {
 
+      showPDF(pdf);
 
-    /* =====================================================
-       PDF CERTIFICATE
-       ===================================================== */
-
-    else if (pdf) {
-
-      showPDF(
-        pdf,
-        title
-      );
-
-    }
-
-
-    /* =====================================================
-       NO FILE
-       ===================================================== */
-
-    else {
+    } else {
 
       showPlaceholder();
 
     }
 
-
-    /* =====================================================
-       OPEN MODAL
-       ===================================================== */
 
     if (
       typeof modal.showModal ===
@@ -990,20 +1073,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
 
       if (modal.open) {
-
         modal.close();
-
       }
 
     } else {
 
-      modal.removeAttribute("open");
+      modal.removeAttribute(
+        "open"
+      );
 
     }
 
 
     resetModal();
-
 
     document.body.classList.remove(
       "modal-open"
@@ -1114,8 +1196,9 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const themeSwitch =
-    document.querySelector(".theme-switch");
-
+    document.querySelector(
+      ".theme-switch"
+    );
 
   let savedTheme = null;
 
@@ -1134,9 +1217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  if (
-    savedTheme === "light"
-  ) {
+  if (savedTheme === "light") {
 
     document.body.classList.add(
       "light-theme"
@@ -1188,12 +1269,12 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const revealElements =
-    document.querySelectorAll(".reveal");
+    document.querySelectorAll(
+      ".reveal"
+    );
 
 
-  if (
-    "IntersectionObserver" in window
-  ) {
+  if ("IntersectionObserver" in window) {
 
     const observer =
       new IntersectionObserver(
@@ -1201,14 +1282,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
           entries.forEach((entry) => {
 
-            if (
-              entry.isIntersecting
-            ) {
+            if (entry.isIntersecting) {
 
               entry.target.classList.add(
                 "is-visible"
               );
-
 
               observer.unobserve(
                 entry.target
@@ -1249,7 +1327,9 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const cursorGlow =
-    document.querySelector(".cursor-glow");
+    document.querySelector(
+      ".cursor-glow"
+    );
 
 
   if (
@@ -1302,13 +1382,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     PREVENT DEAD LIVE LINKS
+     PREVENT DEAD LINKS
      ======================================================= */
 
   document
-    .querySelectorAll(
-      'a[href="#"]'
-    )
+    .querySelectorAll('a[href="#"]')
     .forEach((link) => {
 
       link.addEventListener(
@@ -1336,13 +1414,26 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   console.log(
-    "Credential cards found:",
-    credentialCards.length
+    "Projects available:",
+    Object.keys(projects).length
   );
 
   console.log(
-    "Certificate filename aliases:",
-    certificateFileAliases
+    "Live demo projects:",
+    Object.entries(projects)
+      .filter(
+        ([, project]) =>
+          project.live &&
+          project.live !== "#"
+      )
+      .map(
+        ([key]) => key
+      )
+  );
+
+  console.log(
+    "Credential cards found:",
+    credentialCards.length
   );
 
   console.log(
