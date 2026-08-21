@@ -1,309 +1,1352 @@
 /* =========================================================
-   MUKESH PORTFOLIO — SCRIPT.JS
+   MUKESH DUBEY PORTFOLIO
+   MAIN JAVASCRIPT
+   FINAL UPDATED / FIXED VERSION
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
-     PROJECT DATA
-  ========================= */
+  /* =======================================================
+     LOADING SCREEN
+     ======================================================= */
 
-  const projects = {
-    blog: {
-      number: "01",
-      type: "CONTENT EXPERIENCE",
-      overline: "React.js · REST API · React Router",
-      title: "Blog Application",
-      description:
-        "A responsive blog application that renders REST API content through reusable React components and gives readers a clear, simple way to explore posts.",
-      tags: ["React.js", "REST API", "Responsive UI"],
-      link: "https://blog-lyart-alpha-17.vercel.app/",
-      visual: "blog-visual"
-    },
+  const loadingScreen = document.querySelector(".loading-screen");
 
-    shoe: {
-      number: "02",
-      type: "FRONTEND EXPERIENCE",
-      overline: "React.js · Responsive UI · Product Cards",
-      title: "Shoe Mart",
-      description:
-        "A responsive shopping interface with reusable product cards and adaptable layouts for desktop and mobile.",
-      tags: ["React.js", "Responsive UI", "Components"],
-      link: "https://shoe-mart-q6gvl1xda-dubeymukesh-officials-projects.vercel.app/",
-      visual: "shoe-visual"
-    },
+  const hideLoadingScreen = () => {
 
-    hotel: {
-      number: "03",
-      type: "JAVA CONSOLE APPLICATION",
-      overline: "Core Java · JDBC · MySQL",
-      title: "Hotel Booking System",
-      description:
-        "A console-based hotel reservation system with customer management, room availability and CRUD operations.",
-      tags: ["Java", "JDBC", "MySQL"],
-      link: "https://github.com/DubeyMukesh-Official",
-      visual: "hotel-visual",
-      sourceOnly: true
-    },
+    if (!loadingScreen) return;
 
-    ridex: {
-      number: "04",
-      type: "FULL STACK APPLICATION",
-      overline: "Spring Boot · React.js · MySQL",
-      title: "RideX",
-      description:
-        "A bike showroom management system with JWT authentication, cart, wishlist, coupons and Razorpay payments.",
-      tags: ["Spring Boot", "React", "JWT", "MySQL"],
-      link: "https://ride-x-rouge.vercel.app/",
-      visual: "ridex-visual"
-    },
-
-    safety: {
-      number: "05",
-      type: "COLLEGE PROJECT",
-      overline: "Python · Django · HTML/CSS",
-      title: "Women Safety & Emergency Rescue",
-      description:
-        "Emergency assistance platform with WhatsApp and email alerts for trusted contacts.",
-      tags: ["Python", "Django", "Emergency Alerts"],
-      link: "https://github.com/DubeyMukesh-Official",
-      visual: "safety-visual",
-      sourceOnly: true
-    }
-  };
-
-  /* =========================
-     PROJECT SWITCHER
-  ========================= */
-
-  const tabs = document.querySelectorAll(".project-tab");
-  const display = document.querySelector(".project-display");
-
-  const copy = display?.querySelector(".project-copy");
-  const visual = display?.querySelector(".project-visual");
-  const type = display?.querySelector(".display-type");
-  const code = display?.querySelector(".display-code");
-  const counter = display?.querySelector("[data-current-project]");
-
-  function artwork(name) {
-    const map = {
-      "blog-visual": `<b>READ</b><i></i><i></i><i></i>`,
-      "shoe-visual": `<i></i><i></i><i></i><b>SM</b>`,
-      "hotel-visual": `<b>CHECK-IN</b><i></i><i></i><i></i><i></i>`,
-      "ridex-visual": `<b>RX</b><i></i><i></i><i></i>`,
-      "safety-visual": `<b>EMERGENCY</b><i></i><i></i><i></i>`
-    };
-    return map[name];
-  }
-
-  function setProject(key) {
-    const project = projects[key];
-    if (!project) return;
-
-    tabs.forEach(btn => {
-      const active = btn.dataset.project === key;
-      btn.classList.toggle("is-active", active);
-      btn.setAttribute("aria-selected", active);
-    });
-
-    display.classList.add("is-changing");
+    loadingScreen.classList.add("is-hidden");
 
     setTimeout(() => {
-      type.textContent = project.type;
-      code.textContent = `CASE / ${project.number}`;
-      counter.textContent = project.number;
+      loadingScreen.style.display = "none";
+    }, 700);
 
-      visual.className = `project-visual ${project.visual}`;
-      visual.innerHTML = artwork(project.visual);
+  };
 
-      copy.innerHTML = `
-        <p class="project-overline">${project.overline}</p>
+  window.addEventListener("load", hideLoadingScreen);
 
-        <h3>${project.title}</h3>
+  /* Safety fallback */
+  setTimeout(hideLoadingScreen, 1800);
 
-        <p class="project-description">${project.description}</p>
 
-        <ul class="project-tags">
-          ${project.tags.map(t => `<li>${t}</li>`).join("")}
-        </ul>
+  /* =======================================================
+     MOBILE NAVIGATION
+     ======================================================= */
 
-        <div class="project-actions">
-          <a class="live-link"
-             href="${project.link}"
-             target="_blank">
-             ${project.sourceOnly ? "View on GitHub" : "Open live project"} ↗
-          </a>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const siteNav = document.querySelector(".site-nav");
 
-          <a class="source-link"
-             href="https://github.com/DubeyMukesh-Official"
-             target="_blank">
-             GitHub Profile
-          </a>
-        </div>
-      `;
+  if (menuToggle && siteNav) {
 
-      display.classList.remove("is-changing");
-    }, 120);
-  }
+    menuToggle.addEventListener("click", () => {
 
-  tabs.forEach(btn => {
-    btn.addEventListener("click", () => {
-      setProject(btn.dataset.project);
-    });
-  });
+      const isOpen =
+        menuToggle.getAttribute("aria-expanded") === "true";
 
-  const first = document.querySelector(".project-tab.is-active");
-  if (first) setProject(first.dataset.project);
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
 
-  /* =========================
-     MOBILE MENU
-  ========================= */
+      siteNav.classList.toggle(
+        "is-open",
+        !isOpen
+      );
 
-  const menu = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".site-nav");
+      document.body.classList.toggle(
+        "nav-open",
+        !isOpen
+      );
 
-  if (menu && nav) {
-    menu.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      menu.setAttribute("aria-expanded", open);
     });
 
-    nav.querySelectorAll("a").forEach(link => {
+
+    /* Close navigation after clicking a link */
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+
       link.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        menu.setAttribute("aria-expanded", false);
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        siteNav.classList.remove("is-open");
+
+        document.body.classList.remove("nav-open");
+
       });
+
     });
+
   }
 
-  /* =========================
-     THEME SWITCH
-  ========================= */
 
-  const theme = document.querySelector(".theme-switch");
+  /* =======================================================
+     HEADER SCROLL EFFECT
+     ======================================================= */
 
-  function applyTheme(mode) {
-    document.body.classList.toggle("light-theme", mode === "light");
-    localStorage.setItem("theme", mode);
-  }
+  const header = document.querySelector("#site-header");
 
-  applyTheme(localStorage.getItem("theme") || "dark");
+  if (header) {
 
-  theme?.addEventListener("click", () => {
-    applyTheme(
-      document.body.classList.contains("light-theme")
-        ? "dark"
-        : "light"
+    const updateHeader = () => {
+
+      header.classList.toggle(
+        "is-scrolled",
+        window.scrollY > 30
+      );
+
+    };
+
+    window.addEventListener(
+      "scroll",
+      updateHeader,
+      { passive: true }
     );
-  });
 
-  /* =========================
-     CERTIFICATE MODAL
-  ========================= */
+    updateHeader();
 
-  const modal = document.querySelector(".certificate-modal");
-  const title = document.querySelector("#certificate-title");
-  const image = document.querySelector(".modal-image");
-  const placeholder = document.querySelector(".modal-placeholder");
-  const pdf = document.querySelector(".modal-pdf");
-
-  function openCertificate(btn) {
-    title.textContent = btn.dataset.title || "Certificate";
-
-    if (btn.dataset.image) {
-      image.src = btn.dataset.image;
-      image.style.display = "block";
-      placeholder.style.display = "none";
-    } else {
-      image.style.display = "none";
-      placeholder.style.display = "flex";
-    }
-
-    if (btn.dataset.pdf) {
-      pdf.href = btn.dataset.pdf;
-      pdf.style.display = "inline-flex";
-    } else {
-      pdf.style.display = "none";
-    }
-
-    modal.showModal();
   }
 
-  document.querySelectorAll(".credential-card,.credential-open")
-    .forEach(card => {
-      card.addEventListener("click", () => openCertificate(card));
-    });
 
-  document.querySelector(".modal-close")?.addEventListener("click", () => {
-    modal.close();
-  });
+  /* =======================================================
+     SMOOTH SCROLL
+     ======================================================= */
 
-  modal?.addEventListener("click", e => {
-    if (e.target === modal) modal.close();
-  });
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((link) => {
 
-  /* =========================
-     REVEAL ANIMATION
-  ========================= */
+      link.addEventListener("click", (event) => {
 
-  const reveals = document.querySelectorAll(".reveal");
+        const targetId =
+          link.getAttribute("href");
 
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+        if (
+          !targetId ||
+          targetId === "#"
+        ) {
+          return;
         }
+
+        const target =
+          document.querySelector(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
       });
-    }, { threshold: 0.15 });
 
-    reveals.forEach(el => observer.observe(el));
-  } else {
-    reveals.forEach(el => el.classList.add("visible"));
-  }
-
-  /* =========================
-     CURSOR GLOW
-  ========================= */
-
-  const glow = document.querySelector(".cursor-glow");
-
-  if (glow && matchMedia("(pointer:fine)").matches) {
-    window.addEventListener("pointermove", e => {
-      glow.style.left = `${e.clientX}px`;
-      glow.style.top = `${e.clientY}px`;
     });
-  }
 
-  /* =========================
-     LOADING SCREEN
-  ========================= */
 
-  const loader = document.querySelector(".loading-screen");
+  /* =======================================================
+     PROJECT DATA
+     ======================================================= */
 
-  window.addEventListener("load", () => {
-    setTimeout(() => loader?.classList.add("is-loaded"), 300);
+  const projects = {
+
+    blog: {
+
+      number: "01",
+
+      type: "CONTENT EXPERIENCE",
+
+      code: "CASE / 01",
+
+      visual: "blog-visual",
+
+      overline:
+        "React.js · REST API · React Router",
+
+      title:
+        "Blog Application",
+
+      description:
+        "A responsive blog application that renders REST API content through reusable React components and gives readers a clear, simple way to explore posts.",
+
+      tags: [
+        "React.js",
+        "REST API",
+        "Responsive UI"
+      ],
+
+      live:
+        "https://blog-lyart-alpha-17.vercel.app/",
+
+      github:
+        "https://github.com/DubeyMukesh-Official"
+
+    },
+
+
+    shoe: {
+
+      number: "02",
+
+      type: "E-COMMERCE EXPERIENCE",
+
+      code: "CASE / 02",
+
+      visual: "shoe-visual",
+
+      overline:
+        "React.js · JavaScript · CSS",
+
+      title:
+        "Shoe Mart",
+
+      description:
+        "A responsive shoe shopping interface focused on product presentation, clean navigation and a practical e-commerce user experience.",
+
+      tags: [
+        "React.js",
+        "JavaScript",
+        "Responsive UI"
+      ],
+
+      live: "#",
+
+      github:
+        "https://github.com/DubeyMukesh-Official"
+
+    },
+
+
+    hotel: {
+
+      number: "03",
+
+      type: "BOOKING EXPERIENCE",
+
+      code: "CASE / 03",
+
+      visual: "hotel-visual",
+
+      overline:
+        "React.js · REST API · MySQL",
+
+      title:
+        "Hotel Booking",
+
+      description:
+        "A hotel booking application designed to provide a simple reservation experience with structured data, responsive screens and practical application flow.",
+
+      tags: [
+        "React.js",
+        "REST API",
+        "MySQL"
+      ],
+
+      live: "#",
+
+      github:
+        "https://github.com/DubeyMukesh-Official"
+
+    },
+
+
+    ridex: {
+
+      number: "04",
+
+      type: "MOBILITY APPLICATION",
+
+      code: "CASE / 04",
+
+      visual: "ridex-visual",
+
+      overline:
+        "Java · Spring Boot · REST API",
+
+      title:
+        "RideX",
+
+      description:
+        "A practical ride-booking application concept focused on backend API development, structured data and a clean user experience.",
+
+      tags: [
+        "Java",
+        "Spring Boot",
+        "REST API"
+      ],
+
+      live: "#",
+
+      github:
+        "https://github.com/DubeyMukesh-Official"
+
+    },
+
+
+    safety: {
+
+      number: "05",
+
+      type: "SAFETY APPLICATION",
+
+      code: "CASE / 05",
+
+      visual: "safety-visual",
+
+      overline:
+        "Java · Spring Boot · React.js",
+
+      title:
+        "Women Safety",
+
+      description:
+        "A safety-focused application concept designed around quick access to important actions and practical technology solutions.",
+
+      tags: [
+        "Java",
+        "Spring Boot",
+        "React.js"
+      ],
+
+      live: "#",
+
+      github:
+        "https://github.com/DubeyMukesh-Official"
+
+    }
+
+  };
+
+
+  /* =======================================================
+     PROJECT ELEMENTS
+     ======================================================= */
+
+  const projectTabs =
+    document.querySelectorAll(".project-tab");
+
+  const displayType =
+    document.querySelector(".display-type");
+
+  const displayCode =
+    document.querySelector(".display-code");
+
+  const projectVisual =
+    document.querySelector(".project-visual");
+
+  const projectOverline =
+    document.querySelector(".project-overline");
+
+  const projectTitle =
+    document.querySelector(".project-copy h3");
+
+  const projectDescription =
+    document.querySelector(".project-description");
+
+  const projectTags =
+    document.querySelector(".project-tags");
+
+  const liveLink =
+    document.querySelector("[data-live-link]");
+
+  const sourceLink =
+    document.querySelector(".source-link");
+
+  const currentProject =
+    document.querySelector("[data-current-project]");
+
+
+  /* =======================================================
+     UPDATE PROJECT
+     ======================================================= */
+
+  const updateProject = (projectKey) => {
+
+    const project = projects[projectKey];
+
+    if (!project) return;
+
+
+    /* Update tabs */
+
+    projectTabs.forEach((tab) => {
+
+      const active =
+        tab.dataset.project === projectKey;
+
+      tab.classList.toggle(
+        "is-active",
+        active
+      );
+
+      tab.setAttribute(
+        "aria-selected",
+        String(active)
+      );
+
+    });
+
+
+    /* Type */
+
+    if (displayType) {
+      displayType.textContent =
+        project.type;
+    }
+
+
+    /* Code */
+
+    if (displayCode) {
+      displayCode.textContent =
+        project.code;
+    }
+
+
+    /* Overline */
+
+    if (projectOverline) {
+      projectOverline.textContent =
+        project.overline;
+    }
+
+
+    /* Title */
+
+    if (projectTitle) {
+      projectTitle.textContent =
+        project.title;
+    }
+
+
+    /* Description */
+
+    if (projectDescription) {
+      projectDescription.textContent =
+        project.description;
+    }
+
+
+    /* Tags */
+
+    if (projectTags) {
+
+      projectTags.innerHTML = "";
+
+      project.tags.forEach((tag) => {
+
+        const li =
+          document.createElement("li");
+
+        li.textContent = tag;
+
+        projectTags.appendChild(li);
+
+      });
+
+    }
+
+
+    /* Visual */
+
+    if (projectVisual) {
+
+      projectVisual.className =
+        "project-visual " +
+        project.visual;
+
+    }
+
+
+    /* Live project */
+
+    if (liveLink) {
+
+      if (
+        project.live &&
+        project.live !== "#"
+      ) {
+
+        liveLink.href =
+          project.live;
+
+        liveLink.style.display =
+          "inline-flex";
+
+      } else {
+
+        liveLink.removeAttribute("href");
+
+        liveLink.style.display =
+          "none";
+
+      }
+
+    }
+
+
+    /* GitHub */
+
+    if (sourceLink) {
+
+      sourceLink.href =
+        project.github;
+
+    }
+
+
+    /* Counter */
+
+    if (currentProject) {
+
+      currentProject.textContent =
+        project.number;
+
+    }
+
+  };
+
+
+  /* =======================================================
+     PROJECT TAB EVENTS
+     ======================================================= */
+
+  projectTabs.forEach((tab) => {
+
+    tab.addEventListener("click", () => {
+
+      updateProject(
+        tab.dataset.project
+      );
+
+    });
+
   });
 
-  /* =========================
-     SCROLL PROGRESS
-  ========================= */
 
-  const meter = document.querySelector(".scroll-meter i");
+  /* First project */
 
-  function progress() {
-    if (!meter) return;
+  updateProject("blog");
 
-    const max =
-      document.documentElement.scrollHeight - innerHeight;
 
-    meter.style.transform = `scaleX(${scrollY / max || 0})`;
+  /* =======================================================
+     CERTIFICATE MODAL
+     ======================================================= */
+
+  const modal =
+    document.querySelector(".certificate-modal");
+
+  const modalTitle =
+    document.querySelector("#certificate-title");
+
+  const modalImage =
+    document.querySelector(".modal-image");
+
+  const modalPdfViewer =
+    document.querySelector(".modal-pdf-viewer");
+
+  const modalPlaceholder =
+    document.querySelector(".modal-placeholder");
+
+  const modalPdf =
+    document.querySelector(".modal-pdf");
+
+  const modalClose =
+    document.querySelector(".modal-close");
+
+
+  /* =======================================================
+     CERTIFICATE FILE ALIAS FIX
+     =======================================================
+
+     IMPORTANT:
+
+     Your HTML currently contains some filenames that
+     don't exactly match the files visible in your VS Code
+     assets/certificates folder.
+
+     This mapping automatically corrects them.
+
+     Actual files visible in your project:
+
+       ibm-microservices-ai.pdf
+       ibm-sql-databases.pdf
+
+     ======================================================= */
+
+  const certificateFileAliases = {
+
+    "refactoring-microservices-ai.pdf":
+      "./assets/certificates/ibm-microservices-ai.pdf",
+
+    "sql-relational-databases-101.pdf":
+      "./assets/certificates/ibm-sql-databases.pdf"
+
+  };
+
+
+  /* =======================================================
+     RESOLVE CERTIFICATE PATH
+     ======================================================= */
+
+  const resolveCertificatePath = (path) => {
+
+    if (!path) return "";
+
+    const cleanPath =
+      path.split("?")[0];
+
+    const filename =
+      cleanPath.substring(
+        cleanPath.lastIndexOf("/") + 1
+      );
+
+    if (
+      certificateFileAliases[filename]
+    ) {
+
+      return certificateFileAliases[filename];
+
+    }
+
+    return path;
+
+  };
+
+
+  /* =======================================================
+     RESET MODAL
+     ======================================================= */
+
+  const resetModal = () => {
+
+    /* Reset image */
+
+    if (modalImage) {
+
+      modalImage.removeAttribute("src");
+
+      modalImage.removeAttribute("alt");
+
+      modalImage.style.display =
+        "none";
+
+    }
+
+
+    /* Reset PDF */
+
+    if (modalPdfViewer) {
+
+      modalPdfViewer.removeAttribute("src");
+
+      modalPdfViewer.style.display =
+        "none";
+
+    }
+
+
+    /* Reset PDF button */
+
+    if (modalPdf) {
+
+      modalPdf.removeAttribute("href");
+
+      modalPdf.style.display =
+        "none";
+
+    }
+
+
+    /* Reset placeholder */
+
+    if (modalPlaceholder) {
+
+      modalPlaceholder.style.display =
+        "none";
+
+    }
+
+  };
+
+
+  /* =======================================================
+     SHOW PLACEHOLDER
+     ======================================================= */
+
+  const showPlaceholder = (
+    message = "Credential preview unavailable"
+  ) => {
+
+    if (!modalPlaceholder) return;
+
+    const placeholderText =
+      modalPlaceholder.querySelector("b");
+
+    if (placeholderText) {
+
+      placeholderText.textContent =
+        message;
+
+    }
+
+    modalPlaceholder.style.display =
+      "flex";
+
+  };
+
+
+  /* =======================================================
+     SHOW PDF
+     ======================================================= */
+
+  const showPDF = (
+    pdfPath,
+    title
+  ) => {
+
+    if (!pdfPath) {
+
+      showPlaceholder();
+
+      return;
+
+    }
+
+
+    const resolvedPath =
+      resolveCertificatePath(pdfPath);
+
+
+    console.log(
+      "Opening certificate PDF:",
+      resolvedPath
+    );
+
+
+    /* PDF iframe */
+
+    if (modalPdfViewer) {
+
+      modalPdfViewer.src =
+        resolvedPath;
+
+      modalPdfViewer.style.display =
+        "block";
+
+
+      /*
+       * If the browser cannot render the PDF,
+       * the Open PDF button still works.
+       */
+
+      modalPdfViewer.addEventListener(
+        "error",
+        () => {
+
+          console.warn(
+            "PDF iframe could not display:",
+            resolvedPath
+          );
+
+        },
+        {
+          once: true
+        }
+      );
+
+    }
+
+
+    /* Open PDF button */
+
+    if (modalPdf) {
+
+      modalPdf.href =
+        resolvedPath;
+
+      modalPdf.target =
+        "_blank";
+
+      modalPdf.rel =
+        "noopener noreferrer";
+
+      modalPdf.style.display =
+        "inline-flex";
+
+    }
+
+  };
+
+
+  /* =======================================================
+     SHOW IMAGE
+     ======================================================= */
+
+  const showImage = (
+    imagePath,
+    title
+  ) => {
+
+    if (
+      !modalImage ||
+      !imagePath
+    ) {
+
+      showPlaceholder();
+
+      return;
+
+    }
+
+
+    modalImage.src =
+      imagePath;
+
+    modalImage.alt =
+      title;
+
+    modalImage.style.display =
+      "block";
+
+
+    modalImage.onload = () => {
+
+      modalImage.style.display =
+        "block";
+
+    };
+
+
+    modalImage.onerror = () => {
+
+      console.error(
+        "Certificate image not found:",
+        imagePath
+      );
+
+      modalImage.style.display =
+        "none";
+
+      showPlaceholder(
+        "Certificate image could not be loaded"
+      );
+
+    };
+
+  };
+
+
+  /* =======================================================
+     OPEN CREDENTIAL
+     ======================================================= */
+
+  const openCredential = (card) => {
+
+    if (!modal || !card) return;
+
+
+    resetModal();
+
+
+    /* Title */
+
+    const title =
+      card.dataset.title ||
+      "Certificate";
+
+
+    if (modalTitle) {
+
+      modalTitle.textContent =
+        title;
+
+    }
+
+
+    /* Get certificate data */
+
+    const image =
+      card.dataset.image;
+
+    const pdf =
+      card.dataset.pdf;
+
+
+    console.log(
+      "Credential opened:",
+      title
+    );
+
+
+    /* =====================================================
+       IMAGE CERTIFICATE
+       ===================================================== */
+
+    if (image) {
+
+      showImage(
+        image,
+        title
+      );
+
+    }
+
+
+    /* =====================================================
+       PDF CERTIFICATE
+       ===================================================== */
+
+    else if (pdf) {
+
+      showPDF(
+        pdf,
+        title
+      );
+
+    }
+
+
+    /* =====================================================
+       NO FILE
+       ===================================================== */
+
+    else {
+
+      showPlaceholder();
+
+    }
+
+
+    /* =====================================================
+       OPEN MODAL
+       ===================================================== */
+
+    if (
+      typeof modal.showModal ===
+      "function"
+    ) {
+
+      modal.showModal();
+
+    } else {
+
+      modal.setAttribute(
+        "open",
+        ""
+      );
+
+    }
+
+
+    document.body.classList.add(
+      "modal-open"
+    );
+
+  };
+
+
+  /* =======================================================
+     CREDENTIAL CARDS
+     ======================================================= */
+
+  const credentialCards =
+    document.querySelectorAll(
+      ".credential-card, .credential-open"
+    );
+
+
+  credentialCards.forEach((card) => {
+
+    card.addEventListener(
+      "click",
+      () => {
+
+        openCredential(card);
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     CLOSE MODAL
+     ======================================================= */
+
+  const closeModal = () => {
+
+    if (!modal) return;
+
+
+    if (
+      typeof modal.close ===
+      "function"
+    ) {
+
+      if (modal.open) {
+
+        modal.close();
+
+      }
+
+    } else {
+
+      modal.removeAttribute("open");
+
+    }
+
+
+    resetModal();
+
+
+    document.body.classList.remove(
+      "modal-open"
+    );
+
+  };
+
+
+  /* Close button */
+
+  if (modalClose) {
+
+    modalClose.addEventListener(
+      "click",
+      closeModal
+    );
+
   }
 
-  progress();
 
-  addEventListener("scroll", progress, { passive: true });
-  addEventListener("resize", progress);
+  /* =======================================================
+     CLICK OUTSIDE MODAL
+     ======================================================= */
+
+  if (modal) {
+
+    modal.addEventListener(
+      "click",
+      (event) => {
+
+        const modalInner =
+          modal.querySelector(
+            ".modal-inner"
+          );
+
+        if (!modalInner) return;
+
+
+        const rect =
+          modalInner.getBoundingClientRect();
+
+
+        const clickedOutside =
+          event.clientX < rect.left ||
+          event.clientX > rect.right ||
+          event.clientY < rect.top ||
+          event.clientY > rect.bottom;
+
+
+        if (clickedOutside) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     MODAL CLOSE EVENT
+     ======================================================= */
+
+  if (modal) {
+
+    modal.addEventListener(
+      "close",
+      () => {
+
+        resetModal();
+
+        document.body.classList.remove(
+          "modal-open"
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     ESCAPE KEY
+     ======================================================= */
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Escape" &&
+        modal &&
+        modal.open
+      ) {
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+  /* =======================================================
+     THEME SWITCH
+     ======================================================= */
+
+  const themeSwitch =
+    document.querySelector(".theme-switch");
+
+
+  let savedTheme = null;
+
+
+  try {
+
+    savedTheme =
+      localStorage.getItem(
+        "portfolio-theme"
+      );
+
+  } catch (error) {
+
+    savedTheme = null;
+
+  }
+
+
+  if (
+    savedTheme === "light"
+  ) {
+
+    document.body.classList.add(
+      "light-theme"
+    );
+
+  }
+
+
+  if (themeSwitch) {
+
+    themeSwitch.addEventListener(
+      "click",
+      () => {
+
+        document.body.classList.toggle(
+          "light-theme"
+        );
+
+
+        const isLight =
+          document.body.classList.contains(
+            "light-theme"
+          );
+
+
+        try {
+
+          localStorage.setItem(
+            "portfolio-theme",
+            isLight
+              ? "light"
+              : "dark"
+          );
+
+        } catch (error) {
+
+          /* Ignore localStorage errors */
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     REVEAL ANIMATIONS
+     ======================================================= */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  if (
+    "IntersectionObserver" in window
+  ) {
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "is-visible"
+              );
+
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach((element) => {
+
+      observer.observe(element);
+
+    });
+
+  } else {
+
+    revealElements.forEach((element) => {
+
+      element.classList.add(
+        "is-visible"
+      );
+
+    });
+
+  }
+
+
+  /* =======================================================
+     CURSOR GLOW
+     ======================================================= */
+
+  const cursorGlow =
+    document.querySelector(".cursor-glow");
+
+
+  if (
+    cursorGlow &&
+    window.matchMedia(
+      "(pointer: fine)"
+    ).matches
+  ) {
+
+    document.addEventListener(
+      "mousemove",
+      (event) => {
+
+        cursorGlow.style.transform =
+          `translate3d(
+            ${event.clientX}px,
+            ${event.clientY}px,
+            0
+          )`;
+
+      },
+      {
+        passive: true
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     IMAGE ERROR HANDLING
+     ======================================================= */
+
+  document
+    .querySelectorAll("img")
+    .forEach((image) => {
+
+      image.addEventListener(
+        "error",
+        () => {
+
+          image.classList.add(
+            "image-error"
+          );
+
+        }
+      );
+
+    });
+
+
+  /* =======================================================
+     PREVENT DEAD LIVE LINKS
+     ======================================================= */
+
+  document
+    .querySelectorAll(
+      'a[href="#"]'
+    )
+    .forEach((link) => {
+
+      link.addEventListener(
+        "click",
+        (event) => {
+
+          event.preventDefault();
+
+        }
+      );
+
+    });
+
+
+  /* =======================================================
+     DEBUG INFORMATION
+     ======================================================= */
+
+  console.log(
+    "--------------------------------------"
+  );
+
+  console.log(
+    "Mukesh Dubey Portfolio loaded."
+  );
+
+  console.log(
+    "Credential cards found:",
+    credentialCards.length
+  );
+
+  console.log(
+    "Certificate filename aliases:",
+    certificateFileAliases
+  );
+
+  console.log(
+    "--------------------------------------"
+  );
 
 });

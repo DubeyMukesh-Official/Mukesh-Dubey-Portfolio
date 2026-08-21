@@ -39,17 +39,32 @@
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
     crossorigin
   />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
     rel="stylesheet"
   />
 
 
   <!-- =====================================================
-       STYLES
+       MOTION CSS
+       ===================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./motion.css"
+  />
+
+
+  <!-- =====================================================
+       MAIN CSS
        ===================================================== -->
 
   <link
@@ -57,15 +72,41 @@
     href="./styles.css"
   />
 
-  <link
-    rel="stylesheet"
-    href="./motion.css"
-  />
+
+  <!-- =====================================================
+       VISIBILITY SAFETY
+       ===================================================== -->
+
+  <style>
+
+    /*
+     * Keeps sections visible even if
+     * reveal animation is unavailable.
+     */
+
+    .reveal {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+
+    .statement,
+    .project-section,
+    .stack-section,
+    .process-section,
+    .credentials,
+    .contact,
+    .footer {
+      visibility: visible;
+    }
+
+  </style>
 
 </head>
 
 
 <body>
+
 
   <!-- =====================================================
        LOADING SCREEN
@@ -75,6 +116,7 @@
     class="loading-screen"
     aria-label="Loading portfolio"
   >
+
     <i></i>
 
     <span>
@@ -82,6 +124,7 @@
     </span>
 
     <i></i>
+
   </div>
 
 
@@ -104,23 +147,46 @@
        NAVIGATION
        ===================================================== -->
 
-  <header class="topbar section-pad">
+  <header
+    class="topbar section-pad"
+    id="site-header"
+  >
+
+
+    <!-- WORDMARK -->
 
     <a
       href="#top"
       class="wordmark"
       aria-label="Mukesh Dubey home"
     >
-      MUKESH
-      <i></i>
+
+      <span>
+        MUKESH
+      </span>
+
+      <i aria-hidden="true"></i>
+
     </a>
 
 
-    <div class="topbar-status">
-      <b></b>
-      Available for opportunities
+    <!-- AVAILABILITY -->
+
+    <div
+      class="topbar-status"
+      aria-label="Current availability"
+    >
+
+      <b aria-hidden="true"></b>
+
+      <span>
+        Available for opportunities
+      </span>
+
     </div>
 
+
+    <!-- MOBILE MENU -->
 
     <button
       class="menu-toggle"
@@ -129,10 +195,25 @@
       aria-expanded="false"
       aria-controls="site-navigation"
     >
-      <span></span>
-      MENU
+
+      <span
+        class="menu-icon"
+        aria-hidden="true"
+      >
+
+        <i></i>
+        <i></i>
+
+      </span>
+
+      <span class="menu-text">
+        MENU
+      </span>
+
     </button>
 
+
+    <!-- NAVIGATION -->
 
     <nav
       class="site-nav"
@@ -140,28 +221,68 @@
       aria-label="Primary navigation"
     >
 
-      <a href="#about">
-        About
-      </a>
-
-      <a href="#projects">
-        Projects
-      </a>
-
-      <a href="#skills">
-        Skills
-      </a>
-
-      <a href="#credentials">
-        Credentials
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
+      <div class="nav-links">
 
 
-      <!-- CORRECT RESUME PATH -->
+        <a href="#about">
+
+          <span>
+            01
+          </span>
+
+          About
+
+        </a>
+
+
+        <a href="#projects">
+
+          <span>
+            02
+          </span>
+
+          Projects
+
+        </a>
+
+
+        <a href="#skills">
+
+          <span>
+            03
+          </span>
+
+          Skills
+
+        </a>
+
+
+        <a href="#credentials">
+
+          <span>
+            04
+          </span>
+
+          Credentials
+
+        </a>
+
+
+        <a href="#contact">
+
+          <span>
+            05
+          </span>
+
+          Contact
+
+        </a>
+
+
+      </div>
+
+
+      <!-- RESUME -->
 
       <a
         class="nav-resume"
@@ -169,11 +290,20 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Resume
-        <span>↗</span>
+
+        <span class="resume-label">
+          Resume
+        </span>
+
+        <span class="resume-arrow">
+          ↗
+        </span>
+
       </a>
 
+
     </nav>
+
 
   </header>
 
@@ -191,6 +321,7 @@
 
     <section class="hero section-pad">
 
+
       <div class="hero-meta">
 
         <span>
@@ -206,7 +337,9 @@
 
       <div class="hero-main">
 
+
         <div class="hero-copy-stack">
+
 
           <p class="hero-kicker">
             FULL STACK JAVA DEVELOPER
@@ -219,22 +352,28 @@
 
 
           <h1>
+
             Building
             <em>digital</em><br />
             experiences.
+
           </h1>
+
 
         </div>
 
 
         <div class="hero-bottom">
 
+
           <p>
+
             I'm
             <strong>Mukesh Dubey</strong>,
             a B.Sc. IT graduate and aspiring Full Stack Developer
             focused on building responsive web applications using
             React.js, Java, Spring Boot, REST APIs and MySQL.
+
           </p>
 
 
@@ -242,18 +381,23 @@
             class="primary-cta"
             href="#projects"
           >
+
             EXPLORE MY WORK
-            <span>↘</span>
+
+            <span>
+              ↘
+            </span>
+
           </a>
 
+
         </div>
+
 
       </div>
 
 
-      <!-- =================================================
-           ORBIT
-           ================================================= -->
+      <!-- ORBIT -->
 
       <div
         class="orbit-scene"
@@ -288,9 +432,7 @@
       </div>
 
 
-      <!-- =================================================
-           RESUME STRIP
-           ================================================= -->
+      <!-- RESUME STRIP -->
 
       <a
         class="resume-strip"
@@ -313,6 +455,7 @@
 
       </a>
 
+
     </section>
 
 
@@ -325,6 +468,7 @@
       id="about"
     >
 
+
       <p class="section-label">
         01 <span>/</span> ABOUT
       </p>
@@ -332,28 +476,36 @@
 
       <div class="statement-content">
 
+
         <h2>
+
           I create
           <em>clean, responsive</em>
           web experiences with
           practical engineering.
+
         </h2>
 
 
         <div class="bio">
 
+
           <p>
+
             I enjoy turning ideas into functional web applications.
             My development experience includes frontend development
             with React.js and backend development using Java,
             Spring Boot, REST APIs and MySQL.
+
           </p>
 
 
           <p>
+
             As a fresher, I'm focused on learning quickly, writing
             maintainable code and contributing to real-world
             development teams.
+
           </p>
 
 
@@ -361,16 +513,26 @@
             class="text-arrow"
             href="#contact"
           >
+
             Let's work together
-            <span>↗</span>
+
+            <span>
+              ↗
+            </span>
+
           </a>
 
+
         </div>
+
 
       </div>
 
 
+      <!-- FACTS -->
+
       <div class="fact-row">
+
 
         <article>
 
@@ -423,7 +585,9 @@
 
         </article>
 
+
       </div>
+
 
     </section>
 
@@ -437,20 +601,25 @@
       id="projects"
     >
 
+
       <div class="section-heading reveal">
+
 
         <p class="section-label">
           02 <span>/</span> SELECTED WORK
         </p>
 
+
         <p>
           Projects / Applications / Experiments
         </p>
+
 
       </div>
 
 
       <div class="project-console reveal">
+
 
         <!-- PROJECT TABS -->
 
@@ -460,6 +629,7 @@
           aria-label="Projects"
         >
 
+
           <button
             class="project-tab is-active"
             type="button"
@@ -467,8 +637,13 @@
             aria-selected="true"
             data-project="blog"
           >
-            <span>01</span>
+
+            <span>
+              01
+            </span>
+
             Blog Application
+
           </button>
 
 
@@ -479,8 +654,13 @@
             aria-selected="false"
             data-project="shoe"
           >
-            <span>02</span>
+
+            <span>
+              02
+            </span>
+
             Shoe Mart
+
           </button>
 
 
@@ -491,8 +671,13 @@
             aria-selected="false"
             data-project="hotel"
           >
-            <span>03</span>
+
+            <span>
+              03
+            </span>
+
             Hotel Booking
+
           </button>
 
 
@@ -503,8 +688,13 @@
             aria-selected="false"
             data-project="ridex"
           >
-            <span>04</span>
+
+            <span>
+              04
+            </span>
+
             RideX
+
           </button>
 
 
@@ -515,9 +705,15 @@
             aria-selected="false"
             data-project="safety"
           >
-            <span>05</span>
+
+            <span>
+              05
+            </span>
+
             Women Safety
+
           </button>
+
 
         </div>
 
@@ -525,6 +721,7 @@
         <!-- PROJECT DISPLAY -->
 
         <div class="project-display">
+
 
           <div class="project-display-top">
 
@@ -561,6 +758,7 @@
 
           <div class="project-copy">
 
+
             <p class="project-overline">
               React.js · REST API · React Router
             </p>
@@ -572,9 +770,11 @@
 
 
             <p class="project-description">
+
               A responsive blog application that renders REST API
               content through reusable React components and gives
               readers a clear, simple way to explore posts.
+
             </p>
 
 
@@ -597,6 +797,7 @@
 
             <div class="project-actions">
 
+
               <a
                 class="live-link"
                 data-live-link
@@ -604,8 +805,13 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
+
                 Open live project
-                <span>↗</span>
+
+                <span>
+                  ↗
+                </span>
+
               </a>
 
 
@@ -615,13 +821,19 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
+
                 GitHub profile
+
               </a>
+
 
             </div>
 
+
           </div>
 
+
+          <!-- COUNTER -->
 
           <div class="project-counter">
 
@@ -633,9 +845,12 @@
 
           </div>
 
+
         </div>
 
+
       </div>
+
 
     </section>
 
@@ -649,6 +864,7 @@
       id="skills"
     >
 
+
       <p class="section-label">
         03 <span>/</span> STACK
       </p>
@@ -659,15 +875,20 @@
 
         <div class="stack-intro">
 
+
           <p>
             TOOLS / TECHNOLOGIES
           </p>
 
+
           <h2>
+
             Technology is useful
             when it solves the
             right problem.
+
           </h2>
+
 
         </div>
 
@@ -683,8 +904,10 @@
           </h3>
 
           <p>
+
             React, JavaScript ES6+, HTML5, CSS3,
             Bootstrap, React Router and responsive UI.
+
           </p>
 
         </article>
@@ -697,12 +920,14 @@
           </span>
 
           <h3>
-            Java & Spring Boot
+            Java &amp; Spring Boot
           </h3>
 
           <p>
+
             Core Java, OOP, Spring Boot, REST APIs,
             JDBC, JPA and backend application development.
+
           </p>
 
         </article>
@@ -719,8 +944,10 @@
           </h3>
 
           <p>
+
             SQL queries, CRUD operations, relational
             database design and application integration.
+
           </p>
 
         </article>
@@ -733,12 +960,14 @@
           </span>
 
           <h3>
-            Git & Development Tools
+            Git &amp; Development Tools
           </h3>
 
           <p>
+
             Git, GitHub, Postman, VS Code, Eclipse,
             Maven and API testing workflows.
+
           </p>
 
         </article>
@@ -755,13 +984,17 @@
           </h3>
 
           <p>
+
             JWT authentication, Spring Security,
             BCrypt password encoding and protected APIs.
+
           </p>
 
         </article>
 
+
       </div>
+
 
     </section>
 
@@ -773,6 +1006,7 @@
     <section
       class="process-section section-pad reveal"
     >
+
 
       <p class="section-label">
         04 <span>/</span> PROCESS
@@ -793,8 +1027,10 @@
           </h3>
 
           <p>
+
             Break down the requirement and understand
             the problem before starting implementation.
+
           </p>
 
         </article>
@@ -811,8 +1047,10 @@
           </h3>
 
           <p>
+
             Create clean components, APIs and database
             operations while keeping the application practical.
+
           </p>
 
         </article>
@@ -829,13 +1067,17 @@
           </h3>
 
           <p>
+
             Test, debug and refine the application to
             improve usability, responsiveness and reliability.
+
           </p>
 
         </article>
 
+
       </div>
+
 
     </section>
 
@@ -849,7 +1091,11 @@
       id="credentials"
     >
 
+
+      <!-- CREDENTIAL HEADING -->
+
       <div class="credentials-heading reveal">
+
 
         <p class="section-label">
           05 <span>/</span> CREDENTIALS
@@ -859,16 +1105,21 @@
         <div>
 
           <h2>
+
             Learning,
             building,
             improving.
+
           </h2>
+
 
           <p>
             Certifications / Training / Learning
           </p>
 
+
         </div>
+
 
       </div>
 
@@ -889,6 +1140,7 @@
 
         <div class="credential-feature-copy">
 
+
           <span>
             FEATURED TRAINING
           </span>
@@ -900,9 +1152,11 @@
 
 
           <p>
+
             Full Stack Java Development training covering
             Java, Spring Boot, frontend technologies,
             databases and application development.
+
           </p>
 
 
@@ -912,34 +1166,49 @@
             data-title="Full Stack Java Development"
             data-image="./assets/certificates/itvedant-full-stack-java.jpg"
           >
+
             View credential
-            <i>↗</i>
+
+            <i>
+              ↗
+            </i>
+
           </button>
 
+
         </div>
+
 
       </div>
 
 
       <!-- =================================================
-           CREDENTIAL CARDS
+           CREDENTIAL GRID
            ================================================= -->
 
       <div class="credential-grid reveal">
 
 
-        <!-- IBM JAVA -->
+        <!-- 01 -->
 
         <button
-          class="credential-card"
+          class="credential-card ibm-card"
           type="button"
           data-title="IBM Java Fundamentals"
           data-pdf="./assets/certificates/ibm-java-fundamentals.pdf"
         >
 
-          <span>
+          <span class="ibm-mark">
             IBM / JAVA
           </span>
+
+          <b>
+            Java Fundamentals
+          </b>
+
+          <small>
+            Java / Programming
+          </small>
 
           <i>
             ↗
@@ -948,18 +1217,26 @@
         </button>
 
 
-        <!-- IBM FULL STACK JAVA -->
+        <!-- 02 -->
 
         <button
-          class="credential-card"
+          class="credential-card ibm-card"
           type="button"
           data-title="IBM Full Stack Java Developer"
           data-pdf="./assets/certificates/ibm-full-stack-java.pdf"
         >
 
-          <span>
+          <span class="ibm-mark">
             IBM / FULL STACK JAVA
           </span>
+
+          <b>
+            Full Stack Java Developer
+          </b>
+
+          <small>
+            Java / Full Stack Development
+          </small>
 
           <i>
             ↗
@@ -968,18 +1245,26 @@
         </button>
 
 
-        <!-- HACKERRANK JAVA -->
+        <!-- 03 -->
 
         <button
-          class="credential-card"
+          class="credential-card ibm-card"
           type="button"
           data-title="HackerRank Java Basic"
           data-pdf="./assets/certificates/hackerrank-java-basic.pdf"
         >
 
-          <span>
+          <span class="ibm-mark">
             HACKERRANK / JAVA
           </span>
+
+          <b>
+            Java Basic
+          </b>
+
+          <small>
+            Java / Programming
+          </small>
 
           <i>
             ↗
@@ -988,7 +1273,7 @@
         </button>
 
 
-        <!-- IT VEDANT REACT -->
+        <!-- 04 -->
 
         <button
           class="credential-card ibm-card"
@@ -1015,7 +1300,289 @@
 
         </button>
 
+
+        <!-- 05 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="IT Vedant Spring Boot"
+          data-image="./assets/certificates/itvedant-springboot.jpg"
+        >
+
+          <span class="ibm-mark">
+            SPRING BOOT
+          </span>
+
+          <b>
+            Spring Boot Development
+          </b>
+
+          <small>
+            Java / Spring Boot
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 06 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="IT Vedant SQL Deep Dive"
+          data-image="./assets/certificates/itvedant-sql-deep-dive.jpg"
+        >
+
+          <span class="ibm-mark">
+            SQL
+          </span>
+
+          <b>
+            SQL Deep Dive
+          </b>
+
+          <small>
+            Database / SQL
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 07 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="IT Vedant JavaScript Essentials"
+          data-image="./assets/certificates/itvedant-javascript-essentials.jpg"
+        >
+
+          <span class="ibm-mark">
+            JAVASCRIPT
+          </span>
+
+          <b>
+            JavaScript Essentials
+          </b>
+
+          <small>
+            Frontend / JavaScript
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 08 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="IT Vedant Java Essentials"
+          data-image="./assets/certificates/itvedant-java-essentials.jpg"
+        >
+
+          <span class="ibm-mark">
+            JAVA
+          </span>
+
+          <b>
+            Java Essentials
+          </b>
+
+          <small>
+            Java / Programming
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 09 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="Future Tech 2.0 - Blind Coding"
+          data-image="./assets/certificates/college-future-tech-2024.jpg"
+        >
+
+          <span class="ibm-mark">
+            FUTURE TECH
+          </span>
+
+          <b>
+            Future Tech 2.0
+          </b>
+
+          <small>
+            Blind Coding / Participation
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 10 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="Refactoring to Microservices with Open-Source AI Technology"
+          data-pdf="./assets/certificates/ibm-microservices-ai.pdf"
+        >
+
+          <span class="ibm-mark">
+            IBM / AI
+          </span>
+
+          <b>
+            Refactoring to Microservices
+          </b>
+
+          <small>
+            Microservices / Open-Source AI
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 11 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="SQL and Relational Databases"
+          data-pdf="./assets/certificates/ibm-sql-databases.pdf"
+        >
+
+          <span class="ibm-mark">
+            IBM / SQL
+          </span>
+
+          <b>
+            SQL &amp; Relational Databases
+          </b>
+
+          <small>
+            SQL / Relational Databases
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 12 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="IBM Spring Boot Application Development"
+          data-pdf="./assets/certificates/ibm-spring-boot-application.pdf"
+        >
+
+          <span class="ibm-mark">
+            IBM / SPRING BOOT
+          </span>
+
+          <b>
+            Spring Boot Application Development
+          </b>
+
+          <small>
+            Java / Spring Boot
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 13 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="IBM Web Development with HTML"
+          data-pdf="./assets/certificates/ibm-web-development-html.pdf"
+        >
+
+          <span class="ibm-mark">
+            IBM / WEB
+          </span>
+
+          <b>
+            Web Development with HTML
+          </b>
+
+          <small>
+            HTML / Web Development
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
+        <!-- 14 -->
+
+        <button
+          class="credential-card ibm-card"
+          type="button"
+          data-title="HackerRank React Basic"
+          data-pdf="./assets/certificates/hackerrank-react-basic.pdf"
+        >
+
+          <span class="ibm-mark">
+            HACKERRANK / REACT
+          </span>
+
+          <b>
+            React Basic
+          </b>
+
+          <small>
+            React / Frontend Development
+          </small>
+
+          <i>
+            ↗
+          </i>
+
+        </button>
+
+
       </div>
+
 
     </section>
 
@@ -1028,6 +1595,7 @@
       class="contact section-pad reveal"
       id="contact"
     >
+
 
       <p class="section-label">
         06 <span>/</span> CONTACT
@@ -1043,22 +1611,34 @@
 
 
       <h2>
+
         Let's build
         <em>something</em><br />
         useful.
+
       </h2>
 
+
+      <!-- EMAIL -->
 
       <a
         class="mail-link"
         href="mailto:mukeshdubey.dev@gmail.com"
       >
+
         mukeshdubey.dev@gmail.com
-        <span>↗</span>
+
+        <span>
+          ↗
+        </span>
+
       </a>
 
 
+      <!-- CONTACT DETAILS -->
+
       <div class="contact-details">
+
 
         <span>
           Mumbai, India
@@ -1089,9 +1669,12 @@
           Email ↗
         </a>
 
+
       </div>
 
+
     </section>
+
 
   </main>
 
@@ -1102,17 +1685,21 @@
 
   <footer class="footer section-pad">
 
+
     <span>
       © 2026 Mukesh Dubey
     </span>
+
 
     <span>
       Built with HTML / CSS / JavaScript
     </span>
 
+
     <a href="#top">
       Back to top ↑
     </a>
+
 
   </footer>
 
@@ -1128,6 +1715,7 @@
     title="Toggle theme"
   >
 
+
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
@@ -1138,6 +1726,7 @@
         cy="12"
         r="4"
       ></circle>
+
 
       <path d="M12 2v2"></path>
 
@@ -1157,6 +1746,7 @@
 
     </svg>
 
+
   </button>
 
 
@@ -1169,6 +1759,9 @@
     aria-labelledby="certificate-title"
   >
 
+
+    <!-- CLOSE -->
+
     <button
       class="modal-close"
       type="button"
@@ -1180,35 +1773,68 @@
 
     <div class="modal-inner">
 
-      <p>
+
+      <!-- LABEL -->
+
+      <p class="modal-eyebrow">
         CREDENTIAL
       </p>
 
+
+      <!-- TITLE -->
 
       <h2 id="certificate-title">
         Certificate
       </h2>
 
 
-      <img
-        class="modal-image"
-        src=""
-        alt=""
-      />
+      <!-- =================================================
+           CERTIFICATE PREVIEW
+           ================================================= -->
+
+      <div class="certificate-preview">
 
 
-      <div class="modal-placeholder">
+        <!-- IMAGE -->
 
-        <span>
-          CERTIFICATE / CREDENTIAL
-        </span>
+        <img
+          class="modal-image"
+          src=""
+          alt="Certificate preview"
+        />
 
-        <b>
-          Credential preview
-        </b>
+
+        <!-- PDF -->
+
+        <iframe
+          class="modal-pdf-viewer"
+          src=""
+          title="Certificate PDF preview"
+        ></iframe>
+
+
+        <!-- FALLBACK -->
+
+        <div class="modal-placeholder">
+
+
+          <span>
+            CERTIFICATE / CREDENTIAL
+          </span>
+
+
+          <b>
+            Credential preview unavailable
+          </b>
+
+
+        </div>
+
 
       </div>
 
+
+      <!-- OPEN PDF -->
 
       <a
         class="modal-pdf"
@@ -1216,10 +1842,14 @@
         target="_blank"
         rel="noopener noreferrer"
       >
+
         Open PDF ↗
+
       </a>
 
+
     </div>
+
 
   </dialog>
 
@@ -1232,6 +1862,7 @@
     src="./script.js"
     defer
   ></script>
+
 
 </body>
 
