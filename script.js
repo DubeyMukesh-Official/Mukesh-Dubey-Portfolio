@@ -1,7 +1,6 @@
 /* =========================================================
    MUKESH DUBEY PORTFOLIO
    MAIN JAVASCRIPT
-   UPDATED VERSION
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadingScreen = document.querySelector(".loading-screen");
 
-  const hideLoadingScreen = () => {
+  function hideLoadingScreen() {
     if (!loadingScreen) return;
 
     loadingScreen.classList.add("is-hidden");
@@ -20,11 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       loadingScreen.style.display = "none";
     }, 700);
-  };
+  }
 
   window.addEventListener("load", hideLoadingScreen);
 
-  /* Safety fallback */
   setTimeout(hideLoadingScreen, 1800);
 
 
@@ -56,10 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "nav-open",
         !isOpen
       );
+
     });
 
-
-    /* Close mobile navigation after clicking a link */
 
     siteNav.querySelectorAll("a").forEach((link) => {
 
@@ -73,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         siteNav.classList.remove("is-open");
 
         document.body.classList.remove("nav-open");
+
       });
 
     });
@@ -86,25 +84,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const header = document.querySelector("#site-header");
 
-  if (header) {
+  function updateHeader() {
 
-    const updateHeader = () => {
+    if (!header) return;
 
-      header.classList.toggle(
-        "is-scrolled",
-        window.scrollY > 30
-      );
+    if (window.scrollY > 30) {
 
-    };
+      header.classList.add("is-scrolled");
 
-    window.addEventListener(
-      "scroll",
-      updateHeader,
-      { passive: true }
-    );
+    } else {
 
-    updateHeader();
+      header.classList.remove("is-scrolled");
+
+    }
+
   }
+
+  window.addEventListener(
+    "scroll",
+    updateHeader,
+    { passive: true }
+  );
+
+  updateHeader();
 
 
   /* =======================================================
@@ -117,7 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       link.addEventListener("click", (event) => {
 
-        const targetId = link.getAttribute("href");
+        const targetId =
+          link.getAttribute("href");
 
         if (
           !targetId ||
@@ -126,12 +129,17 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        let target = null;
+        let target;
 
         try {
-          target = document.querySelector(targetId);
+
+          target =
+            document.querySelector(targetId);
+
         } catch (error) {
+
           return;
+
         }
 
         if (!target) return;
@@ -150,25 +158,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =======================================================
      PROJECT DATA
-     =======================================================
-
-     LIVE DEMOS AVAILABLE FOR:
-
-     01 - Blog Application
-     02 - Shoe Mart
-     03 - Hotel Booking - NO LIVE DEMO
-     04 - RideX
-     05 - Women Safety
-     06 - User Management
-
      ======================================================= */
 
   const projects = {
-
-    /* =====================================================
-       PROJECT 01
-       BLOG APPLICATION
-       ===================================================== */
 
     blog: {
 
@@ -204,11 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
-    /* =====================================================
-       PROJECT 02
-       SHOE MART
-       ===================================================== */
-
     shoe: {
 
       number: "02",
@@ -242,12 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     },
 
-
-    /* =====================================================
-       PROJECT 03
-       HOTEL BOOKING
-       NO LIVE DEMO
-       ===================================================== */
 
     hotel: {
 
@@ -283,11 +264,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
-    /* =====================================================
-       PROJECT 04
-       RIDEX
-       ===================================================== */
-
     ridex: {
 
       number: "04",
@@ -322,11 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
-    /* =====================================================
-       PROJECT 05
-       WOMEN SAFETY
-       ===================================================== */
-
     safety: {
 
       number: "05",
@@ -360,11 +331,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     },
 
-
-    /* =====================================================
-       PROJECT 06
-       USER MANAGEMENT
-       ===================================================== */
 
     userManagement: {
 
@@ -444,117 +410,64 @@ document.addEventListener("DOMContentLoaded", () => {
      UPDATE PROJECT
      ======================================================= */
 
-  const updateProject = (projectKey) => {
+  function updateProject(projectKey) {
 
-    const project = projects[projectKey];
+    const project =
+      projects[projectKey];
 
     if (!project) {
+
       console.warn(
         "Project not found:",
         projectKey
       );
+
       return;
+
     }
 
 
-    /* -----------------------------------------------------
-       ACTIVE TAB
-       ----------------------------------------------------- */
+    /* Active tab */
 
     projectTabs.forEach((tab) => {
 
-      const active =
+      const isActive =
         tab.dataset.project === projectKey;
 
       tab.classList.toggle(
         "is-active",
-        active
+        isActive
       );
 
       tab.setAttribute(
         "aria-selected",
-        String(active)
+        String(isActive)
       );
 
     });
 
 
-    /* -----------------------------------------------------
-       TYPE
-       ----------------------------------------------------- */
+    /* Type */
 
     if (displayType) {
+
       displayType.textContent =
         project.type;
+
     }
 
 
-    /* -----------------------------------------------------
-       CASE NUMBER
-       ----------------------------------------------------- */
+    /* Code */
 
     if (displayCode) {
+
       displayCode.textContent =
         project.code;
-    }
-
-
-    /* -----------------------------------------------------
-       OVERLINE
-       ----------------------------------------------------- */
-
-    if (projectOverline) {
-      projectOverline.textContent =
-        project.overline;
-    }
-
-
-    /* -----------------------------------------------------
-       TITLE
-       ----------------------------------------------------- */
-
-    if (projectTitle) {
-      projectTitle.textContent =
-        project.title;
-    }
-
-
-    /* -----------------------------------------------------
-       DESCRIPTION
-       ----------------------------------------------------- */
-
-    if (projectDescription) {
-      projectDescription.textContent =
-        project.description;
-    }
-
-
-    /* -----------------------------------------------------
-       TAGS
-       ----------------------------------------------------- */
-
-    if (projectTags) {
-
-      projectTags.innerHTML = "";
-
-      project.tags.forEach((tag) => {
-
-        const li =
-          document.createElement("li");
-
-        li.textContent =
-          tag;
-
-        projectTags.appendChild(li);
-
-      });
 
     }
 
 
-    /* -----------------------------------------------------
-       PROJECT VISUAL
-       ----------------------------------------------------- */
+    /* Visual */
 
     if (projectVisual) {
 
@@ -565,22 +478,61 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -----------------------------------------------------
-       LIVE PROJECT
-       ----------------------------------------------------- */
+    /* Overline */
+
+    if (projectOverline) {
+
+      projectOverline.textContent =
+        project.overline;
+
+    }
+
+
+    /* Title */
+
+    if (projectTitle) {
+
+      projectTitle.textContent =
+        project.title;
+
+    }
+
+
+    /* Description */
+
+    if (projectDescription) {
+
+      projectDescription.textContent =
+        project.description;
+
+    }
+
+
+    /* Tags */
+
+    if (projectTags) {
+
+      projectTags.innerHTML = "";
+
+      project.tags.forEach((tag) => {
+
+        const li =
+          document.createElement("li");
+
+        li.textContent = tag;
+
+        projectTags.appendChild(li);
+
+      });
+
+    }
+
+
+    /* Live link */
 
     if (liveLink) {
 
-      /*
-       * Projects with a valid live URL
-       * will show the Live Project button.
-       */
-
-      if (
-        project.live &&
-        project.live.trim() !== "" &&
-        project.live !== "#"
-      ) {
+      if (project.live) {
 
         liveLink.href =
           project.live;
@@ -588,33 +540,15 @@ document.addEventListener("DOMContentLoaded", () => {
         liveLink.style.display =
           "inline-flex";
 
-        liveLink.setAttribute(
-          "target",
-          "_blank"
-        );
-
-        liveLink.setAttribute(
-          "rel",
-          "noopener noreferrer"
-        );
-
-        liveLink.setAttribute(
-          "aria-label",
-          `Open live demo of ${project.title}`
+        liveLink.removeAttribute(
+          "aria-disabled"
         );
 
       } else {
 
-        /*
-         * Hotel Booking has no live URL,
-         * therefore hide the button.
-         */
-
-        liveLink.removeAttribute("href");
-
-        liveLink.removeAttribute("target");
-
-        liveLink.removeAttribute("rel");
+        liveLink.removeAttribute(
+          "href"
+        );
 
         liveLink.style.display =
           "none";
@@ -624,50 +558,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -----------------------------------------------------
-       GITHUB
-       ----------------------------------------------------- */
+    /* GitHub */
 
     if (sourceLink) {
 
-      if (
-        project.github &&
-        project.github !== "#"
-      ) {
-
-        sourceLink.href =
-          project.github;
-
-        sourceLink.style.display =
-          "inline-flex";
-
-        sourceLink.setAttribute(
-          "target",
-          "_blank"
-        );
-
-        sourceLink.setAttribute(
-          "rel",
-          "noopener noreferrer"
-        );
-
-      } else {
-
-        sourceLink.removeAttribute(
-          "href"
-        );
-
-        sourceLink.style.display =
-          "none";
-
-      }
+      sourceLink.href =
+        project.github;
 
     }
 
 
-    /* -----------------------------------------------------
-       PROJECT COUNTER
-       ----------------------------------------------------- */
+    /* Counter */
 
     if (currentProject) {
 
@@ -676,7 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-  };
+  }
 
 
   /* =======================================================
@@ -685,24 +586,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   projectTabs.forEach((tab) => {
 
-    tab.addEventListener(
-      "click",
-      () => {
+    tab.addEventListener("click", () => {
 
-        const projectKey =
-          tab.dataset.project;
+      const projectKey =
+        tab.dataset.project;
 
-        updateProject(projectKey);
+      updateProject(projectKey);
 
-      }
-    );
+    });
 
   });
 
 
-  /* First project */
+  /* =======================================================
+     INITIAL PROJECT
+     ======================================================= */
 
-  updateProject("blog");
+  const activeProject =
+    document.querySelector(
+      ".project-tab.is-active"
+    );
+
+  if (activeProject) {
+
+    updateProject(
+      activeProject.dataset.project
+    );
+
+  } else if (projectTabs.length > 0) {
+
+    updateProject(
+      projectTabs[0].dataset.project
+    );
+
+  }
 
 
   /* =======================================================
@@ -712,6 +629,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal =
     document.querySelector(
       ".certificate-modal"
+    );
+
+  const modalClose =
+    document.querySelector(
+      ".modal-close"
     );
 
   const modalTitle =
@@ -739,91 +661,45 @@ document.addEventListener("DOMContentLoaded", () => {
       ".modal-pdf"
     );
 
-  const modalClose =
-    document.querySelector(
-      ".modal-close"
-    );
-
 
   /* =======================================================
-     CERTIFICATE FILE ALIASES
+     RESET CERTIFICATE MODAL
      ======================================================= */
 
-  const certificateFileAliases = {
-
-    "refactoring-microservices-ai.pdf":
-      "./assets/certificates/ibm-microservices-ai.pdf",
-
-    "sql-relational-databases-101.pdf":
-      "./assets/certificates/ibm-sql-databases.pdf"
-
-  };
-
-
-  /* =======================================================
-     RESOLVE CERTIFICATE PATH
-     ======================================================= */
-
-  const resolveCertificatePath = (path) => {
-
-    if (!path) return "";
-
-    const cleanPath =
-      path.split("?")[0];
-
-    const filename =
-      cleanPath.substring(
-        cleanPath.lastIndexOf("/") + 1
-      );
-
-    if (
-      certificateFileAliases[filename]
-    ) {
-
-      return certificateFileAliases[
-        filename
-      ];
-
-    }
-
-    return path;
-  };
-
-
-  /* =======================================================
-     RESET MODAL
-     ======================================================= */
-
-  const resetModal = () => {
+  function resetCertificateModal() {
 
     if (modalImage) {
 
-      modalImage.removeAttribute("src");
-
-      modalImage.removeAttribute("alt");
-
       modalImage.style.display =
         "none";
+
+      modalImage.removeAttribute(
+        "src"
+      );
 
     }
 
 
     if (modalPdfViewer) {
 
-      modalPdfViewer.removeAttribute("src");
-
       modalPdfViewer.style.display =
         "none";
+
+      modalPdfViewer.removeAttribute(
+        "src"
+      );
 
     }
 
 
     if (modalPdf) {
 
-      modalPdf.removeAttribute("href");
-
       modalPdf.style.display =
         "none";
+
+      modalPdf.removeAttribute(
+        "href"
+      );
 
     }
 
@@ -835,25 +711,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-  };
+  }
+
+
+  /* =======================================================
+     RESOLVE CERTIFICATE PATH
+     ======================================================= */
+
+  function resolveCertificatePath(path) {
+
+    if (!path) {
+      return "";
+    }
+
+    /*
+      This is important.
+
+      Your certificate path is:
+
+      ./assets/certificates/
+      itvedant-java-full-stack-web-development.pdf
+
+      We resolve it relative to the actual portfolio page.
+    */
+
+    try {
+
+      return new URL(
+        path,
+        window.location.href
+      ).href;
+
+    } catch (error) {
+
+      console.error(
+        "Invalid certificate path:",
+        path
+      );
+
+      return path;
+
+    }
+
+  }
 
 
   /* =======================================================
      SHOW PLACEHOLDER
      ======================================================= */
 
-  const showPlaceholder = (
+  function showPlaceholder(
     message = "Credential preview unavailable"
-  ) => {
+  ) {
 
-    if (!modalPlaceholder) return;
+    if (!modalPlaceholder) {
+      return;
+    }
 
-    const placeholderText =
+    const text =
       modalPlaceholder.querySelector("b");
 
-    if (placeholderText) {
+    if (text) {
 
-      placeholderText.textContent =
+      text.textContent =
         message;
 
     }
@@ -861,42 +781,64 @@ document.addEventListener("DOMContentLoaded", () => {
     modalPlaceholder.style.display =
       "flex";
 
-  };
+  }
 
 
   /* =======================================================
      SHOW PDF
      ======================================================= */
 
-  const showPDF = (pdfPath) => {
+  function showPDF(pdfPath) {
 
     if (!pdfPath) {
 
-      showPlaceholder();
+      showPlaceholder(
+        "Certificate PDF path is missing."
+      );
 
       return;
 
     }
 
-    const resolvedPath =
-      resolveCertificatePath(pdfPath);
 
+    const pdfUrl =
+      resolveCertificatePath(
+        pdfPath
+      );
+
+
+    console.log(
+      "Opening certificate:",
+      pdfUrl
+    );
+
+
+    /* -------------------------------------------------------
+       PDF IFRAME
+       ------------------------------------------------------- */
 
     if (modalPdfViewer) {
-
-      modalPdfViewer.src =
-        resolvedPath;
 
       modalPdfViewer.style.display =
         "block";
 
+      modalPdfViewer.src =
+        pdfUrl;
+
     }
 
 
+    /* -------------------------------------------------------
+       OPEN PDF BUTTON
+       ------------------------------------------------------- */
+
     if (modalPdf) {
 
+      modalPdf.style.display =
+        "inline-flex";
+
       modalPdf.href =
-        resolvedPath;
+        pdfUrl;
 
       modalPdf.target =
         "_blank";
@@ -904,22 +846,19 @@ document.addEventListener("DOMContentLoaded", () => {
       modalPdf.rel =
         "noopener noreferrer";
 
-      modalPdf.style.display =
-        "inline-flex";
-
     }
 
-  };
+  }
 
 
   /* =======================================================
      SHOW IMAGE
      ======================================================= */
 
-  const showImage = (
+  function showImage(
     imagePath,
     title
-  ) => {
+  ) {
 
     if (
       !modalImage ||
@@ -931,6 +870,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
 
     }
+
 
     modalImage.src =
       imagePath;
@@ -944,37 +884,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modalImage.onerror = () => {
 
-      console.error(
-        "Certificate image not found:",
-        imagePath
-      );
-
       modalImage.style.display =
         "none";
 
       showPlaceholder(
-        "Certificate image could not be loaded"
+        "Certificate image could not be loaded."
       );
 
     };
 
-  };
+  }
 
 
   /* =======================================================
-     OPEN CREDENTIAL
+     OPEN CERTIFICATE
      ======================================================= */
 
-  const openCredential = (card) => {
+  function openCertificate(card) {
 
-    if (!modal || !card) return;
+    if (
+      !modal ||
+      !card
+    ) {
+      return;
+    }
 
-    resetModal();
+
+    resetCertificateModal();
 
 
     const title =
       card.dataset.title ||
       "Certificate";
+
+
+    const image =
+      card.dataset.image;
+
+
+    const pdf =
+      card.dataset.pdf;
 
 
     if (modalTitle) {
@@ -985,12 +934,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    const image =
-      card.dataset.image;
-
-    const pdf =
-      card.dataset.pdf;
-
+    /* Image certificate */
 
     if (image) {
 
@@ -999,16 +943,28 @@ document.addEventListener("DOMContentLoaded", () => {
         title
       );
 
-    } else if (pdf) {
+    }
+
+
+    /* PDF certificate */
+
+    else if (pdf) {
 
       showPDF(pdf);
 
-    } else {
+    }
+
+
+    /* No certificate */
+
+    else {
 
       showPlaceholder();
 
     }
 
+
+    /* Open modal */
 
     if (
       typeof modal.showModal ===
@@ -1031,11 +987,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "modal-open"
     );
 
-  };
+  }
 
 
   /* =======================================================
-     CREDENTIAL CARDS
+     CERTIFICATE CARDS
      ======================================================= */
 
   const credentialCards =
@@ -1050,7 +1006,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "click",
       () => {
 
-        openCredential(card);
+        openCertificate(card);
 
       }
     );
@@ -1059,12 +1015,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     CLOSE MODAL
+     CLOSE CERTIFICATE MODAL
      ======================================================= */
 
-  const closeModal = () => {
+  function closeCertificateModal() {
 
-    if (!modal) return;
+    if (!modal) {
+      return;
+    }
 
 
     if (
@@ -1073,7 +1031,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
 
       if (modal.open) {
+
         modal.close();
+
       }
 
     } else {
@@ -1085,29 +1045,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    resetModal();
+    resetCertificateModal();
+
 
     document.body.classList.remove(
       "modal-open"
-    );
-
-  };
-
-
-  /* Close button */
-
-  if (modalClose) {
-
-    modalClose.addEventListener(
-      "click",
-      closeModal
     );
 
   }
 
 
   /* =======================================================
-     CLICK OUTSIDE MODAL
+     CLOSE BUTTON
+     ======================================================= */
+
+  if (modalClose) {
+
+    modalClose.addEventListener(
+      "click",
+      closeCertificateModal
+    );
+
+  }
+
+
+  /* =======================================================
+     CLOSE WHEN CLICKING OUTSIDE
      ======================================================= */
 
   if (modal) {
@@ -1121,23 +1084,25 @@ document.addEventListener("DOMContentLoaded", () => {
             ".modal-inner"
           );
 
-        if (!modalInner) return;
+        if (!modalInner) {
+          return;
+        }
 
 
         const rect =
           modalInner.getBoundingClientRect();
 
 
-        const clickedOutside =
+        const outside =
           event.clientX < rect.left ||
           event.clientX > rect.right ||
           event.clientY < rect.top ||
           event.clientY > rect.bottom;
 
 
-        if (clickedOutside) {
+        if (outside) {
 
-          closeModal();
+          closeCertificateModal();
 
         }
 
@@ -1157,7 +1122,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "close",
       () => {
 
-        resetModal();
+        resetCertificateModal();
 
         document.body.classList.remove(
           "modal-open"
@@ -1170,7 +1135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     ESCAPE KEY
+     ESC KEY
      ======================================================= */
 
   document.addEventListener(
@@ -1183,7 +1148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.open
       ) {
 
-        closeModal();
+        closeCertificateModal();
 
       }
 
@@ -1200,8 +1165,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ".theme-switch"
     );
 
-  let savedTheme = null;
 
+  let savedTheme = null;
 
   try {
 
@@ -1217,7 +1182,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  if (savedTheme === "light") {
+  if (
+    savedTheme ===
+    "light"
+  ) {
 
     document.body.classList.add(
       "light-theme"
@@ -1237,7 +1205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        const isLight =
+        const lightMode =
           document.body.classList.contains(
             "light-theme"
           );
@@ -1247,14 +1215,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
           localStorage.setItem(
             "portfolio-theme",
-            isLight
+            lightMode
               ? "light"
               : "dark"
           );
 
         } catch (error) {
 
-          /* Ignore localStorage errors */
+          console.warn(
+            "Unable to save theme preference."
+          );
 
         }
 
@@ -1274,7 +1244,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-  if ("IntersectionObserver" in window) {
+  if (
+    "IntersectionObserver" in window
+  ) {
 
     const observer =
       new IntersectionObserver(
@@ -1282,7 +1254,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
           entries.forEach((entry) => {
 
-            if (entry.isIntersecting) {
+            if (
+              entry.isIntersecting
+            ) {
 
               entry.target.classList.add(
                 "is-visible"
@@ -1303,21 +1277,27 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
 
-    revealElements.forEach((element) => {
+    revealElements.forEach(
+      (element) => {
 
-      observer.observe(element);
+        observer.observe(
+          element
+        );
 
-    });
+      }
+    );
 
   } else {
 
-    revealElements.forEach((element) => {
+    revealElements.forEach(
+      (element) => {
 
-      element.classList.add(
-        "is-visible"
-      );
+        element.classList.add(
+          "is-visible"
+        );
 
-    });
+      }
+    );
 
   }
 
@@ -1382,11 +1362,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     PREVENT DEAD LINKS
+     PREVENT EMPTY LINKS
      ======================================================= */
 
   document
-    .querySelectorAll('a[href="#"]')
+    .querySelectorAll(
+      'a[href="#"]'
+    )
     .forEach((link) => {
 
       link.addEventListener(
@@ -1402,42 +1384,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     DEBUG INFORMATION
+     DEBUG
      ======================================================= */
 
   console.log(
-    "--------------------------------------"
+    "Mukesh Dubey Portfolio loaded successfully."
   );
 
   console.log(
-    "Mukesh Dubey Portfolio loaded."
-  );
-
-  console.log(
-    "Projects available:",
+    "Projects:",
     Object.keys(projects).length
   );
 
   console.log(
-    "Live demo projects:",
-    Object.entries(projects)
-      .filter(
-        ([, project]) =>
-          project.live &&
-          project.live !== "#"
-      )
-      .map(
-        ([key]) => key
-      )
-  );
-
-  console.log(
-    "Credential cards found:",
+    "Credential cards:",
     credentialCards.length
   );
 
   console.log(
-    "--------------------------------------"
+    "Certificate PDF support: enabled"
   );
 
 });
