@@ -1,1784 +1,917 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mukesh Dubey — Full Stack Developer skilled in React.js, Node.js, Spring Boot, Java, SQL Server, and MySQL. Experienced in client software delivery and production systems." />
+  <meta name="author" content="Mukesh Dubey" />
+  <title>Mukesh Dubey — Full Stack Developer | React.js · Node.js · Spring Boot · SQL Server</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <meta
-    name="description"
-    content="Mukesh Dubey — Full Stack Java Developer and React.js Developer portfolio."
-  />
-
-  <meta
-    name="keywords"
-    content="Mukesh Dubey, React Developer, Java Developer, Spring Boot Developer, Full Stack Developer, Mumbai"
-  />
-
-  <meta
-    name="author"
-    content="Mukesh Dubey"
-  />
-
-  <title>Mukesh Dubey — Full Stack Java Developer</title>
-
-
-  <!-- =====================================================
-       GOOGLE FONTS
-       ===================================================== -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-  />
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
-    rel="stylesheet"
-  />
-
-
-  <!-- =====================================================
-       MOTION CSS
-       ===================================================== -->
-
-  <link
-    rel="stylesheet"
-    href="./motion.css"
-  />
-
-
-  <!-- =====================================================
-       MAIN CSS
-       ===================================================== -->
-
-  <link
-    rel="stylesheet"
-    href="./styles.css"
-  />
-
-
-  <!-- =====================================================
-       VISIBILITY SAFETY
-       ===================================================== -->
-
-  <style>
-
-    .reveal {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: none !important;
-    }
-
-    .statement,
-    .project-section,
-    .stack-section,
-    .process-section,
-    .credentials,
-    .contact,
-    .footer {
-      visibility: visible;
-    }
-
-  </style>
-
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-
 
 <body>
 
-
-  <!-- =====================================================
-       LOADING SCREEN
-       ===================================================== -->
-
-  <div
-    class="loading-screen"
-    aria-label="Loading portfolio"
-  >
-
-    <i></i>
-
-    <span>
-      LOADING PORTFOLIO
-    </span>
-
-    <i></i>
-
-  </div>
-
-
-  <!-- =====================================================
-       VISUAL EFFECTS
-       ===================================================== -->
-
-  <div
-    class="noise"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="cursor-glow"
-    aria-hidden="true"
-  ></div>
-
-
-  <!-- =====================================================
-       NAVIGATION
-       ===================================================== -->
-
-  <header
-    class="topbar section-pad"
-    id="site-header"
-  >
-
-    <!-- WORDMARK -->
-
-    <a
-      href="#top"
-      class="wordmark"
-      aria-label="Mukesh Dubey home"
-    >
-
-      <span>
-        MUKESH
-      </span>
-
-      <i aria-hidden="true"></i>
-
-    </a>
-
-
-    <!-- AVAILABILITY -->
-
-    <div
-      class="topbar-status"
-      aria-label="Current availability"
-    >
-
-      <b aria-hidden="true"></b>
-
-      <span>
-        Available for opportunities
-      </span>
-
-    </div>
-
-
-    <!-- MOBILE MENU -->
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="site-navigation"
-    >
-
-      <span
-        class="menu-icon"
-        aria-hidden="true"
-      >
-
-        <i></i>
-        <i></i>
-
-      </span>
-
-      <span class="menu-text">
-        MENU
-      </span>
-
-    </button>
-
-
-    <!-- NAVIGATION -->
-
-    <nav
-      class="site-nav"
-      id="site-navigation"
-      aria-label="Primary navigation"
-    >
-
-      <div class="nav-links">
-
-        <a href="#about">
-          <span>01</span>
-          About
-        </a>
-
-        <a href="#projects">
-          <span>02</span>
-          Projects
-        </a>
-
-        <a href="#skills">
-          <span>03</span>
-          Skills
-        </a>
-
-        <a href="#credentials">
-          <span>04</span>
-          Credentials
-        </a>
-
-        <a href="#contact">
-          <span>05</span>
-          Contact
-        </a>
-
-      </div>
-
-
-      <!-- RESUME -->
-
-      <a
-        class="nav-resume"
-        href="./assets/resume/Mukesh_Dubey_Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <span class="resume-label">
-          Resume
-        </span>
-
-        <span class="resume-arrow">
-          ↗
-        </span>
-
+  <!-- =========================================================================
+       FLOATING HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Main Navigation">
+      <a href="#home" class="brand-link" aria-label="Mukesh Dubey Home">
+        <span class="brand-dot"></span>
+        <span>Mukesh Dubey</span>
       </a>
 
-    </nav>
+      <div class="nav-links-desktop">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
 
+      <a href="./assets/resume/Mukesh_Dubey_Resume.pdf" class="nav-cta-btn" target="_blank" rel="noopener noreferrer">
+        Resume PDF ↗
+      </a>
+
+      <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+        ☰
+      </button>
+    </nav>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact">Contact</a>
+    <a href="./assets/resume/Mukesh_Dubey_Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
+  </div>
 
-  <!-- =====================================================
-       MAIN
-       ===================================================== -->
-
-  <main id="top">
-
-
-    <!-- ===================================================
-         HERO
-         =================================================== -->
-
-    <section class="hero section-pad">
-
-      <div class="hero-meta">
-
-        <span>
-          Portfolio / 2026
-        </span>
-
-        <span>
-          Mumbai, India
-        </span>
-
-      </div>
-
-
-      <div class="hero-main">
-
-        <div class="hero-copy-stack">
-
-          <p class="hero-kicker">
-            FULL STACK JAVA DEVELOPER
-          </p>
-
-          <div class="role-chip">
-            REACT.JS · JAVA · SPRING BOOT
-          </div>
-
-          <h1>
-            Building
-            <em>digital</em><br />
-            experiences.
-          </h1>
-
+  <main>
+    <!-- =======================================================================
+         HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        
+        <!-- Live Status Pill -->
+        <div class="hero-status-pill">
+          <span class="status-pulse-dot"></span>
+          <span>AVAILABLE FOR FULL STACK &amp; SOFTWARE ENGINEER ROLES</span>
         </div>
 
-
-        <div class="hero-bottom">
-
-          <p>
-            I'm
-            <strong>Mukesh Dubey</strong>,
-            a B.Sc. IT graduate and aspiring Full Stack Developer
-            focused on building responsive web applications using
-            React.js, Java, Spring Boot, REST APIs and MySQL.
-          </p>
-
-
-          <a
-            class="primary-cta"
-            href="#projects"
-          >
-
-            EXPLORE MY WORK
-
-            <span>
-              ↘
-            </span>
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- ORBIT -->
-
-      <div
-        class="orbit-scene"
-        aria-hidden="true"
-      >
-
-        <div class="core">
-          &lt;/&gt;
-        </div>
-
-        <div class="orbit"></div>
-
-        <div class="orbit orbit-two"></div>
-
-        <span class="orbit-label java">
-          JAVA
-        </span>
-
-        <span class="orbit-label react">
-          REACT
-        </span>
-
-        <span class="orbit-label api">
-          REST API
-        </span>
-
-        <span class="orbit-label sql">
-          MYSQL
-        </span>
-
-      </div>
-
-
-      <!-- RESUME STRIP -->
-
-      <a
-        class="resume-strip"
-        href="./assets/resume/Mukesh_Dubey_Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <span>
-          01
-        </span>
-
-        <strong>
-          View / Download Resume
-        </strong>
-
-        <i>
-          ↗
-        </i>
-
-      </a>
-
-    </section>
-
-
-    <!-- ===================================================
-         ABOUT
-         =================================================== -->
-
-    <section
-      class="statement section-pad reveal"
-      id="about"
-    >
-
-      <p class="section-label">
-        01 <span>/</span> ABOUT
-      </p>
-
-
-      <div class="statement-content">
-
-        <h2>
-          I create
-          <em>clean, responsive</em>
-          web experiences with
-          practical engineering.
-        </h2>
-
-
-        <div class="bio">
-
-          <p>
-            I enjoy turning ideas into functional web applications.
-            My development experience includes frontend development
-            with React.js and backend development using Java,
-            Spring Boot, REST APIs and MySQL.
-          </p>
-
-
-          <p>
-            As a fresher, I'm focused on learning quickly, writing
-            maintainable code and contributing to real-world
-            development teams.
-          </p>
-
-
-          <a
-            class="text-arrow"
-            href="#contact"
-          >
-
-            Let's work together
-
-            <span>
-              ↗
-            </span>
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- FACTS -->
-
-      <div class="fact-row">
-
-        <article>
-
-          <strong>
-            2025
-          </strong>
-
-          <span>
-            B.Sc. IT Graduate
-          </span>
-
-        </article>
-
-
-        <article>
-
-          <strong>
-            6
-          </strong>
-
-          <span>
-            Major Projects
-          </span>
-
-        </article>
-
-
-        <article>
-
-          <strong>
-            Java
-          </strong>
-
-          <span>
-            Backend Development
-          </span>
-
-        </article>
-
-
-        <article>
-
-          <strong>
-            React
-          </strong>
-
-          <span>
-            Frontend Development
-          </span>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         PROJECTS
-         =================================================== -->
-
-    <section
-      class="project-section"
-      id="projects"
-    >
-
-
-      <div class="section-heading reveal">
-
-        <p class="section-label">
-          02 <span>/</span> SELECTED WORK
+        <!-- Headline -->
+        <h1 class="hero-headline">
+          I build <em>reliable, scalable</em><br />web applications &amp; systems.
+        </h1>
+
+        <!-- Executive Summary Bio -->
+        <p class="hero-bio" id="about">
+          Hi, I'm <strong>Mukesh Dubey</strong> — a Full Stack Developer skilled in <strong>React.js</strong>, <strong>Node.js</strong>, <strong>Spring Boot</strong>, <strong>Java</strong>, <strong>SQL Server</strong>, and <strong>MySQL</strong>. Experienced in software testing, production client system deployment, digital billing solutions, and secure RESTful architectures.
         </p>
 
-        <p>
-          Projects / Applications / Experiments
-        </p>
-
-      </div>
-
-
-      <div class="project-console reveal">
-
-
-        <!-- =================================================
-             PROJECT TABS
-             ================================================= -->
-
-        <div
-          class="project-tabs"
-          role="tablist"
-          aria-label="Projects"
-        >
-
-
-          <!-- PROJECT 01 -->
-
-          <button
-            class="project-tab is-active"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            data-project="blog"
-          >
-
-            <span>
-              01
-            </span>
-
-            Blog Application
-
-          </button>
-
-
-          <!-- PROJECT 02 -->
-
-          <button
-            class="project-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-project="shoe"
-          >
-
-            <span>
-              02
-            </span>
-
-            Shoe Mart
-
-          </button>
-
-
-          <!-- PROJECT 03 -->
-
-          <button
-            class="project-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-project="hotel"
-          >
-
-            <span>
-              03
-            </span>
-
-            Hotel Booking
-
-          </button>
-
-
-          <!-- PROJECT 04 -->
-
-          <button
-            class="project-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-project="ridex"
-          >
-
-            <span>
-              04
-            </span>
-
-            RideX
-
-          </button>
-
-
-          <!-- PROJECT 05 -->
-
-          <button
-            class="project-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-project="safety"
-          >
-
-            <span>
-              05
-            </span>
-
-            Women Safety
-
-          </button>
-
-
-          <!-- PROJECT 06 -->
-
-          <button
-            class="project-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-project="userManagement"
-          >
-
-            <span>
-              06
-            </span>
-
-            User Management
-
-          </button>
-
+        <!-- Tech Stack Pills -->
+        <div class="hero-tech-stack-row">
+          <span class="tech-pill highlight">React.js</span>
+          <span class="tech-pill highlight">Node.js</span>
+          <span class="tech-pill highlight">Spring Boot</span>
+          <span class="tech-pill highlight">Core Java</span>
+          <span class="tech-pill highlight">SQL Server</span>
+          <span class="tech-pill highlight">MySQL</span>
+          <span class="tech-pill">REST APIs</span>
+          <span class="tech-pill">JWT &amp; RBAC</span>
+          <span class="tech-pill">Razorpay</span>
+          <span class="tech-pill">Selenium</span>
+          <span class="tech-pill">Git</span>
         </div>
 
+        <!-- Call to Actions -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-primary-glow">
+            Explore Featured Projects ↓
+          </a>
+          <a href="./assets/resume/Mukesh_Dubey_Resume.pdf" class="btn-glass-secondary" target="_blank" rel="noopener noreferrer">
+            Download Resume (PDF) ↗
+          </a>
+          <a href="#contact" class="btn-glass-secondary">
+            Get in Touch ✉
+          </a>
+        </div>
 
-        <!-- =================================================
-             PROJECT DISPLAY
-             ================================================= -->
-
-        <div class="project-display">
-
-
-          <!-- TOP -->
-
-          <div class="project-display-top">
-
-            <span class="display-type">
-              CONTENT EXPERIENCE
-            </span>
-
-            <span class="display-code">
-              CASE / 01
-            </span>
-
+        <!-- Bento Stats Row -->
+        <div class="hero-bento-stats">
+          <div class="bento-stat-card">
+            <div class="bento-num cyan">3 Months</div>
+            <div class="bento-label">Software Developer Intern at RSWebtechsoft</div>
           </div>
-
-
-          <!-- =================================================
-               PROJECT VISUAL
-               ================================================= -->
-
-          <div
-            class="project-visual blog-visual"
-            aria-hidden="true"
-          >
-
-            <b>
-              READ
-            </b>
-
-            <i></i>
-            <i></i>
-            <i></i>
-
+          <div class="bento-stat-card">
+            <div class="bento-num amber">Client Project</div>
+            <div class="bento-label">Swastik Car Zone Production Billing System</div>
           </div>
+          <div class="bento-stat-card">
+            <div class="bento-num emerald">8.22 CGPA</div>
+            <div class="bento-label">B.Sc. Information Technology (KES College)</div>
+          </div>
+          <div class="bento-stat-card">
+            <div class="bento-num indigo">Full Stack</div>
+            <div class="bento-label">IT Vedant Master Certified &amp; IBM Network</div>
+          </div>
+        </div>
 
+      </div>
+    </section>
 
-          <!-- =================================================
-               PROJECT COPY
-               ================================================= -->
+    <!-- =======================================================================
+         WORK EXPERIENCE & INTERNSHIPS
+         ======================================================================= -->
+    <section class="experience-section section-pad" id="experience">
+      <div class="container">
+        
+        <div class="section-label">01 / WORK EXPERIENCE</div>
+        <h2 class="section-heading-title">Production Engineering &amp; Client Software Delivery.</h2>
+        <p class="section-subtext">
+          Hands-on industry experience troubleshooting, configuring systems, developing client-facing applications, and deploying solutions in production.
+        </p>
 
-          <div class="project-copy">
-
-
-            <p class="project-overline">
-              React.js · REST API · React Router
-            </p>
-
-
-            <h3>
-              Blog Application
-            </h3>
-
-
-            <p class="project-description">
-              A responsive blog application that renders REST API
-              content through reusable React components and gives
-              readers a clear, simple way to explore posts.
-            </p>
-
-
-            <!-- TAGS -->
-
-            <ul class="project-tags">
-
-              <li>
-                React.js
-              </li>
-
-              <li>
-                REST API
-              </li>
-
-              <li>
-                Responsive UI
-              </li>
-
-            </ul>
-
-
-            <!-- =================================================
-                 PROJECT ACTIONS
-                 ================================================= -->
-
-            <div class="project-actions">
-
-
-              <!-- LIVE DEMO -->
-
-              <a
-                class="live-link"
-                data-live-link
-                href="https://blog-lyart-alpha-17.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                <span>
-                  Open Live Project
-                </span>
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-
-              <!-- GITHUB -->
-
-              <a
-                class="source-link"
-                href="https://github.com/DubeyMukesh-Official"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                GitHub Profile
-
-              </a>
-
+        <div style="margin-top: 40px;">
+          <div class="experience-card-executive">
+            
+            <div class="exp-header-row">
+              <div class="exp-company-block">
+                <h3>RSWebtechsoft</h3>
+                <div class="exp-role-meta">
+                  <span class="exp-role-title">Software Developer Intern</span>
+                  <span class="exp-location-tag">• Bhayander (E), Mumbai</span>
+                </div>
+              </div>
+              <div class="exp-period-badge">
+                📅 1 Aug 2026 – 31 Oct 2026 (3 Months)
+              </div>
             </div>
 
+            <div class="exp-tags-row">
+              <span class="tech-pill highlight">React.js</span>
+              <span class="tech-pill highlight">Node.js</span>
+              <span class="tech-pill highlight">SQL Server</span>
+              <span class="tech-pill">Software Testing</span>
+              <span class="tech-pill">Client Deployment</span>
+              <span class="tech-pill">Client Communication</span>
+              <span class="tech-pill">Production Debugging</span>
+            </div>
+
+            <ul class="exp-bullet-list">
+              <li>
+                <strong>Testing &amp; Client Setup:</strong> Started by working on software testing, application setup, and deployment on client systems, while getting familiar with projects built using different technologies and frameworks.
+              </li>
+              <li>
+                <strong>Client Issue Resolution:</strong> Assisted with client-side issues by checking application errors, understanding the cause, fixing the issue where required, and setting up the updated application on the client's system.
+              </li>
+              <li>
+                <strong>Codebase &amp; Architecture:</strong> Worked with different projects and codebases to understand their functionality, application flow, and technology stack before taking up development work.
+              </li>
+              <li>
+                <strong>Client Project Delivery:</strong> Developed the <strong>Swastik Car Zone</strong> billing application based on client requirements, including the frontend, backend, database, forms, reports, validation, and other required features.
+              </li>
+              <li>
+                <strong>Testing &amp; Formal Handover:</strong> Tested the application thoroughly, fixed issues found during testing, and made changes based on client feedback before setting it up on the client's system and handing it over.
+              </li>
+            </ul>
+
+            <div class="client-spotlight-box">
+              <div class="info-col">
+                <b>Featured Deliverable: Swastik Car Zone Billing Application</b>
+                <p>Architected digital Quotation &amp; Order Booking forms, Customer Master autofill, and print-ready report generation.</p>
+              </div>
+              <a href="#swastik-project" class="spotlight-jump-btn">
+                Inspect Project Case ↓
+              </a>
+            </div>
 
           </div>
-
-
-          <!-- COUNTER -->
-
-          <div class="project-counter">
-
-            <span data-current-project>
-              01
-            </span>
-
-            / 06
-
-          </div>
-
-
         </div>
 
       </div>
-
     </section>
 
-
-    <!-- ===================================================
-         SKILLS
-         =================================================== -->
-
-    <section
-      class="stack-section section-pad reveal"
-      id="skills"
-    >
-
-      <p class="section-label">
-        03 <span>/</span> STACK
-      </p>
-
-
-      <div class="stack-grid">
-
-
-        <div class="stack-intro">
-
-          <p>
-            TOOLS / TECHNOLOGIES
-          </p>
-
-          <h2>
-            Technology is useful
-            when it solves the
-            right problem.
-          </h2>
-
-        </div>
-
-
-        <article class="skill-card">
-
-          <span>
-            01 / FRONTEND
-          </span>
-
-          <h3>
-            React.js
-          </h3>
-
-          <p>
-            React, JavaScript ES6+, HTML5, CSS3,
-            Bootstrap, React Router and responsive UI.
-          </p>
-
-        </article>
-
-
-        <article class="skill-card">
-
-          <span>
-            02 / BACKEND
-          </span>
-
-          <h3>
-            Java &amp; Spring Boot
-          </h3>
-
-          <p>
-            Core Java, OOP, Spring Boot, REST APIs,
-            JDBC, JPA and backend application development.
-          </p>
-
-        </article>
-
-
-        <article class="skill-card">
-
-          <span>
-            03 / DATABASE
-          </span>
-
-          <h3>
-            MySQL
-          </h3>
-
-          <p>
-            SQL queries, CRUD operations, relational
-            database design and application integration.
-          </p>
-
-        </article>
-
-
-        <article class="skill-card">
-
-          <span>
-            04 / TOOLS
-          </span>
-
-          <h3>
-            Git &amp; Development Tools
-          </h3>
-
-          <p>
-            Git, GitHub, Postman, VS Code, Eclipse,
-            Maven and API testing workflows.
-          </p>
-
-        </article>
-
-
-        <article class="skill-card">
-
-          <span>
-            05 / SECURITY
-          </span>
-
-          <h3>
-            Authentication
-          </h3>
-
-          <p>
-            JWT authentication, Spring Security,
-            BCrypt password encoding and protected APIs.
-          </p>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         PROCESS
-         =================================================== -->
-
-    <section
-      class="process-section section-pad reveal"
-    >
-
-      <p class="section-label">
-        04 <span>/</span> PROCESS
-      </p>
-
-
-      <div class="process-grid">
-
-
-        <article class="process-card">
-
-          <span>
-            01 / UNDERSTAND
-          </span>
-
-          <h3>
-            Understand
-          </h3>
-
-          <p>
-            Break down the requirement and understand
-            the problem before starting implementation.
-          </p>
-
-        </article>
-
-
-        <article class="process-card">
-
-          <span>
-            02 / BUILD
-          </span>
-
-          <h3>
-            Build
-          </h3>
-
-          <p>
-            Create clean components, APIs and database
-            operations while keeping the application practical.
-          </p>
-
-        </article>
-
-
-        <article class="process-card">
-
-          <span>
-            03 / IMPROVE
-          </span>
-
-          <h3>
-            Improve
-          </h3>
-
-          <p>
-            Test, debug and refine the application to
-            improve usability, responsiveness and reliability.
-          </p>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         CREDENTIALS
-         =================================================== -->
-
-    <section
-      class="credentials"
-      id="credentials"
-    >
-
-
-      <div class="credentials-heading reveal">
-
-        <p class="section-label">
-          05 <span>/</span> CREDENTIALS
+    <!-- =======================================================================
+         PROJECTS SECTION (THE SHOWCASE)
+         ======================================================================= -->
+    <section class="projects-section section-pad" id="projects">
+      <div class="container">
+        
+        <div class="section-label">02 / FEATURED PROJECTS</div>
+        <h2 class="section-heading-title">Engineering solutions built for real workflows.</h2>
+        <p class="section-subtext">
+          A showcase of client software, full-stack enterprise applications, and deployed web experiences.
         </p>
 
+        <!-- Project Filter Bar -->
+        <div class="project-filter-bar" style="margin-top: 36px;">
+          <button class="filter-pill active" data-filter="all">All Projects (6)</button>
+          <button class="filter-pill" data-filter="client">Client &amp; Production</button>
+          <button class="filter-pill" data-filter="java">Java &amp; Spring Boot</button>
+          <button class="filter-pill" data-filter="react">React &amp; Node.js</button>
+        </div>
 
-        <div>
+        <div class="projects-grid">
 
-          <h2>
-            Learning,
-            building,
-            improving.
-          </h2>
+          <!-- PROJECT 01: SWASTIK CAR ZONE (FEATURED CLIENT PROJECT) -->
+          <article class="project-card featured-card" id="swastik-project" data-category="client react">
+            <div class="mockup-window">
+              <div class="mockup-bar">
+                <div class="mockup-controls">
+                  <span class="ctrl red"></span>
+                  <span class="ctrl yellow"></span>
+                  <span class="ctrl green"></span>
+                </div>
+                <div class="mockup-address">
+                  <span>🛡️ swastik-carzone.internal/billing-app</span>
+                </div>
+                <div class="mockup-badge verified">PRODUCTION CLIENT BUILD</div>
+              </div>
+              <div class="mockup-screen">
+                <div class="screen-header">
+                  <div>
+                    <div class="screen-title">Swastik Car Zone</div>
+                    <div class="screen-subtitle">Digital Quotation &amp; Order Invoicing System</div>
+                  </div>
+                  <div class="screen-badge">SQL Server Connected</div>
+                </div>
+                <div class="screen-metrics-row">
+                  <div class="screen-stat">
+                    <span class="stat-num">₹1,84,500</span>
+                    <span class="stat-lbl">Monthly Volume</span>
+                  </div>
+                  <div class="screen-stat">
+                    <span class="stat-num">142</span>
+                    <span class="stat-lbl">Orders Booked</span>
+                  </div>
+                  <div class="screen-stat">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-lbl">Print Accuracy</span>
+                  </div>
+                </div>
+                <div class="screen-invoice-box">
+                  <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:10px;">
+                    <span style="color:#94a3b8; font-family:var(--font-code);">ORDER #SCZ-2026-092</span>
+                    <span style="color:#34d399; font-weight:700;">PAID &amp; GENERATED</span>
+                  </div>
+                  <div style="font-size:12px; display:flex; flex-direction:column; gap:6px;">
+                    <div style="display:flex; justify-content:space-between; background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:4px;">
+                      <span>R. Sharma (Honda City)</span>
+                      <span style="color:var(--cyan); font-weight:700;">₹24,500</span>
+                    </div>
+                  </div>
+                  <div style="display:flex; gap:8px; margin-top:12px;">
+                    <span style="font-size:10.5px; font-family:var(--font-code); background:rgba(56,189,248,0.12); padding:4px 10px; border-radius:4px; color:#7dd3fc;">🖨️ Print-Ready Invoice</span>
+                    <span style="font-size:10.5px; font-family:var(--font-code); background:rgba(56,189,248,0.12); padding:4px 10px; border-radius:4px; color:#7dd3fc;">✉️ Email Dispatch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <p>
-            Certifications / Training / Learning
-          </p>
+            <div class="project-content">
+              <div>
+                <div class="project-overline">Client Project · Production Delivery</div>
+                <h3 class="project-title">Swastik Car Zone Billing Application</h3>
+                <p class="project-desc">
+                  Full-stack billing and quotation software custom-built for client operations. Replaced manual billing books with digital Quotation and Order Booking forms based on existing business formats. Built an automated Customer Master with instant autofill, admin authentication, form validation, database management, and direct email/print reporting.
+                </p>
+                <div class="project-tags-cloud">
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">SQL Server</span>
+                  <span class="project-tag">Client Project</span>
+                  <span class="project-tag">Invoicing Engine</span>
+                  <span class="project-tag">PDF &amp; Print</span>
+                </div>
+              </div>
+              <div class="project-actions-row">
+                <span class="btn-project-deployed">
+                  <span>Client System Deployed</span> <span>✓</span>
+                </span>
+                <a href="https://github.com/DubeyMukesh-Official" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  GitHub Profile ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: IT HELPDESK -->
+          <article class="project-card" data-category="client react">
+            <div class="mockup-window">
+              <div class="mockup-bar">
+                <div class="mockup-controls">
+                  <span class="ctrl red"></span>
+                  <span class="ctrl yellow"></span>
+                  <span class="ctrl green"></span>
+                </div>
+                <div class="mockup-address">
+                  <span>🔒 helpdesk.internal/tickets</span>
+                </div>
+                <div class="mockup-badge secure">RBAC AUTH</div>
+              </div>
+              <div class="mockup-screen">
+                <div class="screen-header">
+                  <div>
+                    <div class="screen-title">IT Support Command Console</div>
+                    <div class="screen-subtitle">Active Resolution Pipeline · SLA Tracking</div>
+                  </div>
+                  <div class="screen-badge" style="color:#34d399;">Support Lead</div>
+                </div>
+                <div class="screen-metrics-row">
+                  <div class="screen-stat">
+                    <span class="stat-num">18</span>
+                    <span class="stat-lbl">Open Tickets</span>
+                  </div>
+                  <div class="screen-stat">
+                    <span class="stat-num">98.4%</span>
+                    <span class="stat-lbl">SLA Rate</span>
+                  </div>
+                  <div class="screen-stat">
+                    <span class="stat-num">1.8h</span>
+                    <span class="stat-lbl">Avg Resolution</span>
+                  </div>
+                </div>
+                <div class="ticket-list-preview" style="display:flex; flex-direction:column; gap:8px;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:8px; border-radius:6px; font-size:12px;">
+                    <span>[CRITICAL] Server Latency Alert</span>
+                    <span style="font-size:9.5px; font-family:var(--font-code); color:#f87171; background:rgba(239,68,68,0.15); padding:2px 6px; border-radius:4px;">IN PROGRESS</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:8px; border-radius:6px; font-size:12px;">
+                    <span>[DATABASE] Schema Migration Done</span>
+                    <span style="font-size:9.5px; font-family:var(--font-code); color:#34d399; background:rgba(16,185,129,0.15); padding:2px 6px; border-radius:4px;">RESOLVED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div>
+                <div class="project-overline">Enterprise Architecture · Support Platform</div>
+                <h3 class="project-title">IT Helpdesk &amp; Ticket Management</h3>
+                <p class="project-desc">
+                  Full-stack ticket management platform for handling IT support requests from initial creation through resolution. Features role-based access for support staff and admins, status tracking, search/filtering, and real-time monitoring dashboard with SQL Server data persistence.
+                </p>
+                <div class="project-tags-cloud">
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">SQL Server</span>
+                  <span class="project-tag">REST APIs</span>
+                  <span class="project-tag">RBAC</span>
+                </div>
+              </div>
+              <div class="project-actions-row">
+                <span class="btn-project-deployed">
+                  <span>Enterprise Internal Platform</span> <span>🔒</span>
+                </span>
+                <a href="https://github.com/DubeyMukesh-Official" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  GitHub Profile ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: RIDE-X (LIVE DEMO) -->
+          <article class="project-card" data-category="java react">
+            <div class="mockup-window">
+              <div class="mockup-bar">
+                <div class="mockup-controls">
+                  <span class="ctrl red"></span>
+                  <span class="ctrl yellow"></span>
+                  <span class="ctrl green"></span>
+                </div>
+                <div class="mockup-address">
+                  <span>⚡ https://ride-x-rouge.vercel.app</span>
+                </div>
+                <div class="mockup-badge live">LIVE DEMO</div>
+              </div>
+              <div class="mockup-screen">
+                <div class="screen-header">
+                  <div>
+                    <div class="screen-title">Ride-X Superbike Showroom</div>
+                    <div class="screen-subtitle">Spring Boot · React.js · Razorpay Gateway</div>
+                  </div>
+                  <div class="screen-badge" style="color:var(--cyan);">Secured Checkout</div>
+                </div>
+                <div class="ridex-product-preview" style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px;">
+                  <div style="font-size:10px; color:#94a3b8; font-family:var(--font-code); display:flex; justify-content:space-between;">
+                    <span>DUCATI CORSE</span>
+                    <span>214 HP · 1103cc</span>
+                  </div>
+                  <div style="font-size:16px; font-weight:700; color:#fff; margin:4px 0;">Panigale V4 S Speciale</div>
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <span style="font-size:16px; font-weight:800; color:var(--cyan);">₹26,50,000</span>
+                    <span style="font-size:11px; font-family:var(--font-code); background:var(--cyan); color:#07090e; font-weight:700; padding:4px 10px; border-radius:4px;">🛒 Cart Ready</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div>
+                <div class="project-overline">Full Stack E-Commerce · Mobility</div>
+                <h3 class="project-title">Ride-X Bike Showroom System</h3>
+                <p class="project-desc">
+                  Full-stack bike showroom platform where users browse bikes, inspect specifications, and manage orders. Features catalog search, dynamic cart and wishlist workflows, JWT-based secure authentication, live Razorpay payment processing, and Spring Boot REST APIs connected to MySQL.
+                </p>
+                <div class="project-tags-cloud">
+                  <span class="project-tag">Spring Boot</span>
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">MySQL</span>
+                  <span class="project-tag">Razorpay</span>
+                  <span class="project-tag">JWT</span>
+                </div>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://ride-x-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                  Open Live Demo ↗
+                </a>
+                <a href="https://github.com/DubeyMukesh-Official/Ride-X" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  Source Code ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: BLOG APPLICATION -->
+          <article class="project-card" data-category="react">
+            <div class="mockup-window">
+              <div class="mockup-bar">
+                <div class="mockup-controls">
+                  <span class="ctrl red"></span>
+                  <span class="ctrl yellow"></span>
+                  <span class="ctrl green"></span>
+                </div>
+                <div class="mockup-address">
+                  <span>🌐 https://blog-lyart-alpha-17.vercel.app</span>
+                </div>
+                <div class="mockup-badge live">LIVE APP</div>
+              </div>
+              <div class="mockup-screen">
+                <div class="screen-header">
+                  <div>
+                    <div class="screen-title">Engineering Insights Blog</div>
+                    <div class="screen-subtitle">REST API · React Router · Responsive UI</div>
+                  </div>
+                  <div class="screen-badge">Dynamic Feed</div>
+                </div>
+                <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px;">
+                  <span style="font-size:9.5px; font-family:var(--font-code); color:var(--cyan);">SYSTEM ARCHITECTURE</span>
+                  <div style="font-size:14px; font-weight:700; color:#fff; margin:4px 0;">Building Scalable REST APIs with Spring Boot</div>
+                  <div style="font-size:11px; color:#94a3b8; display:flex; gap:8px;">
+                    <span>By Mukesh Dubey</span>
+                    <span>• 4 min read</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div>
+                <div class="project-overline">Content Experience · React Architecture</div>
+                <h3 class="project-title">Responsive Blog Application</h3>
+                <p class="project-desc">
+                  Responsive blog application that renders REST API content through reusable React components. Gives readers a clean, simple way to explore articles with responsive layouts across devices and smooth client-side routing.
+                </p>
+                <div class="project-tags-cloud">
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">REST API</span>
+                  <span class="project-tag">React Router</span>
+                  <span class="project-tag">Responsive UI</span>
+                </div>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://blog-lyart-alpha-17.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                  Open Live Project ↗
+                </a>
+                <a href="https://github.com/DubeyMukesh-Official/BLOG" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  Source Code ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 05: SHOE MART -->
+          <article class="project-card" data-category="react">
+            <div class="mockup-window">
+              <div class="mockup-bar">
+                <div class="mockup-controls">
+                  <span class="ctrl red"></span>
+                  <span class="ctrl yellow"></span>
+                  <span class="ctrl green"></span>
+                </div>
+                <div class="mockup-address">
+                  <span>👟 https://shoe-mart-khaki.vercel.app</span>
+                </div>
+                <div class="mockup-badge live">E-COMMERCE UI</div>
+              </div>
+              <div class="mockup-screen">
+                <div class="screen-header">
+                  <div>
+                    <div class="screen-title">Shoe Mart Storefront</div>
+                    <div class="screen-subtitle">Component Architecture · Responsive Filtering</div>
+                  </div>
+                  <div class="screen-badge" style="color:var(--amber);">★ 4.9 Rating</div>
+                </div>
+                <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px;">
+                  <div style="font-size:14px; font-weight:700; color:#fff;">Air Zoom Dynamic Speed</div>
+                  <div style="display:flex; gap:6px; margin:6px 0;">
+                    <span style="font-size:10px; font-family:var(--font-code); background:rgba(255,255,255,0.06); padding:2px 8px; border-radius:4px;">UK 7</span>
+                    <span style="font-size:10px; font-family:var(--font-code); background:var(--cyan); color:#000; font-weight:700; padding:2px 8px; border-radius:4px;">UK 8</span>
+                    <span style="font-size:10px; font-family:var(--font-code); background:rgba(255,255,255,0.06); padding:2px 8px; border-radius:4px;">UK 9</span>
+                  </div>
+                  <div style="font-size:15px; font-weight:800; color:var(--text-white);">₹12,499</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div>
+                <div class="project-overline">Frontend Engineering · Storefront</div>
+                <h3 class="project-title">Shoe Mart E-Commerce UI</h3>
+                <p class="project-desc">
+                  Responsive shoe-shopping interface with modular product cards and adaptable layouts designed for easy browsing, state filtering, and seamless performance on desktop and mobile screens.
+                </p>
+                <div class="project-tags-cloud">
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">JavaScript ES6+</span>
+                  <span class="project-tag">CSS3</span>
+                  <span class="project-tag">Product Catalog</span>
+                </div>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://shoe-mart-khaki.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                  Open Live Store ↗
+                </a>
+                <a href="https://github.com/DubeyMukesh-Official/SHOE-MART" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  Source Code ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 06: WOMEN SAFETY -->
+          <article class="project-card" data-category="java react">
+            <div class="mockup-window">
+              <div class="mockup-bar">
+                <div class="mockup-controls">
+                  <span class="ctrl red"></span>
+                  <span class="ctrl yellow"></span>
+                  <span class="ctrl green"></span>
+                </div>
+                <div class="mockup-address">
+                  <span>🚨 svgRescue.github.io</span>
+                </div>
+                <div class="mockup-badge live">SAFETY SYSTEM</div>
+              </div>
+              <div class="mockup-screen">
+                <div class="screen-header">
+                  <div>
+                    <div class="screen-title">Rescue Incident Dispatch</div>
+                    <div class="screen-subtitle">Emergency Alert &amp; Location Lock</div>
+                  </div>
+                  <div class="screen-badge" style="color:#f87171;">Radar Active</div>
+                </div>
+                <div style="background:rgba(0,0,0,0.3); padding:14px; border-radius:8px; text-align:center;">
+                  <span style="display:inline-block; font-size:11px; font-family:var(--font-code); font-weight:700; background:linear-gradient(135deg,#ef4444,#dc2626); color:#fff; padding:8px 20px; border-radius:999px;">
+                    🚨 EMERGENCY SOS TRIGGER
+                  </span>
+                  <div style="font-size:11px; color:#94a3b8; margin-top:8px;">📍 Mumbai, India (GPS Telemetry Active)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div>
+                <div class="project-overline">Emergency Response · College Project</div>
+                <h3 class="project-title">Women Safety &amp; Emergency Rescue</h3>
+                <p class="project-desc">
+                  College project that turns a rescue-focused safety idea into a clear digital experience with immediate alert triggers, routing, and accessible emergency safety resources.
+                </p>
+                <div class="project-tags-cloud">
+                  <span class="project-tag">Java</span>
+                  <span class="project-tag">Spring Boot</span>
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">Academic Project</span>
+                </div>
+              </div>
+              <div class="project-actions-row">
+                <a href="https://dubeymukesh-official.github.io/svgRescue/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                  Open Project ↗
+                </a>
+                <a href="https://github.com/DubeyMukesh-Official/svgRescue" target="_blank" rel="noopener noreferrer" class="btn-project-code">
+                  Source Code ↗
+                </a>
+              </div>
+            </div>
+          </article>
 
         </div>
 
       </div>
+    </section>
 
+    <!-- =======================================================================
+         SKILLS SECTION (BENTO GRID)
+         ======================================================================= -->
+    <section class="skills-section section-pad" id="skills">
+      <div class="container">
+        
+        <div class="section-label">03 / TECHNICAL TOOLKIT</div>
+        <h2 class="section-heading-title">Proven technologies for scalable software.</h2>
+        <p class="section-subtext">
+          A comprehensive breakdown of tools, frameworks, and engineering methodologies used in production.
+        </p>
 
-      <!-- FEATURED TRAINING -->
+        <div class="skills-bento-grid" style="margin-top: 40px;">
+          
+          <!-- Card 1: Languages -->
+          <div class="skill-bento-card">
+            <div class="skill-category-num">01 / CORE LANGUAGES</div>
+            <h3 class="skill-card-title">Java, JavaScript, SQL</h3>
+            <p class="skill-card-desc">
+              Strong foundation in Core Java (OOP, Collections, Multithreading, Exception Handling), modern ES6+ JavaScript, and relational SQL scripting.
+            </p>
+            <div class="skill-pill-tags">
+              <span>Java 17/21</span>
+              <span>JavaScript ES6+</span>
+              <span>SQL</span>
+              <span>OOP</span>
+              <span>Data Structures</span>
+            </div>
+          </div>
 
-      <div class="credential-feature reveal">
+          <!-- Card 2: Frontend -->
+          <div class="skill-bento-card">
+            <div class="skill-category-num">02 / FRONTEND ARCHITECTURE</div>
+            <h3 class="skill-card-title">React.js &amp; Redux Toolkit</h3>
+            <p class="skill-card-desc">
+              Building dynamic, component-driven user interfaces with React Hooks, centralized state management via Redux Toolkit, HTML5, CSS3, and Bootstrap.
+            </p>
+            <div class="skill-pill-tags">
+              <span>React.js</span>
+              <span>Redux Toolkit</span>
+              <span>HTML5 / CSS3</span>
+              <span>Bootstrap</span>
+              <span>Responsive UI</span>
+            </div>
+          </div>
 
+          <!-- Card 3: Backend -->
+          <div class="skill-bento-card">
+            <div class="skill-category-num">03 / BACKEND &amp; APIS</div>
+            <h3 class="skill-card-title">Node.js &amp; Spring Boot</h3>
+            <p class="skill-card-desc">
+              Designing scalable RESTful APIs, Spring Boot microservices, Node.js runtime servers, JDBC connectivity, and JWT-secured endpoints.
+            </p>
+            <div class="skill-pill-tags">
+              <span>Spring Boot</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>REST APIs</span>
+              <span>JWT &amp; RBAC</span>
+            </div>
+          </div>
 
-        <img
-          src="./assets/certificates/itvedant-full-stack-java.jpg"
-          alt="IT Vedant Full Stack Java Development certificate"
-          loading="lazy"
-        />
+          <!-- Card 4: Databases -->
+          <div class="skill-bento-card">
+            <div class="skill-category-num">04 / RELATIONAL DATABASES</div>
+            <h3 class="skill-card-title">SQL Server &amp; MySQL</h3>
+            <p class="skill-card-desc">
+              Relational schema design, database normalization (1NF–3NF), complex joins, subqueries, views, and ACID-compliant CRUD operations.
+            </p>
+            <div class="skill-pill-tags">
+              <span>Microsoft SQL Server</span>
+              <span>MySQL</span>
+              <span>Schema Design</span>
+              <span>Optimization</span>
+              <span>CRUD</span>
+            </div>
+          </div>
 
+          <!-- Card 5: Testing & Tools -->
+          <div class="skill-bento-card">
+            <div class="skill-category-num">05 / TESTING &amp; DEVOPS TOOLS</div>
+            <h3 class="skill-card-title">Selenium, Postman &amp; Git</h3>
+            <p class="skill-card-desc">
+              Automated UI testing with Selenium, API validation &amp; testing with Postman, version control with Git &amp; GitHub, and VS Code / Eclipse IDEs.
+            </p>
+            <div class="skill-pill-tags">
+              <span>Selenium</span>
+              <span>Postman</span>
+              <span>Git &amp; GitHub</span>
+              <span>VS Code</span>
+              <span>Eclipse</span>
+            </div>
+          </div>
 
-        <div class="credential-feature-copy">
-
-          <span>
-            FEATURED TRAINING
-          </span>
-
-          <h3>
-            Full Stack Java Development
-          </h3>
-
-          <p>
-            Full Stack Java Development training covering
-            Java, Spring Boot, frontend technologies,
-            databases and application development.
-          </p>
-
-
-          <button
-            class="credential-open"
-            type="button"
-            data-title="Full Stack Java Development"
-            data-image="./assets/certificates/itvedant-full-stack-java.jpg"
-          >
-
-            View credential
-
-            <i>
-              ↗
-            </i>
-
-          </button>
+          <!-- Card 6: Core Strengths -->
+          <div class="skill-bento-card">
+            <div class="skill-category-num">06 / PROFESSIONAL STRENGTHS</div>
+            <h3 class="skill-card-title">Debugging &amp; Client Delivery</h3>
+            <p class="skill-card-desc">
+              Root-cause debugging, client-side issue resolution, software installation, system setup on client machines, and structured handover.
+            </p>
+            <div class="skill-pill-tags">
+              <span>Root Cause Debugging</span>
+              <span>Client Setup</span>
+              <span>Client Communication</span>
+              <span>Delivery</span>
+            </div>
+          </div>
 
         </div>
 
       </div>
-
-
-      <!-- CREDENTIAL GRID -->
-
-      <div class="credential-grid reveal">
-
-
-        <!-- 01 -->
-<!-- 01 -->
-<button
-    class="credential-card ibm-card"
-    type="button"
-    data-title="Java Full Stack Web Development"
-    data-pdf="./assets/certificates/Java Full stack.pdf"
->
-    <span class="ibm-mark">
-        IT VEDANT / FULL STACK JAVA
-    </span>
-
-    <b>
-        Java Full Stack Web Development
-    </b>
-
-    <small>
-        Java / Full Stack Development
-    </small>
-
-    <i>
-        ↗
-    </i>
-</button>
-
-
-        <!-- 02 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IBM Java Fundamentals"
-          data-pdf="./assets/certificates/ibm-java-fundamentals.pdf"
-        >
-
-          <span class="ibm-mark">
-            IBM / JAVA
-          </span>
-
-          <b>
-            Java Fundamentals
-          </b>
-
-          <small>
-            Java / Programming
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 02 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IBM Full Stack Java Developer"
-          data-pdf="./assets/certificates/ibm-full-stack-java.pdf"
-        >
-
-          <span class="ibm-mark">
-            IBM / FULL STACK JAVA
-          </span>
-
-          <b>
-            Full Stack Java Developer
-          </b>
-
-          <small>
-            Java / Full Stack Development
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 03 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="HackerRank Java Basic"
-          data-pdf="./assets/certificates/hackerrank-java-basic.pdf"
-        >
-
-          <span class="ibm-mark">
-            HACKERRANK / JAVA
-          </span>
-
-          <b>
-            Java Basic
-          </b>
-
-          <small>
-            Java / Programming
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 04 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IT Vedant React Essentials"
-          data-image="./assets/certificates/itvedant-react-essentials.jpg"
-        >
-
-          <span class="ibm-mark">
-            REACT
-          </span>
-
-          <b>
-            React Essentials
-          </b>
-
-          <small>
-            Frontend / React.js
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 05 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IT Vedant Spring Boot"
-          data-image="./assets/certificates/itvedant-springboot.jpg"
-        >
-
-          <span class="ibm-mark">
-            SPRING BOOT
-          </span>
-
-          <b>
-            Spring Boot Development
-          </b>
-
-          <small>
-            Java / Spring Boot
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 06 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IT Vedant SQL Deep Dive"
-          data-image="./assets/certificates/itvedant-sql-deep-dive.jpg"
-        >
-
-          <span class="ibm-mark">
-            SQL
-          </span>
-
-          <b>
-            SQL Deep Dive
-          </b>
-
-          <small>
-            Database / SQL
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 07 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IT Vedant JavaScript Essentials"
-          data-image="./assets/certificates/itvedant-javascript-essentials.jpg"
-        >
-
-          <span class="ibm-mark">
-            JAVASCRIPT
-          </span>
-
-          <b>
-            JavaScript Essentials
-          </b>
-
-          <small>
-            Frontend / JavaScript
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 08 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IT Vedant Java Essentials"
-          data-image="./assets/certificates/itvedant-java-essentials.jpg"
-        >
-
-          <span class="ibm-mark">
-            JAVA
-          </span>
-
-          <b>
-            Java Essentials
-          </b>
-
-          <small>
-            Java / Programming
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 09 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="Future Tech 2.0 - Blind Coding"
-          data-image="./assets/certificates/college-future-tech-2024.jpg"
-        >
-
-          <span class="ibm-mark">
-            FUTURE TECH
-          </span>
-
-          <b>
-            Future Tech 2.0
-          </b>
-
-          <small>
-            Blind Coding / Participation
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 10 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="Refactoring to Microservices with Open-Source AI Technology"
-          data-pdf="./assets/certificates/ibm-microservices-ai.pdf"
-        >
-
-          <span class="ibm-mark">
-            IBM / AI
-          </span>
-
-          <b>
-            Refactoring to Microservices
-          </b>
-
-          <small>
-            Microservices / Open-Source AI
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 11 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="SQL and Relational Databases"
-          data-pdf="./assets/certificates/ibm-sql-databases.pdf"
-        >
-
-          <span class="ibm-mark">
-            IBM / SQL
-          </span>
-
-          <b>
-            SQL &amp; Relational Databases
-          </b>
-
-          <small>
-            SQL / Relational Databases
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 12 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IBM Spring Boot Application Development"
-          data-pdf="./assets/certificates/ibm-spring-boot-application.pdf"
-        >
-
-          <span class="ibm-mark">
-            IBM / SPRING BOOT
-          </span>
-
-          <b>
-            Spring Boot Application Development
-          </b>
-
-          <small>
-            Java / Spring Boot
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 13 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="IBM Web Development with HTML"
-          data-pdf="./assets/certificates/ibm-web-development-html.pdf"
-        >
-
-          <span class="ibm-mark">
-            IBM / WEB
-          </span>
-
-          <b>
-            Web Development with HTML
-          </b>
-
-          <small>
-            HTML / Web Development
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-        <!-- 14 -->
-
-        <button
-          class="credential-card ibm-card"
-          type="button"
-          data-title="HackerRank React Basic"
-          data-pdf="./assets/certificates/hackerrank-react-basic.pdf"
-        >
-
-          <span class="ibm-mark">
-            HACKERRANK / REACT
-          </span>
-
-          <b>
-            React Basic
-          </b>
-
-          <small>
-            React / Frontend Development
-          </small>
-
-          <i>
-            ↗
-          </i>
-
-        </button>
-
-
-      </div>
-
     </section>
 
+    <!-- =======================================================================
+         EDUCATION & CREDENTIALS VAULT
+         ======================================================================= -->
+    <section class="credentials-section section-pad" id="credentials">
+      <div class="container">
+        
+        <div class="section-label">04 / EDUCATION &amp; CREDENTIALS</div>
+        <h2 class="section-heading-title">Verified academic &amp; professional qualifications.</h2>
+        <p class="section-subtext">
+          Click any credential card to inspect the official verified certificate.
+        </p>
 
-    <!-- ===================================================
-         CONTACT
-         =================================================== -->
+        <div class="credentials-dual-grid" style="margin-top: 40px;">
+          
+          <!-- Column 1: Education -->
+          <div class="edu-column">
+            <div class="column-title">
+              <span>🎓</span> Formal Education
+            </div>
 
-    <section
-      class="contact section-pad reveal"
-      id="contact"
-    >
+            <div class="edu-item-card">
+              <div class="edu-meta-top">
+                <span class="edu-degree">B.Sc. in Information Technology</span>
+                <span class="edu-grade-pill">8.22 CGPA</span>
+              </div>
+              <div class="edu-institution">Khar Education Society's College of Commerce &amp; Economics</div>
+              <div class="edu-years">2022 – 2025 · Mumbai, India</div>
+              <p style="font-size:13.5px; color:#94a3b8; margin-top:10px; line-height:1.55;">
+                Solid academic grounding in Computer Systems, Object-Oriented Programming, Database Management Systems, Network Security, and Software Engineering.
+              </p>
+            </div>
 
-      <p class="section-label">
-        06 <span>/</span> CONTACT
-      </p>
+            <div class="edu-item-card">
+              <div class="edu-meta-top">
+                <span class="edu-degree">Full Stack Java Development</span>
+                <span class="edu-grade-pill" style="color:var(--cyan); border-color:rgba(56,189,248,0.3); background:rgba(56,189,248,0.1);">Professional Diploma</span>
+              </div>
+              <div class="edu-institution">IT Vedant Institute</div>
+              <div class="edu-years">2025 – 2026 · Mumbai, India</div>
+              <p style="font-size:13.5px; color:#94a3b8; margin-top:10px; line-height:1.55;">
+                Comprehensive professional program covering Core &amp; Advanced Java, Spring Boot microservices, React.js frontend development, and SQL database design.
+              </p>
+            </div>
+          </div>
 
+          <!-- Column 2: Certifications -->
+          <div class="certs-column">
+            <div class="column-title">
+              <span>🏆</span> Verified Certifications
+            </div>
 
-      <div
-        class="contact-noise"
-        aria-hidden="true"
-      >
-        LET'S TALK
+            <!-- Cert 1 -->
+            <button class="cert-card-interactive" type="button" data-title="Master in Full Stack Web Development with Java" data-image="./assets/certificates/itvedant-full-stack-java.jpg">
+              <div class="cert-info">
+                <h4>Master in Full Stack Web Development with Java</h4>
+                <p>IT Vedant Institute · Issued 2026 · Java &amp; React Specialization</p>
+              </div>
+              <span class="cert-arrow-icon">Inspect ↗</span>
+            </button>
+
+            <!-- Cert 2 -->
+            <button class="cert-card-interactive" type="button" data-title="IBM Full Stack Java Developer" data-pdf="./assets/certificates/ibm-full-stack-java.pdf">
+              <div class="cert-info">
+                <h4>IBM Skills Network: Full Stack Java Developer</h4>
+                <p>IBM Skills Network · Jan 2026 · Enterprise Java Credential</p>
+              </div>
+              <span class="cert-arrow-icon">Inspect ↗</span>
+            </button>
+
+            <!-- Cert 3 -->
+            <button class="cert-card-interactive" type="button" data-title="HackerRank Java (Basic)" data-pdf="./assets/certificates/hackerrank-java-basic.pdf">
+              <div class="cert-info">
+                <h4>HackerRank: Java (Basic) Skill Certification</h4>
+                <p>HackerRank · Verified Coding Assessment · Java Core</p>
+              </div>
+              <span class="cert-arrow-icon">Inspect ↗</span>
+            </button>
+
+            <!-- Cert 4 -->
+            <button class="cert-card-interactive" type="button" data-title="HackerRank React (Basic)" data-pdf="./assets/certificates/hackerrank-react-basic.pdf">
+              <div class="cert-info">
+                <h4>HackerRank: React (Basic) Skill Certification</h4>
+                <p>HackerRank · Verified Assessment · React Component Architecture</p>
+              </div>
+              <span class="cert-arrow-icon">Inspect ↗</span>
+            </button>
+
+            <!-- Cert 5 -->
+            <button class="cert-card-interactive" type="button" data-title="Future Tech 2.0 Blind Coding" data-image="./assets/certificates/college-future-tech-2024.jpg">
+              <div class="cert-info">
+                <h4>Future Tech 2.0: Blind Coding Competition</h4>
+                <p>KES College · 2024 · Algorithm &amp; Coding Speed</p>
+              </div>
+              <span class="cert-arrow-icon">Inspect ↗</span>
+            </button>
+
+          </div>
+
+        </div>
+
       </div>
-
-
-      <h2>
-        Let's build
-        <em>something</em><br />
-        useful.
-      </h2>
-
-
-      <!-- EMAIL -->
-
-      <a
-        class="mail-link"
-        href="mailto:mukeshdubey.dev@gmail.com"
-      >
-
-        mukeshdubey.dev@gmail.com
-
-        <span>
-          ↗
-        </span>
-
-      </a>
-
-
-      <!-- CONTACT DETAILS -->
-
-      <div class="contact-details">
-
-        <span>
-          Mumbai, India
-        </span>
-
-
-        <a
-          href="https://github.com/DubeyMukesh-Official"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub ↗
-        </a>
-
-
-        <a
-          href="https://www.linkedin.com/in/mukesh-dubey-offiicial/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn ↗
-        </a>
-
-
-        <a
-          href="mailto:mukeshdubey.dev@gmail.com"
-        >
-          Email ↗
-        </a>
-
-      </div>
-
     </section>
 
+    <!-- =======================================================================
+         CONTACT SECTION
+         ======================================================================= -->
+    <section class="contact-section section-pad" id="contact">
+      <div class="container">
+        
+        <div class="contact-glass-box">
+          <div class="section-label" style="justify-content:center;">05 / GET IN TOUCH</div>
+          <h2 class="contact-headline">Let's build something extraordinary together.</h2>
+          <p class="contact-subtext">
+            I'm actively seeking full-time Software Engineer and Full Stack Developer roles. Open to On-site, Hybrid, and Remote opportunities across India and globally.
+          </p>
+
+          <div class="contact-channels-row">
+            <button class="contact-pill-btn primary" id="copy-email-btn" data-email="mukeshdubey975@gmail.com">
+              <span>✉️ Copy Email</span>
+            </button>
+
+            <a href="mailto:mukeshdubey975@gmail.com" class="contact-pill-btn">
+              <span>Direct Email ↗</span>
+            </a>
+
+            <a href="tel:+919702465977" class="contact-pill-btn">
+              <span>📞 +91 9702465977</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/mukesh-dubey-offiicial/" target="_blank" rel="noopener noreferrer" class="contact-pill-btn">
+              <span>LinkedIn ↗</span>
+            </a>
+
+            <a href="https://github.com/DubeyMukesh-Official" target="_blank" rel="noopener noreferrer" class="contact-pill-btn">
+              <span>GitHub ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 
-
-  <!-- =====================================================
+  <!-- =========================================================================
        FOOTER
-       ===================================================== -->
-
-  <footer class="footer section-pad">
-
-    <span>
-      © 2026 Mukesh Dubey
-    </span>
-
-
-    <span>
-      Built with HTML / CSS / JavaScript
-    </span>
-
-
-    <a href="#top">
+       ========================================================================= -->
+  <footer class="site-footer container">
+    <div>
+      © 2026 Mukesh Dubey · Full Stack Developer · Mumbai, Maharashtra
+    </div>
+    <a href="#home" class="footer-top-btn">
       Back to top ↑
     </a>
-
   </footer>
 
-
-  <!-- =====================================================
-       THEME SWITCH
-       ===================================================== -->
-
-  <button
-    class="theme-switch"
-    type="button"
-    aria-label="Toggle light and dark theme"
-    title="Toggle theme"
-  >
-
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-
-      <circle
-        cx="12"
-        cy="12"
-        r="4"
-      ></circle>
-
-      <path d="M12 2v2"></path>
-
-      <path d="M12 20v2"></path>
-
-      <path d="m4.93 4.93 1.41 1.41"></path>
-
-      <path d="m17.66 17.66 1.41 1.41"></path>
-
-      <path d="M2 12h2"></path>
-
-      <path d="M20 12h2"></path>
-
-      <path d="m6.34 17.66-1.41 1.41"></path>
-
-      <path d="m19.07 4.93-1.41 1.41"></path>
-
-    </svg>
-
-  </button>
-
-
-  <!-- =====================================================
-       CERTIFICATE MODAL
-       ===================================================== -->
-
-  <dialog
-    class="certificate-modal"
-    aria-labelledby="certificate-title"
-  >
-
-    <button
-      class="modal-close"
-      type="button"
-      aria-label="Close certificate"
-    >
-      ×
-    </button>
-
-
-    <div class="modal-inner">
-
-      <p class="modal-eyebrow">
-        CREDENTIAL
-      </p>
-
-
-      <h2 id="certificate-title">
-        Certificate
-      </h2>
-
-
-      <div class="certificate-preview">
-
-        <img
-          class="modal-image"
-          src=""
-          alt="Certificate preview"
-        />
-
-
-        <iframe
-          class="modal-pdf-viewer"
-          src=""
-          title="Certificate PDF preview"
-        ></iframe>
-
-
-        <div class="modal-placeholder">
-
-          <span>
-            CERTIFICATE / CREDENTIAL
-          </span>
-
-          <b>
-            Credential preview unavailable
-          </b>
-
-        </div>
-
-      </div>
-
-
-      <a
-        class="modal-pdf"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Open PDF ↗
-      </a>
-
+  <!-- =========================================================================
+       CERTIFICATE VIEWER MODAL
+       ========================================================================= -->
+  <dialog class="cert-modal-dialog" id="cert-modal">
+    <button class="cert-modal-close" id="cert-modal-close" aria-label="Close Modal">✕</button>
+    <div style="font-family:var(--font-code); font-size:11px; color:var(--cyan); margin-bottom:4px;">VERIFIED CREDENTIAL VIEWER</div>
+    <h3 id="cert-modal-title" style="font-size:20px; font-weight:700;">Certificate Title</h3>
+    <img id="cert-modal-img" class="cert-modal-image" src="" alt="Certificate Preview" style="display:none;" />
+    <div id="cert-modal-placeholder" style="display:none; padding:40px 20px; text-align:center; background:rgba(0,0,0,0.3); border-radius:8px; margin:16px 0;">
+      <p style="font-size:14px; color:#cbd5e1; margin-bottom:12px;">This credential is verified and available as an official PDF document.</p>
     </div>
-
+    <div style="display:flex; justify-content:flex-end;">
+      <a id="cert-modal-pdf-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary-glow" style="font-size:12px; padding:10px 20px; display:none;">
+        Open Official PDF ↗
+      </a>
+    </div>
   </dialog>
 
-
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
-
-  <script
-    src="./script.js"
-    defer
-  ></script>
-
-
+  <!-- Scripts -->
+  <script src="./script.js"></script>
 </body>
-
 </html>
